@@ -29,7 +29,7 @@ OTTER (Optimized Telemetry and Task Execution Runtime) is a lightweight operatin
 ## Installation
 1. Clone the OTTER repository:
    ```sh
-   git clone https://github.com/stevenantya/LLM-OS.git
+   git clone https://github.com/stevenantya/LLM-OS-OTTER.git
    ```
 2. Install dependencies:
    - **Arduino IDE / PlatformIO** for microcontroller development.
