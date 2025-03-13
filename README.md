@@ -19,7 +19,7 @@ OTTER (Optimized Telemetry and Task Execution Runtime) is a lightweight operatin
 5. **Data Retrieval & Processing**: Fetches, formats, and scales sensor data based on predefined rules.
 
 ## Supported Hardware
-- **Microcontrollers**: Arduino Nano 33 BLE Sense Lite, ESP32-S3, Bluno Beetle.
+- **Microcontrollers**: Arduino Nano 33 BLE Sense Lite.
 - **Sensors**:
   - Temperature Sensors: MCP9808, TMP102
   - Temperature & Humidity Sensors: AHT20, SHT31
@@ -29,7 +29,7 @@ OTTER (Optimized Telemetry and Task Execution Runtime) is a lightweight operatin
 ## Installation
 1. Clone the OTTER repository:
    ```sh
-   git clone https://github.com/your-repo/OTTER.git
+   git clone https://github.com/stevenantya/LLM-OS.git
    ```
 2. Install dependencies:
    - **Arduino IDE / PlatformIO** for microcontroller development.
