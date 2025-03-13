@@ -1,7 +1,7 @@
 # OTTER - LLM OS for Embedded Systems
 
 ## Overview
-OTTER (Optimized Telemetry and Task Execution Runtime) is a lightweight operating system designed to streamline sensor interfacing in embedded systems using Large Language Models (LLMs). It simplifies I2C sensor communication by dynamically generating and executing sensor configurations, reducing development time and increasing flexibility.
+OTTER (Open-source Translation at Task Execution Runtime) is a lightweight operating system designed to streamline sensor interfacing in embedded systems using Large Language Models (LLMs). It simplifies I2C sensor communication by dynamically generating and executing sensor configurations, reducing development time and increasing flexibility.
 
 ## Features
 - **LLM-Powered Sensor Configuration**: Converts natural language descriptions into optimized sensor configurations.
