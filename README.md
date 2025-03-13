@@ -73,14 +73,14 @@ Temp = 26.62°C
 - **Cloud Connectivity**: Enable remote monitoring and data logging.
 
 ## Contributors
-- **Steven Waskito** - Lead Developer
-- **Prof. Ambuj Varshney** - Principal Investigator
+- [**Steven Waskito**](https://swaskito.com) - Lead Developer
+- [**Prof. Ambuj Varshney**](https://ambuj.se) - Principal Investigator
 
 ## License
 [Apache 2.0]
 
 ## Contact
-For inquiries, please reach out to **steven.waskito@example.com** or visit our GitHub repository.
+For inquiries, please reach out to **steven@comp.nus.edu.sg** or visit our GitHub repository.
 
 ---
 
