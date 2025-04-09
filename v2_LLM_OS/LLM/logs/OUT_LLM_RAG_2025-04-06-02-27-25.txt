@@ -1,0 +1,13 @@
+Sensor name: SHT31
+Query: I2C address hexadecimal value
+Response: 0x44
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: The only numerical byte value mentioned is 6.
+Query: Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.
+Response: (Temperature: [0:15], Humidity: [16:31])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Temperature: "X 175 * 65535 / -45 +", Humidity: "X 100 * 65535 /")

@@ -1,0 +1,13 @@
+Sensor name: AHT20
+Query: What is the I2C address hexadecimal value?
+Response: 0x38
+Query: How do you initialize or reset the sensor? Include register addresses or command codes for initialization or soft reset or power-up.
+Response: INOP
+Query: What read command or register hexadecimal value triggers a sensor measurement? Which register address should be pointed to or read from to acquire data?
+Response: 0xAC, 0x33, 0x00
+Query: What is the sensor data output length in bytes?
+Response: 6
+Query: Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.
+Response: (RelativeHumidity: [8:27], Temperature: [28:47])
+Query: What is the formula or process for converting raw sensor output values to physical units like temperature, humidity, pressure, or altitude?
+Response: (RelativeHumidity: "X 100 * 1048576 /", Temperature: "X 200 * 1048576 / 50 -")

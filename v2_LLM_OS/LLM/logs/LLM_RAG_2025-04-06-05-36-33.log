@@ -1,0 +1,852 @@
+2025-04-06 05:36:33,302 - root - DEBUG - Loaded model client=<openai.resources.chat.completions.completions.Completions object at 0x799747002530> async_client=<openai.resources.chat.completions.completions.AsyncCompletions object at 0x799747020e80> root_client=<openai.OpenAI object at 0x79974967ee60> root_async_client=<openai.AsyncOpenAI object at 0x799747002590> model_name='o3-mini' model_kwargs={} openai_api_key=SecretStr('**********')
+2025-04-06 05:36:33,303 - root - INFO - Sensor name: MCP9808
+2025-04-06 05:36:33,306 - primp.utils - DEBUG - Loaded CA certs
+2025-04-06 05:36:33,307 - rquest.connect - DEBUG - starting new connection: https://lite.duckduckgo.com/
+2025-04-06 05:36:33,307 - rquest.util.client.connect.dns - DEBUG - resolving lite.duckduckgo.com
+2025-04-06 05:36:33,328 - rquest.util.client.connect.http - DEBUG - connecting to 20.43.161.105:443
+2025-04-06 05:36:33,335 - rquest.util.client.connect.http - DEBUG - connected to 20.43.161.105:443
+2025-04-06 05:36:33,346 - rquest.util.client.pool - DEBUG - pooling idle connection for PoolKey { uri: https://lite.duckduckgo.com/, alpn_protos: None, network: default }
+2025-04-06 05:36:34,239 - cookie_store.cookie_store - DEBUG - inserting secure cookie 'kl'
+2025-04-06 05:36:34,240 - primp - INFO - response: https://lite.duckduckgo.com/lite/ 200
+2025-04-06 05:36:34,240 - duckduckgo_search.DDGS - DEBUG - _get_url() https://lite.duckduckgo.com/lite/ 200
+2025-04-06 05:36:34,242 - root - DEBUG - Datasheet URL: https://cdn-shop.adafruit.com/datasheets/MCP9808.pdf
+2025-04-06 05:36:34,242 - root - DEBUG - Downloading datasheet...
+2025-04-06 05:36:34,242 - root - DEBUG - Datasheet already exists in the database.
+2025-04-06 05:36:34,242 - root - DEBUG - Loading datasheet...
+2025-04-06 05:36:34,242 - root - DEBUG - Datasheet loaded!
+2025-04-06 05:36:34,242 - root - DEBUG - Datasheet fetch latency: 0.9392886161804199 seconds
+2025-04-06 05:36:34,245 - root - DEBUG - Datasheet partition exists. Loaded from local file
+2025-04-06 05:36:34,249 - root - DEBUG - 213
+2025-04-06 05:36:34,249 - root - DEBUG - Number of chunks: 213
+2025-04-06 05:36:34,249 - root - DEBUG - Datasheet partition latency: 0.00449371337890625 seconds
+2025-04-06 05:36:34,370 - faiss.loader - DEBUG - Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2025-04-06 05:36:34,370 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2025-04-06 05:36:34,385 - faiss.loader - INFO - Successfully loaded faiss with AVX512 support.
+2025-04-06 05:36:34,389 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-04-06 05:36:34,391 - root - DEBUG - Vector DB found, loaded from local file
+2025-04-06 05:36:34,391 - root - DEBUG - Vector DB embedding latency: 0.1418297290802002 seconds
+2025-04-06 05:36:34,391 - root - INFO - Query: I2C address hexadecimal value
+2025-04-06 05:36:34,647 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x799745e243a0>, 'json_data': {'input': [[40, 17, 34, 2686, 70822, 907]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-06 05:36:34,651 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-06 05:36:34,651 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-06 05:36:34,672 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x799745e34f70>
+2025-04-06 05:36:34,672 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x79974c0ed0c0> server_hostname='api.openai.com' timeout=None
+2025-04-06 05:36:34,778 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x799745e34d00>
+2025-04-06 05:36:34,778 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:34,779 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:34,779 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:34,779 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:34,779 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:37,310 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:36:37 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-ada-002-v2'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'104'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-7d9f6f4497-z4kmq'), (b'x-envoy-upstream-service-time', b'71'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999994'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_85fe6ac757c95b5abb0a8d0dbe778682'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=1ZXDmlHvQXGy1Ao3UPH7Ib_XoZvzHnseE_.QVbumHF8-1743888997-1.0.1.1-nMysQdCpyEMC1jZcFQpOzDOM.BUI_wcVQ1TsoC5mrssq8LvGhDpBhgxY8JVMNkte8q1d7IKlOyn9Vjxvuakukg05X79jqv3OSsyplASTQY4; path=/; expires=Sat, 05-Apr-25 22:06:37 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=cNEFQ5a.vNnO_a9eY8vcgHCqlNd7wXOrtk3bHhAIR5k-1743888997209-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2e8948e5fdba-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:36:37,311 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-04-06 05:36:37,311 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:36:37,312 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:36:37,312 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:36:37,312 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:36:37,312 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers([('date', 'Sat, 05 Apr 2025 21:36:37 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-allow-origin', '*'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-model', 'text-embedding-ada-002-v2'), ('openai-organization', 'user-xo5nxcg539ixphtlpjjluiw6'), ('openai-processing-ms', '104'), ('openai-version', '2020-10-01'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('via', 'envoy-router-7d9f6f4497-z4kmq'), ('x-envoy-upstream-service-time', '71'), ('x-ratelimit-limit-requests', '3000'), ('x-ratelimit-limit-tokens', '1000000'), ('x-ratelimit-remaining-requests', '2999'), ('x-ratelimit-remaining-tokens', '999994'), ('x-ratelimit-reset-requests', '20ms'), ('x-ratelimit-reset-tokens', '0s'), ('x-request-id', 'req_85fe6ac757c95b5abb0a8d0dbe778682'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=1ZXDmlHvQXGy1Ao3UPH7Ib_XoZvzHnseE_.QVbumHF8-1743888997-1.0.1.1-nMysQdCpyEMC1jZcFQpOzDOM.BUI_wcVQ1TsoC5mrssq8LvGhDpBhgxY8JVMNkte8q1d7IKlOyn9Vjxvuakukg05X79jqv3OSsyplASTQY4; path=/; expires=Sat, 05-Apr-25 22:06:37 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=cNEFQ5a.vNnO_a9eY8vcgHCqlNd7wXOrtk3bHhAIR5k-1743888997209-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '92bc2e8948e5fdba-SIN'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-04-06 05:36:37,312 - openai._base_client - DEBUG - request_id: req_85fe6ac757c95b5abb0a8d0dbe778682
+2025-04-06 05:36:37,318 - root - DEBUG - Retrieved Chunk 1: Address Byte
+
+SCL 1 2 3 4 5 6 7 8 9
+
+AC
+
+SDA 0 0 1 1 A2 A1 A0 K
+
+Start
+
+Address Slave
+
+Code Address R/W
+
+**MCP9808** Response
+
+**See** Table 3-2. *FIGURE 4-1: Device Addressing.*
+
+###### 4.1.5 DATA VALID
+
+After the Start condition, each bit of data in the
+transmission needs to be settled for a time specified by
+t SU-DATA before SCL toggles from low-to-high (see the
+Sensor Serial Interface Timing Specifications section). 4.1.6 ACKNOWLEDGE (ACK/NAK)
+2025-04-06 05:36:37,323 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            I2C address hexadecimal value\n\n            CHUNK:\n            Address Byte\n\nSCL 1 2 3 4 5 6 7 8 9\n\nAC\n\nSDA 0 0 1 1 A2 A1 A0 K\n\nStart\n\nAddress Slave\n\nCode Address R/W\n\n**MCP9808** Response\n\n**See** Table 3-2. *FIGURE 4-1: Device Addressing.*\n\n###### 4.1.5 DATA VALID\n\nAfter the Start condition, each bit of data in the\ntransmission needs to be settled for a time specified by\nt SU-DATA before SCL toggles from low-to-high (see the\nSensor Serial Interface Timing Specifications section). 4.1.6 ACKNOWLEDGE (ACK/NAK)\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:36:37,324 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:36:37,324 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-06 05:36:37,348 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x799745e370d0>
+2025-04-06 05:36:37,348 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7997497f49c0> server_hostname='api.openai.com' timeout=None
+2025-04-06 05:36:37,362 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x799745e36e60>
+2025-04-06 05:36:37,362 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:37,363 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:37,363 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:37,363 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:37,363 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:42,854 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:36:42 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'4435'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199805'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'58ms'), (b'x-request-id', b'req_6b1e581058015d9fc56aa1b608a9f23b'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=RqYp2Nx846_MB7WkeVZ3Oi57CvGLIppvch8FhwswzNA-1743889002-1.0.1.1-WszvNlwyvAoTeVZLqNBxycWhNPQVfOpoTgwOXVfa9xntHM2c7_4p8EJK3VTNiBXRBz9QnPzUPjZMLrHOxDv9a4Nc3Wvphd_5GFifOCoeYM0; path=/; expires=Sat, 05-Apr-25 22:06:42 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=UQ_IuDWw3fNz_uCMceBCzQweGkv3ADiIbDJh4v1OfDQ-1743889002708-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2e99696fff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:36:42,855 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:36:42,855 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:36:42,855 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:36:42,855 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:36:42,855 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:36:42,855 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Sat, 05 Apr 2025 21:36:42 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-xo5nxcg539ixphtlpjjluiw6'), ('openai-processing-ms', '4435'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '500'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '499'), ('x-ratelimit-remaining-tokens', '199805'), ('x-ratelimit-reset-requests', '120ms'), ('x-ratelimit-reset-tokens', '58ms'), ('x-request-id', 'req_6b1e581058015d9fc56aa1b608a9f23b'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=RqYp2Nx846_MB7WkeVZ3Oi57CvGLIppvch8FhwswzNA-1743889002-1.0.1.1-WszvNlwyvAoTeVZLqNBxycWhNPQVfOpoTgwOXVfa9xntHM2c7_4p8EJK3VTNiBXRBz9QnPzUPjZMLrHOxDv9a4Nc3Wvphd_5GFifOCoeYM0; path=/; expires=Sat, 05-Apr-25 22:06:42 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=UQ_IuDWw3fNz_uCMceBCzQweGkv3ADiIbDJh4v1OfDQ-1743889002708-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '92bc2e99696fff95-SIN'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-04-06 05:36:42,855 - openai._base_client - DEBUG - request_id: req_6b1e581058015d9fc56aa1b608a9f23b
+2025-04-06 05:36:42,862 - root - DEBUG - yes
+2025-04-06 05:36:42,862 - root - DEBUG - YES. Chunk is helpful, proceeding with the next steps
+2025-04-06 05:36:42,862 - root - DEBUG - Retrieved Chunk 2: ```
+  i2c_start(); // send START command
+
+```
+`i2c_write(AddressByte & 0xFE);` `//WRITE Command` (see **Section 4.1.4 “Address Byte”** )
+2025-04-06 05:36:42,864 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            I2C address hexadecimal value\n\n            CHUNK:\n            ```\n  i2c_start(); // send START command\n\n```\n`i2c_write(AddressByte & 0xFE);` `//WRITE Command` (see **Section 4.1.4 “Address Byte”** )\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:36:42,865 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:36:42,865 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:42,865 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:42,865 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:42,865 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:42,865 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:45,497 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:36:45 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'2125'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199883'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'35ms'), (b'x-request-id', b'req_2a8e9c327e794a6bc2472206e2727cd9'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2ebbceb2ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:36:45,497 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:36:45,497 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:36:45,497 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:36:45,497 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:36:45,497 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:36:45,498 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:36:45 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '2125', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199883', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '35ms', 'x-request-id': 'req_2a8e9c327e794a6bc2472206e2727cd9', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2ebbceb2ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:36:45,498 - openai._base_client - DEBUG - request_id: req_2a8e9c327e794a6bc2472206e2727cd9
+2025-04-06 05:36:45,498 - root - DEBUG - no
+2025-04-06 05:36:45,498 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-06 05:36:45,498 - root - DEBUG - Retrieved Chunk 3: ```
+                           //also, make sure bit 0 is cleared ‘0’
+     i2c_write(0x05); // Write T A Register Address
+     i2c_start(); //Repeat START
+
+```
+`i2c_write(AddressByte | 0x01);` `// READ Command` (see **Section 4.1.4 “Address Byte”** )
+2025-04-06 05:36:45,500 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            I2C address hexadecimal value\n\n            CHUNK:\n            ```\n                           //also, make sure bit 0 is cleared ‘0’\n     i2c_write(0x05); // Write T A Register Address\n     i2c_start(); //Repeat START\n\n```\n`i2c_write(AddressByte | 0x01);` `// READ Command` (see **Section 4.1.4 “Address Byte”** )\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:36:45,501 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:36:45,501 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:45,501 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:45,501 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:45,501 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:45,501 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:50,422 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:36:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'4504'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199853'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'44ms'), (b'x-request-id', b'req_48527941b045106fc9322df9749e420e'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2ecc4f1bff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:36:50,422 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:36:50,422 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:36:50,423 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:36:50,423 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:36:50,423 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:36:50,423 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:36:50 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '4504', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199853', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '44ms', 'x-request-id': 'req_48527941b045106fc9322df9749e420e', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2ecc4f1bff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:36:50,423 - openai._base_client - DEBUG - request_id: req_48527941b045106fc9322df9749e420e
+2025-04-06 05:36:50,423 - root - DEBUG - yes
+2025-04-06 05:36:50,423 - root - DEBUG - YES. Chunk is helpful, proceeding with the next steps
+2025-04-06 05:36:50,423 - root - DEBUG - Number of helpful chunks: 2
+2025-04-06 05:36:50,426 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and an expert in I2C Sensors. Assume ideal and default condition.\n\n            Raw context (might be inaccurate):\n            1. Address Byte\n\nSCL 1 2 3 4 5 6 7 8 9\n\nAC\n\nSDA 0 0 1 1 A2 A1 A0 K\n\nStart\n\nAddress Slave\n\nCode Address R/W\n\n**MCP9808** Response\n\n**See** Table 3-2. *FIGURE 4-1: Device Addressing.*\n\n###### 4.1.5 DATA VALID\n\nAfter the Start condition, each bit of data in the\ntransmission needs to be settled for a time specified by\nt SU-DATA before SCL toggles from low-to-high (see the\nSensor Serial Interface Timing Specifications section). 4.1.6 ACKNOWLEDGE (ACK/NAK)\n2. ```\n                           //also, make sure bit 0 is cleared ‘0’\n     i2c_write(0x05); // Write T A Register Address\n     i2c_start(); //Repeat START\n\n```\n`i2c_write(AddressByte | 0x01);` `// READ Command` (see **Section 4.1.4 “Address Byte”** )\n\n\n            From your knowledge, what is the I2C address of MCP9808? Respond ONLY the hexadecimal value.\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:36:50,426 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:36:50,426 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:50,426 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:50,426 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:50,426 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:50,426 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:55,569 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:36:55 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'4843'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199747'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'75ms'), (b'x-request-id', b'req_5a730973004c515d28c5612b3eb96d27'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2eeb1fb3ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:36:55,570 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:36:55,570 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:36:55,570 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:36:55,570 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:36:55,570 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:36:55,570 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:36:55 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '4843', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199747', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '75ms', 'x-request-id': 'req_5a730973004c515d28c5612b3eb96d27', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2eeb1fb3ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:36:55,570 - openai._base_client - DEBUG - request_id: req_5a730973004c515d28c5612b3eb96d27
+2025-04-06 05:36:55,571 - root - DEBUG - Response: 0x18
+2025-04-06 05:36:55,571 - root - INFO - Response: 0x18
+2025-04-06 05:36:55,571 - root - INFO - 
+
+2025-04-06 05:36:55,571 - root - INFO - Query: Initialize registers hexadecimal value
+2025-04-06 05:36:55,572 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x79974c4791b0>, 'json_data': {'input': [[10130, 25771, 70822, 907]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-06 05:36:55,572 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-06 05:36:55,573 - httpcore.connection - DEBUG - close.started
+2025-04-06 05:36:55,573 - httpcore.connection - DEBUG - close.complete
+2025-04-06 05:36:55,573 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-06 05:36:55,589 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x79974b828130>
+2025-04-06 05:36:55,589 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x79974c0ed0c0> server_hostname='api.openai.com' timeout=None
+2025-04-06 05:36:55,607 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x79974b828100>
+2025-04-06 05:36:55,607 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:55,608 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:55,608 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:55,608 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:55,608 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:56,159 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:36:56 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-ada-002-v2'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'172'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-7d9f6f4497-kppm2'), (b'x-envoy-upstream-service-time', b'93'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999996'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_55b5a9529f4d48c5f32117cfe35972c8'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2f0b7f699ca7-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:36:56,160 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-04-06 05:36:56,160 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:36:56,160 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:36:56,160 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:36:56,160 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:36:56,160 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:36:56 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'X-Request-ID', 'openai-model': 'text-embedding-ada-002-v2', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '172', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'via': 'envoy-router-7d9f6f4497-kppm2', 'x-envoy-upstream-service-time': '93', 'x-ratelimit-limit-requests': '3000', 'x-ratelimit-limit-tokens': '1000000', 'x-ratelimit-remaining-requests': '2999', 'x-ratelimit-remaining-tokens': '999996', 'x-ratelimit-reset-requests': '20ms', 'x-ratelimit-reset-tokens': '0s', 'x-request-id': 'req_55b5a9529f4d48c5f32117cfe35972c8', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2f0b7f699ca7-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:36:56,161 - openai._base_client - DEBUG - request_id: req_55b5a9529f4d48c5f32117cfe35972c8
+2025-04-06 05:36:56,162 - root - DEBUG - Retrieved Chunk 1: |Col1|Col2|(See Section 5.3 “Summary of Power-on Default” for Power-on Defaults)|Col4|Col5|Col6|Col7|Col8|Col9|Col10|
+|---|---|---|---|---|---|---|---|---|---|
+|Register Pointer (Hex)|MSB/ LSB|Bit Assignment||||||||
+|||7|6|5|4|3|2|1|0|
+|0x00|MSB|0|0|0|0|0|0|0|0|
+||LSB|0|0|0|1|1|1|1|1|
+|0x01|MSB|0|0|0|0|0|Hysteresis||SHDN|
+||LSB|Crt Loc|Win Loc|Int Clr|Alt Stat|Alt Cnt|Alt Sel|Alt Pol|Alt Mod|
+|0x02|MSB|0|0|0|SIGN|27°C|26°C|25°C|24°C|
+||LSB|23°C|22°C|21°C|20°C|2-1°C|2-2°C|0|0|
+2025-04-06 05:36:56,165 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Initialize registers hexadecimal value\n\n            CHUNK:\n            |Col1|Col2|(See Section 5.3 “Summary of Power-on Default” for Power-on Defaults)|Col4|Col5|Col6|Col7|Col8|Col9|Col10|\n|---|---|---|---|---|---|---|---|---|---|\n|Register Pointer (Hex)|MSB/ LSB|Bit Assignment||||||||\n|||7|6|5|4|3|2|1|0|\n|0x00|MSB|0|0|0|0|0|0|0|0|\n||LSB|0|0|0|1|1|1|1|1|\n|0x01|MSB|0|0|0|0|0|Hysteresis||SHDN|\n||LSB|Crt Loc|Win Loc|Int Clr|Alt Stat|Alt Cnt|Alt Sel|Alt Pol|Alt Mod|\n|0x02|MSB|0|0|0|SIGN|27°C|26°C|25°C|24°C|\n||LSB|23°C|22°C|21°C|20°C|2-1°C|2-2°C|0|0|\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:36:56,165 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:36:56,166 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:56,166 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:56,166 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:56,166 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:56,166 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:57,996 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:36:57 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1514'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199792'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'62ms'), (b'x-request-id', b'req_ce019239cbb3eda876b8caf12be3d30b'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2f0effe7ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:36:57,996 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:36:57,996 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:36:57,997 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:36:57,997 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:36:57,997 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:36:57,997 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:36:57 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1514', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199792', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '62ms', 'x-request-id': 'req_ce019239cbb3eda876b8caf12be3d30b', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2f0effe7ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:36:57,997 - openai._base_client - DEBUG - request_id: req_ce019239cbb3eda876b8caf12be3d30b
+2025-04-06 05:36:57,998 - root - DEBUG - yes
+2025-04-06 05:36:57,998 - root - DEBUG - YES. Chunk is helpful, proceeding with the next steps
+2025-04-06 05:36:57,998 - root - DEBUG - Retrieved Chunk 2: |TABLE 5-3: POWER-ON RESET DEFAULTS|Col2|Col3|Col4|
+|---|---|---|---|
+|Registers||Default Register Data (Hexadecimal)|Power-Up Default Register Description|
+|Address (Hexadecimal)|Register Name|||
+|0x01|CONFIG|0x0000|Comparator Mode Active-Low Output Alert and Critical Output Output Disabled Alert Not Asserted Interrupt Cleared Alert Limits Unlocked Critical Limit Unlocked Continuous Conversion 0°C Hysteresis|
+|0x02|T UPPER|0x0000|0°C|
+|0x03|T LOWER|0x0000|0°C|
+|0x04|T CRIT|0x0000|0°C|
+2025-04-06 05:36:58,001 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Initialize registers hexadecimal value\n\n            CHUNK:\n            |TABLE 5-3: POWER-ON RESET DEFAULTS|Col2|Col3|Col4|\n|---|---|---|---|\n|Registers||Default Register Data (Hexadecimal)|Power-Up Default Register Description|\n|Address (Hexadecimal)|Register Name|||\n|0x01|CONFIG|0x0000|Comparator Mode Active-Low Output Alert and Critical Output Output Disabled Alert Not Asserted Interrupt Cleared Alert Limits Unlocked Critical Limit Unlocked Continuous Conversion 0°C Hysteresis|\n|0x02|T UPPER|0x0000|0°C|\n|0x03|T LOWER|0x0000|0°C|\n|0x04|T CRIT|0x0000|0°C|\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:36:58,001 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:36:58,002 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:58,002 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:58,002 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:58,002 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:58,002 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:59,628 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:36:59 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1284'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199792'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'62ms'), (b'x-request-id', b'req_534052257633ddf6e53475d5a086da4d'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2f1a6feaff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:36:59,628 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:36:59,628 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:36:59,629 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:36:59,629 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:36:59,629 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:36:59,629 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:36:59 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1284', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199792', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '62ms', 'x-request-id': 'req_534052257633ddf6e53475d5a086da4d', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2f1a6feaff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:36:59,629 - openai._base_client - DEBUG - request_id: req_534052257633ddf6e53475d5a086da4d
+2025-04-06 05:36:59,630 - root - DEBUG - yes
+2025-04-06 05:36:59,630 - root - DEBUG - YES. Chunk is helpful, proceeding with the next steps
+2025-04-06 05:36:59,630 - root - DEBUG - Retrieved Chunk 3: The revision begins with 0x00 (hex) for the first release,
+with the number being incremented as revised versions
+are released. REGISTER 5-6: DEVICE ID AND DEVICE REVISION – READ-ONLY ( → ADDRESS ‘0000 0111’b)
+
+R-0 R-0 R-0 R-0 R-0 R-1 R-0 R-0
+
+Device ID
+
+bit 15 bit 8
+
+R-0 R-0 R-0 R-0 R-0 R-0 R-0 R-0
+
+Device Revision
+
+bit 7 bit 0
+
+**Legend:**
+
+R = Readable bit W = Writable bit U = Unimplemented bit, read as ‘0’
+
+-n = Value at POR ‘1’ = Bit is set ‘0’ = Bit is cleared x = Bit is unknown
+2025-04-06 05:36:59,633 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Initialize registers hexadecimal value\n\n            CHUNK:\n            The revision begins with 0x00 (hex) for the first release,\nwith the number being incremented as revised versions\nare released. REGISTER 5-6: DEVICE ID AND DEVICE REVISION – READ-ONLY ( → ADDRESS ‘0000 0111’b)\n\nR-0 R-0 R-0 R-0 R-0 R-1 R-0 R-0\n\nDevice ID\n\nbit 15 bit 8\n\nR-0 R-0 R-0 R-0 R-0 R-0 R-0 R-0\n\nDevice Revision\n\nbit 7 bit 0\n\n**Legend:**\n\nR = Readable bit W = Writable bit U = Unimplemented bit, read as ‘0’\n\n-n = Value at POR ‘1’ = Bit is set ‘0’ = Bit is cleared x = Bit is unknown\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:36:59,633 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:36:59,634 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:36:59,634 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:36:59,634 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:36:59,634 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:36:59,634 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:04,260 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:04 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'4353'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199788'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'63ms'), (b'x-request-id', b'req_17bc83a3f47d868e9a11ccb445da8331'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2f249affff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:04,260 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:04,260 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:04,260 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:04,260 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:04,260 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:04,260 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:04 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '4353', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199788', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '63ms', 'x-request-id': 'req_17bc83a3f47d868e9a11ccb445da8331', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2f249affff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:04,261 - openai._base_client - DEBUG - request_id: req_17bc83a3f47d868e9a11ccb445da8331
+2025-04-06 05:37:04,261 - root - DEBUG - yes
+2025-04-06 05:37:04,261 - root - DEBUG - YES. Chunk is helpful, proceeding with the next steps
+2025-04-06 05:37:04,261 - root - DEBUG - Number of helpful chunks: 3
+2025-04-06 05:37:04,264 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and an expert in I2C Sensors. Assume ideal and default condition.\n\n            Raw context (might be inaccurate):\n            1. |Col1|Col2|(See Section 5.3 “Summary of Power-on Default” for Power-on Defaults)|Col4|Col5|Col6|Col7|Col8|Col9|Col10|\n|---|---|---|---|---|---|---|---|---|---|\n|Register Pointer (Hex)|MSB/ LSB|Bit Assignment||||||||\n|||7|6|5|4|3|2|1|0|\n|0x00|MSB|0|0|0|0|0|0|0|0|\n||LSB|0|0|0|1|1|1|1|1|\n|0x01|MSB|0|0|0|0|0|Hysteresis||SHDN|\n||LSB|Crt Loc|Win Loc|Int Clr|Alt Stat|Alt Cnt|Alt Sel|Alt Pol|Alt Mod|\n|0x02|MSB|0|0|0|SIGN|27°C|26°C|25°C|24°C|\n||LSB|23°C|22°C|21°C|20°C|2-1°C|2-2°C|0|0|\n2. |TABLE 5-3: POWER-ON RESET DEFAULTS|Col2|Col3|Col4|\n|---|---|---|---|\n|Registers||Default Register Data (Hexadecimal)|Power-Up Default Register Description|\n|Address (Hexadecimal)|Register Name|||\n|0x01|CONFIG|0x0000|Comparator Mode Active-Low Output Alert and Critical Output Output Disabled Alert Not Asserted Interrupt Cleared Alert Limits Unlocked Critical Limit Unlocked Continuous Conversion 0°C Hysteresis|\n|0x02|T UPPER|0x0000|0°C|\n|0x03|T LOWER|0x0000|0°C|\n|0x04|T CRIT|0x0000|0°C|\n3. The revision begins with 0x00 (hex) for the first release,\nwith the number being incremented as revised versions\nare released. REGISTER 5-6: DEVICE ID AND DEVICE REVISION – READ-ONLY ( → ADDRESS ‘0000 0111’b)\n\nR-0 R-0 R-0 R-0 R-0 R-1 R-0 R-0\n\nDevice ID\n\nbit 15 bit 8\n\nR-0 R-0 R-0 R-0 R-0 R-0 R-0 R-0\n\nDevice Revision\n\nbit 7 bit 0\n\n**Legend:**\n\nR = Readable bit W = Writable bit U = Unimplemented bit, read as ‘0’\n\n-n = Value at POR ‘1’ = Bit is set ‘0’ = Bit is cleared x = Bit is unknown\n\n\n            From your knowledge, what is the init or initialize registers of MCP9808? Show me the reasoning process step by step and use your memory.\n            If it is not needed, please say so.\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:04,265 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:04,265 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:04,265 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:04,265 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:04,265 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:04,265 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:16,015 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:15 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'11389'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199526'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'142ms'), (b'x-request-id', b'req_4f9fd99d143fbc2de8e1b67322617a40'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2f419a2eff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:16,015 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:16,016 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:16,016 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:16,016 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:16,016 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:16,016 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:15 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '11389', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199526', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '142ms', 'x-request-id': 'req_4f9fd99d143fbc2de8e1b67322617a40', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2f419a2eff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:16,016 - openai._base_client - DEBUG - request_id: req_4f9fd99d143fbc2de8e1b67322617a40
+2025-04-06 05:37:16,017 - root - DEBUG - Response: Below is the reasoning process and answer:
+
+1. Background from the Datasheet and Context:
+ • The MCP9808’s register map is very simple. It has a read‐only temperature register at 0x00 and then configuration/threshold registers at 0x01 (configuration), 0x02 (T_upper), 0x03 (T_lower), and 0x04 (T_critical).
+ • According to the datasheet (and the “Power-on Reset Defaults” information provided), at power up the registers have these defaults:
+  – Configuration register (0x01) is 0x0000. This means the sensor is in continuous conversion mode with comparator-style alert output (active low with no alert asserted) and other alert features disabled.
+  – All threshold registers (T_upper at 0x02, T_lower at 0x03, and T_critical at 0x04) are defaulted to 0°C (i.e. 0x0000).
+
+2. What Does “Initialization” Mean for the MCP9808?
+ • Because the device powers up with these defaults, in typical applications where you just want continuous temperature conversion (and you are fine with the default thresholds and alert behavior) you do not need to write to any registers to “initialize” the sensor.
+ • Only if your application requires changing the alert mode, hysteresis, or setting specific temperature limit values (alert thresholds) would you want to write to the appropriate registers after power up.
+
+3. Final Answer:
+ For the MCP9808 the “init” or “initialize” registers are already set by the power-on defaults:
+  – Temperature Register (0x00): Read-only, reflects the current temperature.
+  – Configuration Register (0x01): Defaults to 0x0000 which sets the sensor into continuous conversion mode and disables alert outputs.
+  – T_upper (0x02), T_lower (0x03), and T_critical (0x04): All default to 0x0000 (0°C).
+ If you are satisfied with the continuous measurement mode and do not need custom alert thresholds or behavior, there is essentially no initialization needed beyond simply reading the sensor.
+
+In summary, unless your application requires a change to, for example, the alert thresholds or mode settings, there is no extra initialization required for the MCP9808 because its registers come to life in the correct operating mode on power-up.
+2025-04-06 05:37:16,020 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and an expert in I2C Sensors. Assume ideal and default condition.\n\n            My expert told me:\n            Below is the reasoning process and answer:\n\n1. Background from the Datasheet and Context:\n\u2003• The MCP9808’s register map is very simple. It has a read‐only temperature register at 0x00 and then configuration/threshold registers at 0x01 (configuration), 0x02 (T_upper), 0x03 (T_lower), and 0x04 (T_critical).\n\u2003• According to the datasheet (and the “Power-on Reset Defaults” information provided), at power up the registers have these defaults:\n\u2003\u2003– Configuration register (0x01) is 0x0000. This means the sensor is in continuous conversion mode with comparator-style alert output (active low with no alert asserted) and other alert features disabled.\n\u2003\u2003– All threshold registers (T_upper at 0x02, T_lower at 0x03, and T_critical at 0x04) are defaulted to 0°C (i.e. 0x0000).\n\n2. What Does “Initialization” Mean for the MCP9808?\n\u2003• Because the device powers up with these defaults, in typical applications where you just want continuous temperature conversion (and you are fine with the default thresholds and alert behavior) you do not need to write to any registers to “initialize” the sensor.\n\u2003• Only if your application requires changing the alert mode, hysteresis, or setting specific temperature limit values (alert thresholds) would you want to write to the appropriate registers after power up.\n\n3. Final Answer:\n\u2003For the MCP9808 the “init” or “initialize” registers are already set by the power-on defaults:\n\u2003\u2003– Temperature Register (0x00): Read-only, reflects the current temperature.\n\u2003\u2003– Configuration Register (0x01): Defaults to 0x0000 which sets the sensor into continuous conversion mode and disables alert outputs.\n\u2003\u2003– T_upper (0x02), T_lower (0x03), and T_critical (0x04): All default to 0x0000 (0°C).\n\u2003If you are satisfied with the continuous measurement mode and do not need custom alert thresholds or behavior, there is essentially no initialization needed beyond simply reading the sensor.\n\nIn summary, unless your application requires a change to, for example, the alert thresholds or mode settings, there is no extra initialization required for the MCP9808 because its registers come to life in the correct operating mode on power-up.\n\n            What are the hexadecimal values to write to the i2c address to initialize the MCP9808 sensor?\n            If it is not needed, output "INOP".\n            Finish the sentence, the hexadecimal values are:\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:16,020 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:16,021 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:16,021 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:16,021 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:16,021 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:16,021 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:18,164 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:18 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1832'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'198646'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'405ms'), (b'x-request-id', b'req_ad05126564d0910f3de99a373b77dc4c'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2f8b0d28ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:18,164 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:18,165 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:18,165 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:18,165 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:18,165 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:18,165 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:18 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1832', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '198646', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '405ms', 'x-request-id': 'req_ad05126564d0910f3de99a373b77dc4c', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2f8b0d28ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:18,165 - openai._base_client - DEBUG - request_id: req_ad05126564d0910f3de99a373b77dc4c
+2025-04-06 05:37:18,166 - root - DEBUG - Response: Since the MCP9808 powers up with the proper defaults for continuous temperature conversion mode and with inactive alert outputs, no register writes are required for initialization in a typical use case. 
+
+Thus, the hexadecimal values are: INOP
+2025-04-06 05:37:18,166 - root - DEBUG - No initialization needed
+2025-04-06 05:37:18,166 - root - INFO - Response: INOP
+2025-04-06 05:37:18,166 - root - INFO - 
+
+2025-04-06 05:37:18,166 - root - INFO - Query: Trigger measurement read command hexadecimal value
+2025-04-06 05:37:18,167 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x79974c4791b0>, 'json_data': {'input': [[18423, 19179, 1373, 3290, 70822, 907]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-06 05:37:18,167 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-06 05:37:18,167 - httpcore.connection - DEBUG - close.started
+2025-04-06 05:37:18,167 - httpcore.connection - DEBUG - close.complete
+2025-04-06 05:37:18,167 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-06 05:37:18,205 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x799744a22d70>
+2025-04-06 05:37:18,206 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x79974c0ed0c0> server_hostname='api.openai.com' timeout=None
+2025-04-06 05:37:18,225 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x799744a23340>
+2025-04-06 05:37:18,225 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:18,225 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:18,225 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:18,225 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:18,225 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:18,875 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:18 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-ada-002-v2'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'46'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-5f6f497f-6h49l'), (b'x-envoy-upstream-service-time', b'30'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999994'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_304d4bf1c34e52da5227b6d58c4199f7'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2f98de32604c-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:18,876 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-04-06 05:37:18,876 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:18,876 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:18,877 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:18,877 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:18,877 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:18 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'X-Request-ID', 'openai-model': 'text-embedding-ada-002-v2', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '46', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'via': 'envoy-router-5f6f497f-6h49l', 'x-envoy-upstream-service-time': '30', 'x-ratelimit-limit-requests': '3000', 'x-ratelimit-limit-tokens': '1000000', 'x-ratelimit-remaining-requests': '2999', 'x-ratelimit-remaining-tokens': '999994', 'x-ratelimit-reset-requests': '20ms', 'x-ratelimit-reset-tokens': '0s', 'x-request-id': 'req_304d4bf1c34e52da5227b6d58c4199f7', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2f98de32604c-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:18,877 - openai._base_client - DEBUG - request_id: req_304d4bf1c34e52da5227b6d58c4199f7
+2025-04-06 05:37:18,878 - root - DEBUG - Retrieved Chunk 1: |0x02|T UPPER|0x0000|0°C|
+|0x03|T LOWER|0x0000|0°C|
+|0x04|T CRIT|0x0000|0°C|
+|0x05|T A|0x0000|0°C|
+|0x06|Manufacturer ID|0x0054|0x0054 (hex)|
+|0x07|Device ID/Device Revision|0x0400|0x0400 (hex)|
+|0x08|Resolution|0x03|0x03 (hex)|
+2025-04-06 05:37:18,881 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Trigger measurement read command hexadecimal value\n\n            CHUNK:\n            |0x02|T UPPER|0x0000|0°C|\n|0x03|T LOWER|0x0000|0°C|\n|0x04|T CRIT|0x0000|0°C|\n|0x05|T A|0x0000|0°C|\n|0x06|Manufacturer ID|0x0054|0x0054 (hex)|\n|0x07|Device ID/Device Revision|0x0400|0x0400 (hex)|\n|0x08|Resolution|0x03|0x03 (hex)|\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:18,881 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:18,882 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:18,882 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:18,882 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:18,882 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:18,882 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:21,568 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:21 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'2416'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199853'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'43ms'), (b'x-request-id', b'req_312dac068395365b792816c743dd10d3'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2f9cfe20ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:21,568 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:21,568 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:21,568 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:21,569 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:21,569 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:21,569 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:21 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '2416', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199853', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '43ms', 'x-request-id': 'req_312dac068395365b792816c743dd10d3', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2f9cfe20ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:21,569 - openai._base_client - DEBUG - request_id: req_312dac068395365b792816c743dd10d3
+2025-04-06 05:37:21,569 - root - DEBUG - no
+2025-04-06 05:37:21,569 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-06 05:37:21,569 - root - DEBUG - Retrieved Chunk 2: ```
+                           //also, make sure bit 0 is Set ‘1’
+     UpperByte = i2c_read(ACK); // READ 8 bits
+                           //and Send ACK bit
+     LowerByte = i2c_read(NAK); // READ 8 bits
+                           //and Send NAK bit
+     i2c_stop(); // send STOP command
+     //Convert the temperature data
+     //First Check flag bits
+     if ((UpperByte & 0x80) == 0x80){ //T A ³ T CRIT
+     }
+     if ((UpperByte & 0x40) == 0x40){ //T A > T UPPER
+     }
+2025-04-06 05:37:21,572 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Trigger measurement read command hexadecimal value\n\n            CHUNK:\n            ```\n                           //also, make sure bit 0 is Set ‘1’\n     UpperByte = i2c_read(ACK); // READ 8 bits\n                           //and Send ACK bit\n     LowerByte = i2c_read(NAK); // READ 8 bits\n                           //and Send NAK bit\n     i2c_stop(); // send STOP command\n     //Convert the temperature data\n     //First Check flag bits\n     if ((UpperByte & 0x80) == 0x80){ //T A ³ T CRIT\n     }\n     if ((UpperByte & 0x40) == 0x40){ //T A > T UPPER\n     }\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:21,572 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:21,572 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:21,572 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:21,572 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:21,572 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:21,572 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:23,593 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:23 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1616'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199792'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'62ms'), (b'x-request-id', b'req_22779cd60ccaa071fd5055fb6ff2cdde'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2fadc8b5ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:23,594 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:23,594 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:23,594 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:23,594 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:23,594 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:23,594 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:23 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1616', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199792', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '62ms', 'x-request-id': 'req_22779cd60ccaa071fd5055fb6ff2cdde', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2fadc8b5ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:23,594 - openai._base_client - DEBUG - request_id: req_22779cd60ccaa071fd5055fb6ff2cdde
+2025-04-06 05:37:23,595 - root - DEBUG - no
+2025-04-06 05:37:23,595 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-06 05:37:23,595 - root - DEBUG - Retrieved Chunk 3: Shutdown
+
+Critical Trip Lock
+
+Alarm Window Lock
+
+Clear Alert
+
+Alert Status
+
+Output Control
+
+Critical Alert only
+
+Alert Polarity
+
+Alert Comp./Int.
+
+Configuration
+
+Tem p erature
+
+T UPPER Limit
+
+T LOWER Limit
+
+T CRITICAL Limit
+
+Manufacturer ID
+
+Device ID/Rev
+
+Resolution
+
+SMBus/Standard I [2] C™
+Interface
+
+
+Band Gap
+Temperature
+Sensor
+
+ΔΣ ADC
+
++0.5°C
++0.25°C
++0.125°C
++0.0625°C
+
+
+A0 A1 A2 Alert SDA SCL V DD GND
+
+DS25095A-page 2 © 2011 Microchip Technology Inc.
+
+
+-----
+2025-04-06 05:37:23,598 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Trigger measurement read command hexadecimal value\n\n            CHUNK:\n            Shutdown\n\nCritical Trip Lock\n\nAlarm Window Lock\n\nClear Alert\n\nAlert Status\n\nOutput Control\n\nCritical Alert only\n\nAlert Polarity\n\nAlert Comp./Int.\n\nConfiguration\n\nTem p erature\n\nT UPPER Limit\n\nT LOWER Limit\n\nT CRITICAL Limit\n\nManufacturer ID\n\nDevice ID/Rev\n\nResolution\n\nSMBus/Standard I [2] C™\nInterface\n\n\nBand Gap\nTemperature\nSensor\n\nΔΣ ADC\n\n+0.5°C\n+0.25°C\n+0.125°C\n+0.0625°C\n\n\nA0 A1 A2 Alert SDA SCL V DD GND\n\nDS25095A-page 2 © 2011 Microchip Technology Inc.\n\n\n-----\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:23,599 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:23,599 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:23,599 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:23,599 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:23,599 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:23,599 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:25,760 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:25 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1560'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199792'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'62ms'), (b'x-request-id', b'req_98b8bff622ba90df28e3d64d74d3f613'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2fba6f3dff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:25,761 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:25,761 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:25,761 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:25,761 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:25,761 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:25,761 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:25 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1560', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199792', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '62ms', 'x-request-id': 'req_98b8bff622ba90df28e3d64d74d3f613', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2fba6f3dff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:25,761 - openai._base_client - DEBUG - request_id: req_98b8bff622ba90df28e3d64d74d3f613
+2025-04-06 05:37:25,762 - root - DEBUG - no
+2025-04-06 05:37:25,762 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-06 05:37:25,762 - root - DEBUG - Number of helpful chunks: 0
+2025-04-06 05:37:25,765 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and an expert in I2C Sensors. Assume ideal and default condition.\n\n            Raw context (might be inaccurate):\n            \n\n            From your knowledge, what is the trigger measurement read commands of MCP9808? Show me the reasoning process step by step and use your memory.\n            If it is not needed, please say so.\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:25,766 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:25,766 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:25,766 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:25,766 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:25,766 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:25,766 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:37,795 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:37 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'11297'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199902'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'29ms'), (b'x-request-id', b'req_71b1f0b8b88924f69948d7a59e98014b'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc2fc7fe96ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:37,796 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:37,796 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:37,796 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:37,796 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:37,796 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:37,796 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:37 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '11297', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199902', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '29ms', 'x-request-id': 'req_71b1f0b8b88924f69948d7a59e98014b', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc2fc7fe96ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:37,796 - openai._base_client - DEBUG - request_id: req_71b1f0b8b88924f69948d7a59e98014b
+2025-04-06 05:37:37,797 - root - DEBUG - Response: The MCP9808 is designed to perform continuous temperature conversions in its default (active) mode. This means that, under normal conditions, you do not need to “trigger” a measurement with a special command; you simply read the temperature register, and the sensor will return the latest conversion result.
+
+Here’s a bit more detail and the reasoning behind it:
+
+1. Default Operation (Continuous Conversion):
+  a. In its active mode, the MCP9808 constantly samples the ambient temperature.
+  b. To obtain the current temperature, you just perform an I²C transaction where you first write a pointer value (usually 0x00) to select the temperature register.
+  c. Then you read two bytes from the sensor over I²C. These bytes encode the current temperature.
+  d. No additional “trigger” command is needed because the sensor is always updating its measurement.
+
+2. One-shot Mode (if used):
+  a. If you choose to run the sensor in shutdown mode with one-shot conversion enabled, you can trigger a temperature conversion.
+  b. In that case, you need to write to the configuration register (pointer 0x01) with the one-shot bit set.
+  c. After triggering the conversion, you would then read the temperature register (0x00) to retrieve the measurement result.
+  d. This additional step is only necessary if you want to save power or control when conversions occur; it is not used in default (continuous) mode.
+
+Since the MCP9808 by default is in continuous conversion mode, there isn’t a distinct “trigger measurement read command” needed. The simple procedure is as follows when reading temperature:
+
+1. Issue an I²C write to the sensor with the pointer set to 0x00 (temperature register).
+2. Issue an I²C read to retrieve the two bytes containing the current temperature data.
+
+Thus, unless you specifically configure the sensor for one-shot operation, you don't need to send any special trigger command.
+2025-04-06 05:37:37,799 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and an expert in I2C Sensors. Assume ideal and default condition.\n\n            My expert told me:\n            The MCP9808 is designed to perform continuous temperature conversions in its default (active) mode. This means that, under normal conditions, you do not need to “trigger” a measurement with a special command; you simply read the temperature register, and the sensor will return the latest conversion result.\n\nHere’s a bit more detail and the reasoning behind it:\n\n1. Default Operation (Continuous Conversion):\n\u2003 a. In its active mode, the MCP9808 constantly samples the ambient temperature.\n\u2003 b. To obtain the current temperature, you just perform an I²C transaction where you first write a pointer value (usually 0x00) to select the temperature register.\n\u2003 c. Then you read two bytes from the sensor over I²C. These bytes encode the current temperature.\n\u2003 d. No additional “trigger” command is needed because the sensor is always updating its measurement.\n\n2. One-shot Mode (if used):\n\u2003 a. If you choose to run the sensor in shutdown mode with one-shot conversion enabled, you can trigger a temperature conversion.\n\u2003 b. In that case, you need to write to the configuration register (pointer 0x01) with the one-shot bit set.\n\u2003 c. After triggering the conversion, you would then read the temperature register (0x00) to retrieve the measurement result.\n\u2003 d. This additional step is only necessary if you want to save power or control when conversions occur; it is not used in default (continuous) mode.\n\nSince the MCP9808 by default is in continuous conversion mode, there isn’t a distinct “trigger measurement read command” needed. The simple procedure is as follows when reading temperature:\n\n1. Issue an I²C write to the sensor with the pointer set to 0x00 (temperature register).\n2. Issue an I²C read to retrieve the two bytes containing the current temperature data.\n\nThus, unless you specifically configure the sensor for one-shot operation, you don\'t need to send any special trigger command.\n\n            What are the hexadecimal values to write to the i2c address to trigger measurement or read data from MCP9808 sensor?\n            If it is not needed, output "INOP".\n            Finish the sentence, the hexadecimal values are:\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:37,800 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:37,800 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:37,800 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:37,800 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:37,800 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:37,800 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:45,499 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:45 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'7258'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'198507'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'447ms'), (b'x-request-id', b'req_b79c83927c0a78809929a0e8cea47b69'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30133caeff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:45,500 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:45,500 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:45,500 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:45,500 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:45,500 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:45,500 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:45 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '7258', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '198507', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '447ms', 'x-request-id': 'req_b79c83927c0a78809929a0e8cea47b69', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30133caeff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:45,500 - openai._base_client - DEBUG - request_id: req_b79c83927c0a78809929a0e8cea47b69
+2025-04-06 05:37:45,501 - root - DEBUG - Response: Since the MCP9808 runs in continuous conversion mode by default, there isn’t any special “trigger” command required. To obtain the temperature, you simply:
+
+1. Write a pointer value of 0x00 (to select the temperature register).
+2. Then perform an I²C read to get the two bytes of temperature data.
+
+Thus, there isn’t a specific command fight to “trigger” a measurement; if a trigger command is being considered for one-shot mode, it isn’t used under default conditions.
+
+The hexadecimal values are: INOP
+2025-04-06 05:37:45,501 - root - DEBUG - No read command needed
+2025-04-06 05:37:45,501 - root - INFO - Response: INOP
+2025-04-06 05:37:45,501 - root - INFO - 
+
+2025-04-06 05:37:45,501 - root - INFO - Query: Sensor data output length in bytes
+2025-04-06 05:37:45,501 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x79974c4791b0>, 'json_data': {'input': [[31852, 828, 2612, 3160, 304, 5943]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-06 05:37:45,502 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-06 05:37:45,502 - httpcore.connection - DEBUG - close.started
+2025-04-06 05:37:45,502 - httpcore.connection - DEBUG - close.complete
+2025-04-06 05:37:45,502 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-06 05:37:45,523 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x79974b817e50>
+2025-04-06 05:37:45,523 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x79974c0ed0c0> server_hostname='api.openai.com' timeout=None
+2025-04-06 05:37:45,546 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x79974b817cd0>
+2025-04-06 05:37:45,546 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:45,546 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:45,546 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:45,546 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:45,546 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:46,268 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:46 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-ada-002-v2'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'159'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-6fc9675f9b-jrsp9'), (b'x-envoy-upstream-service-time', b'93'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999993'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_2161a0af6f1d98449b073568c00016f8'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30439fbdf881-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:46,268 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-04-06 05:37:46,268 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:46,269 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:46,269 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:46,269 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:46,269 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:46 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'X-Request-ID', 'openai-model': 'text-embedding-ada-002-v2', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '159', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'via': 'envoy-router-6fc9675f9b-jrsp9', 'x-envoy-upstream-service-time': '93', 'x-ratelimit-limit-requests': '3000', 'x-ratelimit-limit-tokens': '1000000', 'x-ratelimit-remaining-requests': '2999', 'x-ratelimit-remaining-tokens': '999993', 'x-ratelimit-reset-requests': '20ms', 'x-ratelimit-reset-tokens': '0s', 'x-request-id': 'req_2161a0af6f1d98449b073568c00016f8', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30439fbdf881-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:46,269 - openai._base_client - DEBUG - request_id: req_2161a0af6f1d98449b073568c00016f8
+2025-04-06 05:37:46,270 - root - DEBUG - Retrieved Chunk 1: lower bytes, the upper byte must be right-shifted by
+4 bits (or multiply by 2 [4] ) and the lower byte must be leftshifted by 4 bits (or multiply by 2 [-4] ). Adding the results
+of the shifted values provides the temperature data in
+decimal format (see Equation 5-1).
+2025-04-06 05:37:46,272 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Sensor data output length in bytes\n\n            CHUNK:\n            lower bytes, the upper byte must be right-shifted by\n4 bits (or multiply by 2 [4] ) and the lower byte must be leftshifted by 4 bits (or multiply by 2 [-4] ). Adding the results\nof the shifted values provides the temperature data in\ndecimal format (see Equation 5-1).\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:46,273 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:46,273 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:46,273 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:46,273 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:46,273 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:46,273 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:48,368 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:48 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1650'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199850'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'45ms'), (b'x-request-id', b'req_22a17b70d3d142bd9dbe70f0bf0cc061'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30484bfaff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:48,368 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:48,368 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:48,369 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:48,369 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:48,369 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:48,369 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:48 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1650', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199850', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '45ms', 'x-request-id': 'req_22a17b70d3d142bd9dbe70f0bf0cc061', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30484bfaff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:48,369 - openai._base_client - DEBUG - request_id: req_22a17b70d3d142bd9dbe70f0bf0cc061
+2025-04-06 05:37:48,370 - root - DEBUG - no
+2025-04-06 05:37:48,370 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-06 05:37:48,370 - root - DEBUG - Retrieved Chunk 2: Shutdown
+
+Critical Trip Lock
+
+Alarm Window Lock
+
+Clear Alert
+
+Alert Status
+
+Output Control
+
+Critical Alert only
+
+Alert Polarity
+
+Alert Comp./Int.
+
+Configuration
+
+Tem p erature
+
+T UPPER Limit
+
+T LOWER Limit
+
+T CRITICAL Limit
+
+Manufacturer ID
+
+Device ID/Rev
+
+Resolution
+
+SMBus/Standard I [2] C™
+Interface
+
+
+Band Gap
+Temperature
+Sensor
+
+ΔΣ ADC
+
++0.5°C
++0.25°C
++0.125°C
++0.0625°C
+
+
+A0 A1 A2 Alert SDA SCL V DD GND
+
+DS25095A-page 2 © 2011 Microchip Technology Inc.
+
+
+-----
+2025-04-06 05:37:48,373 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Sensor data output length in bytes\n\n            CHUNK:\n            Shutdown\n\nCritical Trip Lock\n\nAlarm Window Lock\n\nClear Alert\n\nAlert Status\n\nOutput Control\n\nCritical Alert only\n\nAlert Polarity\n\nAlert Comp./Int.\n\nConfiguration\n\nTem p erature\n\nT UPPER Limit\n\nT LOWER Limit\n\nT CRITICAL Limit\n\nManufacturer ID\n\nDevice ID/Rev\n\nResolution\n\nSMBus/Standard I [2] C™\nInterface\n\n\nBand Gap\nTemperature\nSensor\n\nΔΣ ADC\n\n+0.5°C\n+0.25°C\n+0.125°C\n+0.0625°C\n\n\nA0 A1 A2 Alert SDA SCL V DD GND\n\nDS25095A-page 2 © 2011 Microchip Technology Inc.\n\n\n-----\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:48,373 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:48,374 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:48,374 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:48,374 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:48,374 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:48,374 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:53,484 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:37:53 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'4697'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199796'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'60ms'), (b'x-request-id', b'req_825fd844769677f6f903339cb42e73af'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30554a6dff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:37:53,485 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:37:53,485 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:37:53,485 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:37:53,485 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:37:53,485 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:37:53,485 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:37:53 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '4697', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199796', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '60ms', 'x-request-id': 'req_825fd844769677f6f903339cb42e73af', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30554a6dff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:37:53,485 - openai._base_client - DEBUG - request_id: req_825fd844769677f6f903339cb42e73af
+2025-04-06 05:37:53,486 - root - DEBUG - no
+2025-04-06 05:37:53,486 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-06 05:37:53,486 - root - DEBUG - Retrieved Chunk 3: |0x06|MSB|0|0|0|0|0|0|0|0|
+||LSB|0|1|0|1|0|1|0|0|
+|0x07|MSB|0|0|0|0|0|1|0|0|
+||LSB|0|0|0|0|0|0|0|0|
+|0x08|LSB|0|0|0|0|0|0|1|1|
+2025-04-06 05:37:53,489 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Sensor data output length in bytes\n\n            CHUNK:\n            |0x06|MSB|0|0|0|0|0|0|0|0|\n||LSB|0|1|0|1|0|1|0|0|\n|0x07|MSB|0|0|0|0|0|1|0|0|\n||LSB|0|0|0|0|0|0|0|0|\n|0x08|LSB|0|0|0|0|0|0|1|1|\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:37:53,490 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:37:53,490 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:37:53,490 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:37:53,490 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:37:53,490 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:37:53,490 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:02,068 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:38:02 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'8291'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199885'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'34ms'), (b'x-request-id', b'req_3c5ef507d30c9a3d7332447a1fcd6d36'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30754d98ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:38:02,069 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:38:02,069 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:38:02,069 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:38:02,069 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:38:02,069 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:38:02,069 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:38:02 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '8291', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199885', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '34ms', 'x-request-id': 'req_3c5ef507d30c9a3d7332447a1fcd6d36', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30754d98ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:38:02,069 - openai._base_client - DEBUG - request_id: req_3c5ef507d30c9a3d7332447a1fcd6d36
+2025-04-06 05:38:02,070 - root - DEBUG - yes
+2025-04-06 05:38:02,070 - root - DEBUG - YES. Chunk is helpful, proceeding with the next steps
+2025-04-06 05:38:02,070 - root - DEBUG - Number of helpful chunks: 1
+2025-04-06 05:38:02,073 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and an expert in I2C Sensors. Assume ideal and default condition.\n\n            Raw context (might be inaccurate):\n            1. |0x06|MSB|0|0|0|0|0|0|0|0|\n||LSB|0|1|0|1|0|1|0|0|\n|0x07|MSB|0|0|0|0|0|1|0|0|\n||LSB|0|0|0|0|0|0|0|0|\n|0x08|LSB|0|0|0|0|0|0|1|1|\n\n\n            From your knowledge, MCP9808 sensor data output length in bytes? Show me the reasoning process step by step and use your memory.\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:38:02,073 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:38:02,074 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:02,074 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:38:02,074 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:38:02,074 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:38:02,074 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:04,558 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:38:04 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'2098'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199336'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'199ms'), (b'x-request-id', b'req_1d18704011476a9fc047bec6d1658d27'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30aaefe5ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:38:04,558 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:38:04,559 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:38:04,559 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:38:04,559 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:38:04,559 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:38:04,559 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:38:04 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '2098', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199336', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '199ms', 'x-request-id': 'req_1d18704011476a9fc047bec6d1658d27', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30aaefe5ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:38:04,559 - openai._base_client - DEBUG - request_id: req_1d18704011476a9fc047bec6d1658d27
+2025-04-06 05:38:04,560 - root - DEBUG - Response: The MCP9808 temperature sensor outputs its temperature value as a 16‐bit register, which means it provides 2 bytes of data. Here’s the step‐by‐step reasoning:
+
+1. The MCP9808 sensor is designed to output temperature data in a 16‐bit format.
+2. A 16‐bit number is represented using 2 bytes (each byte being 8 bits).
+3. The datasheet confirms that upon reading the temperature register via I²C, the master device receives 2 bytes which together represent the temperature reading.
+4. Therefore, under ideal conditions, the sensor’s output is 2 bytes long.
+
+So, the final answer is: 2 bytes.
+2025-04-06 05:38:04,563 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and an expert in I2C Sensors. Assume ideal and default condition.\n\n            My expert told me:\n            The MCP9808 temperature sensor outputs its temperature value as a 16‐bit register, which means it provides 2 bytes of data. Here’s the step‐by‐step reasoning:\n\n1. The MCP9808 sensor is designed to output temperature data in a 16‐bit format.\n2. A 16‐bit number is represented using 2 bytes (each byte being 8 bits).\n3. The datasheet confirms that upon reading the temperature register via I²C, the master device receives 2 bytes which together represent the temperature reading.\n4. Therefore, under ideal conditions, the sensor’s output is 2 bytes long.\n\nSo, the final answer is: 2 bytes.\n\n            What are the MCP9808 sensor data output length in bytes?\n            ONLY fill in this sentence, the sensor data output length is X bytes\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:38:04,564 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:38:04,564 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:04,564 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:38:04,564 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:38:04,564 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:38:04,564 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:06,166 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:38:06 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1328'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199767'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'69ms'), (b'x-request-id', b'req_b0b193425992163a6689b130c88d6c21'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30ba8b7fff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:38:06,166 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:38:06,166 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:38:06,166 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:38:06,166 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:38:06,166 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:38:06,166 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:38:06 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1328', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199767', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '69ms', 'x-request-id': 'req_b0b193425992163a6689b130c88d6c21', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30ba8b7fff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:38:06,166 - openai._base_client - DEBUG - request_id: req_b0b193425992163a6689b130c88d6c21
+2025-04-06 05:38:06,167 - root - DEBUG - Response: the sensor data output length is 2 bytes
+2025-04-06 05:38:06,171 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and values extractor.\n\n            My expert told me:\n            the sensor data output length is 2 bytes\n\n            Extract only the numerical byte value.\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:38:06,171 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:38:06,171 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:06,172 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:38:06,172 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:38:06,172 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:38:06,172 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:09,598 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:38:09 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'2969'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199945'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'16ms'), (b'x-request-id', b'req_1c03f85bb56d00d25093b89ca8e47a15'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30c4898cff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:38:09,599 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:38:09,599 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:38:09,599 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:38:09,599 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:38:09,599 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:38:09,599 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:38:09 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '2969', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199945', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '16ms', 'x-request-id': 'req_1c03f85bb56d00d25093b89ca8e47a15', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30c4898cff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:38:09,599 - openai._base_client - DEBUG - request_id: req_1c03f85bb56d00d25093b89ca8e47a15
+2025-04-06 05:38:09,600 - root - DEBUG - Response: The numerical value extracted is: 2.
+2025-04-06 05:38:09,600 - root - INFO - Response: The numerical value extracted is: 2.
+2025-04-06 05:38:09,600 - root - INFO - 
+
+2025-04-06 05:38:09,600 - root - INFO - Query: Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.
+2025-04-06 05:38:09,601 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x79974c4793f0>, 'json_data': {'input': [[9241, 527, 279, 12271, 19179, 2819, 9967, 304, 25771, 477, 5044, 30, 30834, 4254, 14564, 11, 5027, 21986, 11, 477, 2766, 10093, 13]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-06 05:38:09,601 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-06 05:38:09,602 - httpcore.connection - DEBUG - close.started
+2025-04-06 05:38:09,602 - httpcore.connection - DEBUG - close.complete
+2025-04-06 05:38:09,602 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-06 05:38:09,625 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x79974513ef50>
+2025-04-06 05:38:09,625 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x79974c0ed0c0> server_hostname='api.openai.com' timeout=None
+2025-04-06 05:38:09,684 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x799745134400>
+2025-04-06 05:38:09,684 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:09,684 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:38:09,684 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:38:09,684 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:38:09,684 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:10,788 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:38:10 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-ada-002-v2'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'84'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-964f7b64-htjp2'), (b'x-envoy-upstream-service-time', b'49'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999977'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'1ms'), (b'x-request-id', b'req_151e4fe1884b968a3eecd399b8ea2fe1'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30da8c869c7d-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:38:10,789 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-04-06 05:38:10,789 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:38:10,789 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:38:10,789 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:38:10,789 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:38:10,790 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:38:10 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'X-Request-ID', 'openai-model': 'text-embedding-ada-002-v2', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '84', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'via': 'envoy-router-964f7b64-htjp2', 'x-envoy-upstream-service-time': '49', 'x-ratelimit-limit-requests': '3000', 'x-ratelimit-limit-tokens': '1000000', 'x-ratelimit-remaining-requests': '2999', 'x-ratelimit-remaining-tokens': '999977', 'x-ratelimit-reset-requests': '20ms', 'x-ratelimit-reset-tokens': '1ms', 'x-request-id': 'req_151e4fe1884b968a3eecd399b8ea2fe1', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30da8c869c7d-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:38:10,790 - openai._base_client - DEBUG - request_id: req_151e4fe1884b968a3eecd399b8ea2fe1
+2025-04-06 05:38:10,791 - root - DEBUG - Retrieved Chunk 1: The registers are accessed by sending a Register
+
+The Temperature register is read-only, used to access
+
+Pointer to the MCP9808, using the serial interface. This
+
+the ambient temperature data. This register is double
+is an 8-bit write-only pointer. However, the four Least
+
+buffered and it is updated every t CONV . The Temperature
+
+Significant bits are used as pointers and all unused bits
+
+Alert Upper Boundary and Lower Boundary Limit
+2025-04-06 05:38:10,794 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.\n\n            CHUNK:\n            The registers are accessed by sending a Register\n\nThe Temperature register is read-only, used to access\n\nPointer to the MCP9808, using the serial interface. This\n\nthe ambient temperature data. This register is double\nis an 8-bit write-only pointer. However, the four Least\n\nbuffered and it is updated every t CONV . The Temperature\n\nSignificant bits are used as pointers and all unused bits\n\nAlert Upper Boundary and Lower Boundary Limit\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:38:10,794 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:38:10,795 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:10,795 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:38:10,795 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:38:10,795 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:38:10,795 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:12,832 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:38:12 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1684'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199783'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'65ms'), (b'x-request-id', b'req_a745d2d0bb9adaf41c27a9a3ec599b31'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30e17da9ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:38:12,832 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:38:12,832 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:38:12,832 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:38:12,833 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:38:12,833 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:38:12,833 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:38:12 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1684', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199783', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '65ms', 'x-request-id': 'req_a745d2d0bb9adaf41c27a9a3ec599b31', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30e17da9ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:38:12,833 - openai._base_client - DEBUG - request_id: req_a745d2d0bb9adaf41c27a9a3ec599b31
+2025-04-06 05:38:12,833 - root - DEBUG - no
+2025-04-06 05:38:12,833 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-06 05:38:12,833 - root - DEBUG - Retrieved Chunk 2: Address Byte
+
+SCL 1 2 3 4 5 6 7 8 9
+
+AC
+
+SDA 0 0 1 1 A2 A1 A0 K
+
+Start
+
+Address Slave
+
+Code Address R/W
+
+**MCP9808** Response
+
+**See** Table 3-2. *FIGURE 4-1: Device Addressing.*
+
+###### 4.1.5 DATA VALID
+
+After the Start condition, each bit of data in the
+transmission needs to be settled for a time specified by
+t SU-DATA before SCL toggles from low-to-high (see the
+Sensor Serial Interface Timing Specifications section). 4.1.6 ACKNOWLEDGE (ACK/NAK)
+2025-04-06 05:38:12,836 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.\n\n            CHUNK:\n            Address Byte\n\nSCL 1 2 3 4 5 6 7 8 9\n\nAC\n\nSDA 0 0 1 1 A2 A1 A0 K\n\nStart\n\nAddress Slave\n\nCode Address R/W\n\n**MCP9808** Response\n\n**See** Table 3-2. *FIGURE 4-1: Device Addressing.*\n\n###### 4.1.5 DATA VALID\n\nAfter the Start condition, each bit of data in the\ntransmission needs to be settled for a time specified by\nt SU-DATA before SCL toggles from low-to-high (see the\nSensor Serial Interface Timing Specifications section). 4.1.6 ACKNOWLEDGE (ACK/NAK)\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:38:12,837 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:38:12,837 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:12,837 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:38:12,837 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:38:12,838 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:38:12,838 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:15,900 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 21:38:15 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'2637'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199780'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'66ms'), (b'x-request-id', b'req_93661073944efbe5eda81f7b07c30e53'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bc30ee3d91ff95-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 05:38:15,901 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-06 05:38:15,901 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 05:38:15,901 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 05:38:15,901 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:38:15,901 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:38:15,901 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 21:38:15 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '2637', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199780', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '66ms', 'x-request-id': 'req_93661073944efbe5eda81f7b07c30e53', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bc30ee3d91ff95-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 05:38:15,901 - openai._base_client - DEBUG - request_id: req_93661073944efbe5eda81f7b07c30e53
+2025-04-06 05:38:15,902 - root - DEBUG - no
+2025-04-06 05:38:15,902 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-06 05:38:15,902 - root - DEBUG - Retrieved Chunk 3: DS25095A-page 18 © 2011 Microchip Technology Inc.
+
+|REGISTER 5-2: CONFIG: CONFIGURATION REGISTER (→ ADDRESS ‘0000 0001’b)|Col2|Col3|Col4|Col5|Col6|Col7|
+|---|---|---|---|---|---|---|
+|U-0 U-0 U-0 U-0 U-0 R/W-0 R/W-0 R/W-0|||||||
+|—|—|—|—|—|T HYST|SHDN|
+|bit 15 bit 8|||||||
+2025-04-06 05:38:15,905 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.\n\n            CHUNK:\n            DS25095A-page 18 © 2011 Microchip Technology Inc.\n\n|REGISTER 5-2: CONFIG: CONFIGURATION REGISTER (→ ADDRESS ‘0000 0001’b)|Col2|Col3|Col4|Col5|Col6|Col7|\n|---|---|---|---|---|---|---|\n|U-0 U-0 U-0 U-0 U-0 R/W-0 R/W-0 R/W-0|||||||\n|—|—|—|—|—|T HYST|SHDN|\n|bit 15 bit 8|||||||\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-06 05:38:15,906 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-06 05:38:15,906 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:15,906 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 05:38:15,906 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 05:38:15,906 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 05:38:15,906 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 05:38:17,252 - httpcore.http11 - DEBUG - receive_response_headers.failed exception=KeyboardInterrupt()
+2025-04-06 05:38:17,252 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 05:38:17,252 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 05:38:17,383 - httpcore.connection - DEBUG - close.started
+2025-04-06 05:38:17,383 - httpcore.connection - DEBUG - close.complete

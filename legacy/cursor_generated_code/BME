@@ -1,0 +1,350 @@
+#include <Wire.h>
+
+// MCP9808 I2C address (default: 0x18)
+#define MCP9808_ADDR 0x18
+// TMP102 I2C address (default: 0x48)
+#define TMP102_ADDR 0x48
+// AHT20 I2C address (default: 0x38)
+#define AHT20_ADDR 0x38
+// SHT31 I2C address (default: 0x44)
+#define SHT31_ADDR 0x44
+// BME280 I2C address (default: 0x76)
+#define BME280_ADDR 0x76
+
+// Register addresses for MCP9808
+#define REG_CONFIG 0x01
+#define REG_TEMP 0x05
+
+// AHT20 commands
+#define AHT20_INIT_CMD 0xBE
+#define AHT20_MEASURE_CMD 0xAC
+
+// SHT31 commands
+#define SHT31_MEAS_HIGH 0x2C
+#define SHT31_MEAS_DATA 0x06
+
+// BME280 registers
+#define BME280_TEMP_MSB 0xFA
+#define BME280_CTRL_MEAS 0xF4
+#define BME280_CONFIG 0xF5
+#define BME280_CTRL_HUM 0xF2
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+  
+  // Configure MCP9808
+  Wire.beginTransmission(MCP9808_ADDR);
+  Wire.write(REG_CONFIG);
+  Wire.write(0x00); // Default configuration
+  Wire.write(0x00);
+  Wire.endTransmission();
+  
+  // Initialize AHT20
+  Wire.beginTransmission(AHT20_ADDR);
+  Wire.write(AHT20_INIT_CMD);
+  Wire.write(0x08);
+  Wire.write(0x00);
+  Wire.endTransmission();
+  delay(10); // Wait for initialization
+  
+  // Configure BME280
+  Wire.beginTransmission(BME280_ADDR);
+  Wire.write(BME280_CTRL_HUM);
+  Wire.write(0x01); // Humidity oversampling x1
+  Wire.endTransmission();
+  Wire.beginTransmission(BME280_ADDR);
+  Wire.write(BME280_CTRL_MEAS);
+  Wire.write(0x27); // Temperature/pressure oversampling x1, normal mode
+  Wire.endTransmission();
+  Wire.beginTransmission(BME280_ADDR);
+  Wire.write(BME280_CONFIG);
+  Wire.write(0x00); // No filtering, fastest sampling
+  Wire.endTransmission();
+  
+  // TMP102 doesn't need configuration for basic operation
+  // SHT31 doesn't need initialization
+}
+
+void loop() {
+  float temp1 = readMCP9808Temperature();
+  float temp2 = readTMP102Temperature();
+  float temp3 = readAHT20Temperature();
+  float temp4 = readSHT31Temperature();
+  float temp5 = readBME280Temperature();
+  float humidity1 = readAHT20Humidity();
+  float humidity2 = readSHT31Humidity();
+  float humidity3 = readBME280Humidity();
+  float pressure = readBME280Pressure();
+  
+  Serial.print("MCP9808 Temperature: ");
+  Serial.print(temp1);
+  Serial.println(" °C");
+  
+  Serial.print("TMP102 Temperature: ");
+  Serial.print(temp2);
+  Serial.println(" °C");
+  
+  Serial.print("AHT20 Temperature: ");
+  Serial.print(temp3);
+  Serial.println(" °C");
+  
+  Serial.print("SHT31 Temperature: ");
+  Serial.print(temp4);
+  Serial.println(" °C");
+  
+  Serial.print("BME280 Temperature: ");
+  Serial.print(temp5);
+  Serial.println(" °C");
+  
+  Serial.print("AHT20 Humidity: ");
+  Serial.print(humidity1);
+  Serial.println(" %");
+  
+  Serial.print("SHT31 Humidity: ");
+  Serial.print(humidity2);
+  Serial.println(" %");
+  
+  Serial.print("BME280 Humidity: ");
+  Serial.print(humidity3);
+  Serial.println(" %");
+  
+  Serial.print("BME280 Pressure: ");
+  Serial.print(pressure);
+  Serial.println(" hPa");
+  
+  delay(1000);
+}
+
+float readMCP9808Temperature() {
+  uint16_t tempData;
+  
+  // Request temperature data
+  Wire.beginTransmission(MCP9808_ADDR);
+  Wire.write(REG_TEMP);
+  Wire.endTransmission();
+  
+  // Read temperature data (2 bytes)
+  Wire.requestFrom(MCP9808_ADDR, 2);
+  if (Wire.available() == 2) {
+    uint8_t msb = Wire.read();
+    uint8_t lsb = Wire.read();
+    
+    // Clear flag bits
+    msb &= 0x1F;
+    
+    // Convert to temperature
+    tempData = (msb << 8) | lsb;
+    if (msb & 0x10) { // Handle negative temperatures
+      tempData = ((~tempData) + 1) & 0x1FFF;
+      return -(tempData * 0.0625);
+    } else {
+      return tempData * 0.0625;
+    }
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readTMP102Temperature() {
+  uint16_t tempData;
+  
+  // Request temperature data
+  Wire.beginTransmission(TMP102_ADDR);
+  Wire.write(0x00); // Temperature register
+  Wire.endTransmission();
+  
+  // Read temperature data (2 bytes)
+  Wire.requestFrom(TMP102_ADDR, 2);
+  if (Wire.available() == 2) {
+    uint8_t msb = Wire.read();
+    uint8_t lsb = Wire.read();
+    
+    // Combine the bytes
+    tempData = ((msb << 8) | lsb) >> 4; // 12-bit resolution
+    
+    // Convert to temperature (0.0625°C resolution)
+    float temp = tempData * 0.0625;
+    if (msb & 0x80) { // Handle negative temperatures
+      temp -= 256;
+    }
+    return temp;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readAHT20Temperature() {
+  uint8_t data[6];
+  
+  // Send measurement command
+  Wire.beginTransmission(AHT20_ADDR);
+  Wire.write(AHT20_MEASURE_CMD);
+  Wire.write(0x33);
+  Wire.write(0x00);
+  Wire.endTransmission();
+  delay(80); // Wait for measurement
+  
+  // Read data (6 bytes)
+  Wire.requestFrom(AHT20_ADDR, 6);
+  if (Wire.available() == 6) {
+    for (int i = 0; i < 6; i++) {
+      data[i] = Wire.read();
+    }
+    
+    // Convert to temperature
+    uint32_t temp_raw = ((uint32_t)data[3] & 0x0F) << 16 | (uint32_t)data[4] << 8 | data[5];
+    float temp = ((float)temp_raw * 200.0 / 1048576.0) - 50.0;
+    return temp;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readAHT20Humidity() {
+  uint8_t data[6];
+  
+  // Send measurement command
+  Wire.beginTransmission(AHT20_ADDR);
+  Wire.write(AHT20_MEASURE_CMD);
+  Wire.write(0x33);
+  Wire.write(0x00);
+  Wire.endTransmission();
+  delay(80); // Wait for measurement
+  
+  // Read data (6 bytes)
+  Wire.requestFrom(AHT20_ADDR, 6);
+  if (Wire.available() == 6) {
+    for (int i = 0; i < 6; i++) {
+      data[i] = Wire.read();
+    }
+    
+    // Convert to humidity (first 20 bits of data)
+    uint32_t hum_raw = ((uint32_t)data[1] << 12) | ((uint32_t)data[2] << 4) | (data[3] >> 4);
+    float humidity = (float)hum_raw * 100.0 / 1048576.0;
+    return humidity;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readSHT31Temperature() {
+  uint8_t data[6];
+  
+  // Send measurement command
+  Wire.beginTransmission(SHT31_ADDR);
+  Wire.write(SHT31_MEAS_HIGH);
+  Wire.write(SHT31_MEAS_DATA);
+  Wire.endTransmission();
+  delay(15); // Wait for measurement
+  
+  // Read data (6 bytes)
+  Wire.requestFrom(SHT31_ADDR, 6);
+  if (Wire.available() == 6) {
+    // Read temperature data (first 2 bytes)
+    uint16_t temp_raw = Wire.read() << 8;
+    temp_raw |= Wire.read();
+    // Skip CRC byte
+    Wire.read();
+    // Skip humidity bytes
+    Wire.read();
+    Wire.read();
+    Wire.read();
+    
+    // Convert to temperature
+    float temp = -45.0 + (175.0 * temp_raw / 65535.0);
+    return temp;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readSHT31Humidity() {
+  uint8_t data[6];
+  
+  // Send measurement command
+  Wire.beginTransmission(SHT31_ADDR);
+  Wire.write(SHT31_MEAS_HIGH);
+  Wire.write(SHT31_MEAS_DATA);
+  Wire.endTransmission();
+  delay(15); // Wait for measurement
+  
+  // Read data (6 bytes)
+  Wire.requestFrom(SHT31_ADDR, 6);
+  if (Wire.available() == 6) {
+    // Skip temperature bytes
+    Wire.read();
+    Wire.read();
+    Wire.read();
+    // Read humidity data (next 2 bytes)
+    uint16_t hum_raw = Wire.read() << 8;
+    hum_raw |= Wire.read();
+    // Skip CRC byte
+    Wire.read();
+    
+    // Convert to humidity
+    float humidity = 100.0 * hum_raw / 65535.0;
+    return humidity;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readBME280Temperature() {
+  int32_t temp_raw;
+  
+  // Request temperature data
+  Wire.beginTransmission(BME280_ADDR);
+  Wire.write(BME280_TEMP_MSB);
+  Wire.endTransmission();
+  
+  // Read temperature data (3 bytes)
+  Wire.requestFrom(BME280_ADDR, 3);
+  if (Wire.available() == 3) {
+    temp_raw = Wire.read() << 12;
+    temp_raw |= Wire.read() << 4;
+    temp_raw |= Wire.read() >> 4;
+    
+    // Convert to temperature using BME280 compensation formula
+    float temp = (float)temp_raw / 100.0;
+    return temp;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readBME280Humidity() {
+  uint8_t data[2];
+  
+  // Request humidity data
+  Wire.beginTransmission(BME280_ADDR);
+  Wire.write(0xFD); // Humidity MSB register
+  Wire.endTransmission();
+  
+  // Read humidity data (2 bytes)
+  Wire.requestFrom(BME280_ADDR, 2);
+  if (Wire.available() == 2) {
+    data[0] = Wire.read();
+    data[1] = Wire.read();
+    
+    uint16_t hum_raw = (data[0] << 8) | data[1];
+    float humidity = (float)hum_raw / 1024.0;
+    return humidity;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readBME280Pressure() {
+  uint8_t data[3];
+  
+  // Request pressure data
+  Wire.beginTransmission(BME280_ADDR);
+  Wire.write(0xF7); // Pressure MSB register
+  Wire.endTransmission();
+  
+  // Read pressure data (3 bytes)
+  Wire.requestFrom(BME280_ADDR, 3);
+  if (Wire.available() == 3) {
+    data[0] = Wire.read();
+    data[1] = Wire.read();
+    data[2] = Wire.read();
+    
+    int32_t press_raw = ((uint32_t)data[0] << 12) | ((uint32_t)data[1] << 4) | (data[2] >> 4);
+    float pressure = (float)press_raw / 100.0; // Convert to hPa
+    return pressure;
+  }
+  return -999.0; // Return error value if read fails
+}

@@ -1,0 +1,2 @@
+Sensor name: MPL3115A2
+Query: I2C address hexadecimal value

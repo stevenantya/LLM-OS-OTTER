@@ -1,0 +1,270 @@
+Datasheet fetch latency: 0.7303457260131836 seconds
+Number of chunks: 78
+Datasheet partition latency: 0.001117706298828125 seconds
+Vector DB embedding latency: 0.1056356430053711 seconds
+Query: I2C address hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: **7.3 Send Command**
+
+After the transmission is started, the first byte of I²C that is subsequently transmitted includes the 7-bit I²C device
+address 0x38 and a SDA direction bit x (read R: ‘1’, write W: ‘0’). After the 8th falling edge of the SCL clock, pull
+down the SDA pin (ACK bit) to indicate that the sensor data is received normally. After sending the measurement
+command 0xAC, the MCU must wait until the measurement is completed.
+
+**Table 9** . Status bit description
+     Retrieved Chunk 2: 4. After receiving six bytes, the next byte is CRC check data, which the user can read as needed. If the receiver
+needs CRC check, it will send an ACK reply after receiving the sixth byte, otherwise it will send a NACK reply. The
+initial value of CRC is 0xFF, and the CRC8 check polynomial is:
+
+CRC [7:0] = 1+X [4] +X [5] +X [8]
+
+5. Calculate the temperature and humidity value
+     Retrieved Chunk 3: **Table 8** . Timing characteristics of I²C fast mode digital Inputs/outputs.
+
+The meaning is shown in Figure 17 Unless otherwise noted.
+### **7 Sensor Communication**
+
+Sensor uses standard I²C protocol for communication. For information about the I²C protocol other than the
+following chapters, please refer to the following website: www.aosong.com provides a sample program for
+reference.
+
+**7.1 Start the Sensor**
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. **7.3 Send Command**
+
+After the transmission is started, the first byte of I²C that is subsequently transmitted includes the 7-bit I²C device
+address 0x38 and a SDA direction bit x (read R: ‘1’, write W: ‘0’). After the 8th falling edge of the SCL clock, pull
+down the SDA pin (ACK bit) to indicate that the sensor data is received normally. After sending the measurement
+command 0xAC, the MCU must wait until the measurement is completed.
+
+**Table 9** . Status bit description
+
+Query: Initialize registers hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: **Table 9** . Status bit description
+
+**7.4 Sensor Reading Process**
+
+1. After power-on, wait for ≥100ms Before reading the temperature and humidity value, get a byte of status word
+by sending 0x71. If the status word and 0x18 are not equal to 0x18, initialize the 0x1B, 0x1C, 0x1E registers,
+details Please refer to our official website routine for the initialization process; if they are equal, proceed to the next
+step.
+     Retrieved Chunk 2: 4. After receiving six bytes, the next byte is CRC check data, which the user can read as needed. If the receiver
+needs CRC check, it will send an ACK reply after receiving the sixth byte, otherwise it will send a NACK reply. The
+initial value of CRC is 0xFF, and the CRC8 check polynomial is:
+
+CRC [7:0] = 1+X [4] +X [5] +X [8]
+
+5. Calculate the temperature and humidity value
+     Retrieved Chunk 3: CRC [7:0] = 1+X [4] +X [5] +X [8]
+
+5. Calculate the temperature and humidity value
+
+Note: The calibration status check in the first step only needs to be checked when the power is turned on.No
+operation is required during the acquisition process.
+     Number of helpful chunks: 2
+Consolidated Final chunk: 1. **Table 9** . Status bit description
+
+**7.4 Sensor Reading Process**
+
+1. After power-on, wait for ≥100ms Before reading the temperature and humidity value, get a byte of status word
+by sending 0x71. If the status word and 0x18 are not equal to 0x18, initialize the 0x1B, 0x1C, 0x1E registers,
+details Please refer to our official website routine for the initialization process; if they are equal, proceed to the next
+step.
+2. 4. After receiving six bytes, the next byte is CRC check data, which the user can read as needed. If the receiver
+needs CRC check, it will send an ACK reply after receiving the sixth byte, otherwise it will send a NACK reply. The
+initial value of CRC is 0xFF, and the CRC8 check polynomial is:
+
+CRC [7:0] = 1+X [4] +X [5] +X [8]
+
+5. Calculate the temperature and humidity value
+
+Query: Trigger measurement read command hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: 2. Wait 10ms to send the 0xAC command (trigger measurement). This command parameter has two bytes, the first
+byte is 0x33, and the second byte is 0x00.
+
+3. Wait 80ms for the measurement to be completed, if the read status word Bit[7] is 0, it means the measurement
+is completed, and then six bytes can be read continuously; otherwise, continue to wait.
+     Retrieved Chunk 2: **7.3 Send Command**
+
+After the transmission is started, the first byte of I²C that is subsequently transmitted includes the 7-bit I²C device
+address 0x38 and a SDA direction bit x (read R: ‘1’, write W: ‘0’). After the 8th falling edge of the SCL clock, pull
+down the SDA pin (ACK bit) to indicate that the sensor data is received normally. After sending the measurement
+command 0xAC, the MCU must wait until the measurement is completed.
+
+**Table 9** . Status bit description
+     Retrieved Chunk 3: **Table 9** . Status bit description
+
+**7.4 Sensor Reading Process**
+
+1. After power-on, wait for ≥100ms Before reading the temperature and humidity value, get a byte of status word
+by sending 0x71. If the status word and 0x18 are not equal to 0x18, initialize the 0x1B, 0x1C, 0x1E registers,
+details Please refer to our official website routine for the initialization process; if they are equal, proceed to the next
+step.
+     Number of helpful chunks: 3
+Consolidated Final chunk: 1. 2. Wait 10ms to send the 0xAC command (trigger measurement). This command parameter has two bytes, the first
+byte is 0x33, and the second byte is 0x00.
+
+3. Wait 80ms for the measurement to be completed, if the read status word Bit[7] is 0, it means the measurement
+is completed, and then six bytes can be read continuously; otherwise, continue to wait.
+2. **7.3 Send Command**
+
+After the transmission is started, the first byte of I²C that is subsequently transmitted includes the 7-bit I²C device
+address 0x38 and a SDA direction bit x (read R: ‘1’, write W: ‘0’). After the 8th falling edge of the SCL clock, pull
+down the SDA pin (ACK bit) to indicate that the sensor data is received normally. After sending the measurement
+command 0xAC, the MCU must wait until the measurement is completed.
+
+**Table 9** . Status bit description
+3. **Table 9** . Status bit description
+
+**7.4 Sensor Reading Process**
+
+1. After power-on, wait for ≥100ms Before reading the temperature and humidity value, get a byte of status word
+by sending 0x71. If the status word and 0x18 are not equal to 0x18, initialize the 0x1B, 0x1C, 0x1E registers,
+details Please refer to our official website routine for the initialization process; if they are equal, proceed to the next
+step.
+
+Query: Sensor data output length in bytes
+Retrieved chunk:
+     Retrieved Chunk 1: [www.aosong.com](http://www.aosong.com/) Version:V1.0 —— May 2021 10 / 16
+
+
+-----
+
+The abbreviations are explained in Table 8. The thicker SDA line is controlled by the sensor, and the ordinary SDA
+line is controlled by the single-chip microcomputer. Please note that the SDA valid read time is triggered by the
+falling edge of the previous conversion.
+
+**Table 8** . Timing characteristics of I²C fast mode digital Inputs/outputs.
+     Retrieved Chunk 2: 2. Wait 10ms to send the 0xAC command (trigger measurement). This command parameter has two bytes, the first
+byte is 0x33, and the second byte is 0x00.
+
+3. Wait 80ms for the measurement to be completed, if the read status word Bit[7] is 0, it means the measurement
+is completed, and then six bytes can be read continuously; otherwise, continue to wait.
+     Retrieved Chunk 3: **Figure 8.** Recommended sensor PCB design size (unit:
+mm), the outer dotted line is the external size of the SMD
+package.
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. 2. Wait 10ms to send the 0xAC command (trigger measurement). This command parameter has two bytes, the first
+byte is 0x33, and the second byte is 0x00.
+
+3. Wait 80ms for the measurement to be completed, if the read status word Bit[7] is 0, it means the measurement
+is completed, and then six bytes can be read continuously; otherwise, continue to wait.
+
+Query: Sensor measurement data
+Retrieved chunk:
+     Retrieved Chunk 1: 4. If there are volatile solvents, tapes with pungent odors, adhesives, and packaging materials around the sensor, the readings may
+shift. For details, please refer to the relevant documents.
+
+5. The minimum and maximum values for supply current and power consumption are based on VCC = 3.3V and T < 60°C. The mean
+value is the value of one measurement taken in every two seconds.
+
+6. The response time depends on the thermal conductivity of the sensor substrate.
+     Retrieved Chunk 2: **Figure 4** . Working conditions
+
+1. This accuracy is based on the sensor's test accuracy at a supply voltage of 3.3Vat 25°C when tested at the factory. This value
+does not include hysteresis and non-linearity and applies only to non-condensing conditions.
+
+2. Time required to achieve 63% first-order response at 25°C and 1 m/s airflow.
+
+3. Normal operating range: 0-80%RH, beyond this range, there will be deviation in the sensor reading (after 60hours in 90%RH
+humidity, drift >3%RH).
+     Retrieved Chunk 3: The sensor has stable performance within the recommended working range, as shown in Figure 4. Long-term
+exposure to conditions outside the normal range, especially when the humidity is> 80%, may cause temporary
+signal drift (drift + 3% RH after 60 hours). After returning to normal working conditions, the sensor will slowly selfrecover to the calibration state. Refer to "Recovery Processing" in section 4.3 to speed up the recovery process.
+     Number of helpful chunks: 3
+Consolidated Final chunk: 1. 4. If there are volatile solvents, tapes with pungent odors, adhesives, and packaging materials around the sensor, the readings may
+shift. For details, please refer to the relevant documents.
+
+5. The minimum and maximum values for supply current and power consumption are based on VCC = 3.3V and T < 60°C. The mean
+value is the value of one measurement taken in every two seconds.
+
+6. The response time depends on the thermal conductivity of the sensor substrate.
+2. **Figure 4** . Working conditions
+
+1. This accuracy is based on the sensor's test accuracy at a supply voltage of 3.3Vat 25°C when tested at the factory. This value
+does not include hysteresis and non-linearity and applies only to non-condensing conditions.
+
+2. Time required to achieve 63% first-order response at 25°C and 1 m/s airflow.
+
+3. Normal operating range: 0-80%RH, beyond this range, there will be deviation in the sensor reading (after 60hours in 90%RH
+humidity, drift >3%RH).
+3. The sensor has stable performance within the recommended working range, as shown in Figure 4. Long-term
+exposure to conditions outside the normal range, especially when the humidity is> 80%, may cause temporary
+signal drift (drift + 3% RH after 60 hours). After returning to normal working conditions, the sensor will slowly selfrecover to the calibration state. Refer to "Recovery Processing" in section 4.3 to speed up the recovery process.
+
+Query: Formula to convert raw sensor data to measurement units
+Retrieved chunk:
+     Retrieved Chunk 1: **Figure 4** . Working conditions
+
+1. This accuracy is based on the sensor's test accuracy at a supply voltage of 3.3Vat 25°C when tested at the factory. This value
+does not include hysteresis and non-linearity and applies only to non-condensing conditions.
+
+2. Time required to achieve 63% first-order response at 25°C and 1 m/s airflow.
+
+3. Normal operating range: 0-80%RH, beyond this range, there will be deviation in the sensor reading (after 60hours in 90%RH
+humidity, drift >3%RH).
+     Retrieved Chunk 2: **8.1 Relative Humidity Conversion**
+
+The relative humidity RH can be calculated according to the relative humidity signal S RH output by SDA through the
+following formula (the result is expressed in %RH):
+#### RH[%]  (S2 RH20 ) *100%
+
+**8.2 Temperature Conversion**
+
+The temperature T can be calculated by substituting the temperature output signal S T into the following formula:
+(The result is expressed in temperature ℃): T[℃] （ 2S 20T ）* 200 - 50
+     Retrieved Chunk 3: The sensor has stable performance within the recommended working range, as shown in Figure 4. Long-term
+exposure to conditions outside the normal range, especially when the humidity is> 80%, may cause temporary
+signal drift (drift + 3% RH after 60 hours). After returning to normal working conditions, the sensor will slowly selfrecover to the calibration state. Refer to "Recovery Processing" in section 4.3 to speed up the recovery process.
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. **8.1 Relative Humidity Conversion**
+
+The relative humidity RH can be calculated according to the relative humidity signal S RH output by SDA through the
+following formula (the result is expressed in %RH):
+#### RH[%]  (S2 RH20 ) *100%
+
+**8.2 Temperature Conversion**
+
+The temperature T can be calculated by substituting the temperature output signal S T into the following formula:
+(The result is expressed in temperature ℃): T[℃] （ 2S 20T ）* 200 - 50
+
+Query: I2C address hexadecimal value
+Response: 0x38
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 6
+Query: Sensor measurement data
+Response: (RelativeHumidity: [8:27], Temperature: [28:47])
+Query: Formula to convert raw sensor data to measurement units
+Response: (RelativeHumidity: "X 100.0 * 1048576.0 /", Temperature: "X 200.0 * 1048576.0 / 50 -")
+Latency for I2C address hexadecimal value:
+     retrieve_chunk: 0.5069561004638672 seconds
+     validate_chunk: 6.961492538452148 seconds
+     function: 2.04707407951355 seconds
+Latency for Initialize registers hexadecimal value:
+     retrieve_chunk: 0.6169106960296631 seconds
+     validate_chunk: 20.887959718704224 seconds
+     function: 19.045013189315796 seconds
+Latency for Trigger measurement read command hexadecimal value:
+     retrieve_chunk: 0.4567983150482178 seconds
+     validate_chunk: 11.138737201690674 seconds
+     function: 17.28141212463379 seconds
+Latency for Sensor data output length in bytes:
+     retrieve_chunk: 0.41162729263305664 seconds
+     validate_chunk: 6.9667840003967285 seconds
+     function: 10.233814716339111 seconds
+Latency for Sensor measurement data:
+     retrieve_chunk: 0.6142969131469727 seconds
+     validate_chunk: 12.136784315109253 seconds
+     function: 33.73890447616577 seconds
+Latency for Formula to convert raw sensor data to measurement units:
+     retrieve_chunk: 1.0278055667877197 seconds
+     validate_chunk: 6.964779615402222 seconds
+     function: 21.49845862388611 seconds
+Latency: 173.37408471107483 seconds
+End time: 1743831632.008206

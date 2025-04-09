@@ -1,0 +1,376 @@
+Datasheet fetch latency: 0.8237886428833008 seconds
+Number of chunks: 135
+Datasheet partition latency: 7.196723699569702 seconds
+Vector DB embedding latency: 3.2799336910247803 seconds
+Query: I2C address hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: **Figure 14. I²C device address: 0x52**
+
+MSBit LSBit
+
+|0|1|0|1|0|0|1|R/W|
+|---|---|---|---|---|---|---|---|
+     Retrieved Chunk 2: The registers shown in the table below can be used to validate the user I²C interface.
+
+**Table 5. Reference registers**
+
+|Address|After fresh reset, without the API loaded|
+|---|---|
+|0xC0|0xEE|
+|0xC1|0xAA|
+|0xC2|0x10|
+|0X51|0x0099|
+|0x61|0x0000|
+
+
+
+*Note:* *The I²C read/writes can be 8, 16, or 32-bit. Multibyte read/writes are always addressed in ascending order with*
+*the MSB first as shown in the following table.*
+
+**Table 6. 32-bit register example**
+     Retrieved Chunk 3: - I²C interface for device control and data transfer
+
+- Xshutdown (reset) and interrupt GPIO
+
+- Programmable I²C address **Application**
+
+- Access control (system activation and presence detection)
+
+- Robotics (collision avoidance, wall tracking, and cliff detection)
+
+- Home appliance and home automation
+
+- Inventory management and liquid level monitoring **Description**
+     Number of helpful chunks: 2
+Consolidated Final chunk: 1. **Figure 14. I²C device address: 0x52**
+
+MSBit LSBit
+
+|0|1|0|1|0|0|1|R/W|
+|---|---|---|---|---|---|---|---|
+2. The registers shown in the table below can be used to validate the user I²C interface.
+
+**Table 5. Reference registers**
+
+|Address|After fresh reset, without the API loaded|
+|---|---|
+|0xC0|0xEE|
+|0xC1|0xAA|
+|0xC2|0x10|
+|0X51|0x0099|
+|0x61|0x0000|
+
+
+
+*Note:* *The I²C read/writes can be 8, 16, or 32-bit. Multibyte read/writes are always addressed in ascending order with*
+*the MSB first as shown in the following table.*
+
+**Table 6. 32-bit register example**
+
+Query: Initialize registers hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: The registers shown in the table below can be used to validate the user I²C interface.
+
+**Table 5. Reference registers**
+
+|Address|After fresh reset, without the API loaded|
+|---|---|
+|0xC0|0xEE|
+|0xC1|0xAA|
+|0xC2|0x10|
+|0X51|0x0099|
+|0x61|0x0000|
+
+
+
+*Note:* *The I²C read/writes can be 8, 16, or 32-bit. Multibyte read/writes are always addressed in ascending order with*
+*the MSB first as shown in the following table.*
+
+**Table 6. 32-bit register example**
+     Retrieved Chunk 2: **Table 6. 32-bit register example**
+
+|Register address|Byte|
+|---|---|
+|Address|MSB|
+|Address + 1|...|
+|Address + 2|...|
+|Address + 3|LSB|
+
+
+
+**DS11555** - **Rev 6** **page 18/38**
+
+
+-----
+
+### **VL53L0X**
+
+**Electrical characteristics**
+## **5 Electrical characteristics**
+### **5.1 Absolute maximum ratings**
+     Retrieved Chunk 3: ***stop*** ***start*** ***start*** ***stop***
+
+
+**SDA**
+
+**SCL**
+
+|Col1|Col2|Col3|Col4|Col5|Col6|Col7|Col8|VIH ... VIL|Col10|Col11|Col12|Col13|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|tBUF||tLOW tR|||tF|||||tHD.STA|||
+|VIH VIL||||||||...|||||
+||||||||||||||
+
+
+t HD.STA
+
+
+t HD.DAT t HIGH t SU.DAT t SU.STA t SU.STO
+
+IL [ or V] IH [.]
+
+
+All timings are measured from either V IL or V IH .
+### **4.2 I²C interface - reference registers**
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. The registers shown in the table below can be used to validate the user I²C interface.
+
+**Table 5. Reference registers**
+
+|Address|After fresh reset, without the API loaded|
+|---|---|
+|0xC0|0xEE|
+|0xC1|0xAA|
+|0xC2|0x10|
+|0X51|0x0099|
+|0x61|0x0000|
+
+
+
+*Note:* *The I²C read/writes can be 8, 16, or 32-bit. Multibyte read/writes are always addressed in ascending order with*
+*the MSB first as shown in the following table.*
+
+**Table 6. 32-bit register example**
+
+Query: Trigger measurement read command hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: The user can get the final data using a polling or an interrupt mechanism.
+
+**Polling mode**
+
+The user has to check the status of the ongoing measurement by polling an API function.
+
+**Interrupt mode**
+
+An interrupt pin (GPIO1) sends an interrupt to the host when a new measurement is available.
+
+The description of these two modes is available in the VL53L0X API user manual (UM2039). **3.8 Device programming and control**
+     Retrieved Chunk 2: A message contains a series of bytes preceded by a start condition, and followed by either a stop or repeated
+start (another start condition but without a preceding stop condition), followed by another message. The first byte
+contains the device address (0x52) and also specifies the data direction. If the least significant bit is low (that is,
+0x52) the message is a controller write-to-the-target. If the LSB is set (that is, 0x53) then the message is a
+controller read-from-the-target.
+     Retrieved Chunk 3: The registers shown in the table below can be used to validate the user I²C interface.
+
+**Table 5. Reference registers**
+
+|Address|After fresh reset, without the API loaded|
+|---|---|
+|0xC0|0xEE|
+|0xC1|0xAA|
+|0xC2|0x10|
+|0X51|0x0099|
+|0x61|0x0000|
+
+
+
+*Note:* *The I²C read/writes can be 8, 16, or 32-bit. Multibyte read/writes are always addressed in ascending order with*
+*the MSB first as shown in the following table.*
+
+**Table 6. 32-bit register example**
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Sensor data output length in bytes
+Retrieved chunk:
+     Retrieved Chunk 1: Stop condition
+
+|Col1|Col2|
+|---|---|
+|||
+||S|
+
+
+Information is packed in 8-bit packets (bytes) and is always followed by an acknowledge bit, Ac for the VL53L0X
+acknowledge and Am for the controller acknowledge (host bus controller). The internal data are produced by
+sampling SDA at a rising edge of SCL. The external data must be stable during the high period of SCL. The
+exceptions to this are start (S) or stop (P) conditions when SDA falls or rises respectively, while SCL is high.
+     Retrieved Chunk 2: |t SU.STA|Start setup time|0.26|—|—||
+|t HD.DAT|Data in hold time|0|—|0.9||
+|t SU.DAT|Data in setup time|50|—|—|ns|
+|t R|SCL/SDA rise time|—|—|120||
+|t F|SCL/SDA fall time|—|—|120||
+|t SU.STO|Stop setup time|0.6|—|—|μs|
+|Ci/o|Input/output capacitance (SDA)|—|—|10|pF|
+|Cin|Input capacitance (SCL)|—|—|4||
+|C L|Load capacitance|—|125|400||
+     Retrieved Chunk 3: |Symbol|Parameter|Minimum|Typical|Maximum|Unit|
+|---|---|---|---|---|---|
+|F I2C|Operating frequency (standard and fast mode)|0|—|400 (1)|kHz|
+|t LOW|Clock pulse width low|1.6|—|—|μs|
+|t HIGH|Clock pulse width high|0.6|—|—||
+|t SP|Pulse width of spikes that are suppressed by the input filter|—|—|50|ns|
+|t BUF|Bus free time between transmissions|1.3|—|—|ms|
+|t HD.STA|Start hold time|0.26|—|—|μs|
+|t SU.STA|Start setup time|0.26|—|—||
+|t HD.DAT|Data in hold time|0|—|0.9||
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Sensor measurement data
+Retrieved chunk:
+     Retrieved Chunk 1: The user can get the final data using a polling or an interrupt mechanism.
+
+**Polling mode**
+
+The user has to check the status of the ongoing measurement by polling an API function.
+
+**Interrupt mode**
+
+An interrupt pin (GPIO1) sends an interrupt to the host when a new measurement is available.
+
+The description of these two modes is available in the VL53L0X API user manual (UM2039). **3.8 Device programming and control**
+     Retrieved Chunk 2: The ranging accuracy can be characterized by the standard deviation. It includes measure-to-measure and partto-part (silicon) dispersion.
+
+**Table 13. Ranging accuracy**
+
+**Measurement conditions**
+
+         - Target reflectance used: Gray (17%), White (88%)
+
+         - Offset correction done at 10 cm from sensor
+
+         - Indoor: No infrared
+
+         - Outdoor: 5 klx equivalent sunlight (10 kcps/SPAD)
+
+         - Nominal voltage (2.8 V) and temperature (23°C)
+     Retrieved Chunk 3: 2. Continuous ranging.
+
+Ranging is performed in a continuous way after the API function is called. As soon as the measurement is
+finished, another one is started without delay. The user has to stop the ranging to return to SW standby. The
+last measurement is completed before stopping.
+
+3. Timed ranging.
+     Number of helpful chunks: 3
+Consolidated Final chunk: 1. The user can get the final data using a polling or an interrupt mechanism.
+
+**Polling mode**
+
+The user has to check the status of the ongoing measurement by polling an API function.
+
+**Interrupt mode**
+
+An interrupt pin (GPIO1) sends an interrupt to the host when a new measurement is available.
+
+The description of these two modes is available in the VL53L0X API user manual (UM2039). **3.8 Device programming and control**
+2. The ranging accuracy can be characterized by the standard deviation. It includes measure-to-measure and partto-part (silicon) dispersion.
+
+**Table 13. Ranging accuracy**
+
+**Measurement conditions**
+
+         - Target reflectance used: Gray (17%), White (88%)
+
+         - Offset correction done at 10 cm from sensor
+
+         - Indoor: No infrared
+
+         - Outdoor: 5 klx equivalent sunlight (10 kcps/SPAD)
+
+         - Nominal voltage (2.8 V) and temperature (23°C)
+3. 2. Continuous ranging.
+
+Ranging is performed in a continuous way after the API function is called. As soon as the measurement is
+finished, another one is started without delay. The user has to stop the ranging to return to SW standby. The
+last measurement is completed before stopping.
+
+3. Timed ranging.
+
+Query: Formula to convert raw sensor data to measurement units
+Retrieved chunk:
+     Retrieved Chunk 1: The ranging accuracy can be characterized by the standard deviation. It includes measure-to-measure and partto-part (silicon) dispersion.
+
+**Table 13. Ranging accuracy**
+
+**Measurement conditions**
+
+         - Target reflectance used: Gray (17%), White (88%)
+
+         - Offset correction done at 10 cm from sensor
+
+         - Indoor: No infrared
+
+         - Outdoor: 5 klx equivalent sunlight (10 kcps/SPAD)
+
+         - Nominal voltage (2.8 V) and temperature (23°C)
+     Retrieved Chunk 2: *2.* *Using a long range API profile.*
+
+**Measurement conditions**
+
+         - Target reflectance used: Gray (17%), White (88%)
+
+         - Nominal voltage (2.8 V) and temperature (23°C)
+
+         - All distances are for a complete FoV covered (FoV = 25°)
+     Retrieved Chunk 3: |Target reflectance level, full FoV|Conditions|Indoor (1)|Outdoor (1)|
+|---|---|---|---|
+|White target (88%)|Typical|200 cm+ (2)|80 cm|
+||Minimum|120 cm|60 cm|
+|Gray target (17%)|Typical|80 cm|50 cm|
+||Minimum|70 cm|40 cm|
+
+*module. For reference, this corresponds to a 1.2 W/m² at 940 nm, and is equivalent to 5 klx daylight, while ranging on a gray*
+*17% chart at 40 cm.*
+
+*2.* *Using a long range API profile.*
+
+**Measurement conditions**
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: I2C address hexadecimal value
+Response: 0x52
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 12
+Query: Sensor measurement data
+Response: (Distance: [0:1], MeasurementUncertainty: [2:3], SignalRate: [4:5], AmbientRate: [6:7])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Distance: "X 16 >> X 65536 % 65536.0 / +", MeasurementUncertainty: "X 16 >> X 65536 % 65536.0 / +", SignalRate: "X 16 >> X 65536 % 65536.0 / +", AmbientRate: "X 16 >> X 65536 % 65536.0 / +")
+Latency for I2C address hexadecimal value:
+     retrieve_chunk: 0.6823935508728027 seconds
+     validate_chunk: 6.9954962730407715 seconds
+     function: 8.56785249710083 seconds
+Latency for Initialize registers hexadecimal value:
+     retrieve_chunk: 1.0255630016326904 seconds
+     validate_chunk: 10.238897562026978 seconds
+     function: 15.170323371887207 seconds
+Latency for Trigger measurement read command hexadecimal value:
+     retrieve_chunk: 0.8153166770935059 seconds
+     validate_chunk: 6.336729526519775 seconds
+     function: 32.36206650733948 seconds
+Latency for Sensor data output length in bytes:
+     retrieve_chunk: 0.8461287021636963 seconds
+     validate_chunk: 5.70695948600769 seconds
+     function: 13.923589944839478 seconds
+Latency for Sensor measurement data:
+     retrieve_chunk: 1.026632308959961 seconds
+     validate_chunk: 5.938380718231201 seconds
+     function: 28.879164457321167 seconds
+Latency for Formula to convert raw sensor data to measurement units:
+     retrieve_chunk: 0.616182804107666 seconds
+     validate_chunk: 12.080846548080444 seconds
+     function: 21.71014714241028 seconds
+Latency: 184.22883558273315 seconds
+End time: 1743829875.229977

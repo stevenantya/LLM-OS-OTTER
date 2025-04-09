@@ -1,0 +1,284 @@
+Datasheet fetch latency: 0.7163140773773193 seconds
+Number of chunks: 224
+Datasheet partition latency: 0.0029251575469970703 seconds
+Vector DB embedding latency: 0.1085050106048584 seconds
+Query: I2C address hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |Table 6-4. Address Pin|and Target Addresses|
+|---|---|
+|DEVICE TWO-WIRE ADDRESS|A0 PIN CONNECTION|
+|1001000|Ground|
+|1001001|V+|
+|1001010|SDA|
+|1001011|SCL|
+
+
+
+***6.3.5 Writing and Reading Operation***
+     Retrieved Chunk 2: Frame 1 Two-Wire Device Address Byte Frame 2 Pointer Register Byte
+
+1 9 1 9
+
+(Continued)SCL …
+
+SDA 1 0 0 1 0 A1 (1) A0 (1) R/W D7 D6 D5 D4 D3 D2 D1 D0 …
+(Continued)
+
+Start By ACK By From ACK By
+Host Device Device Host (2)
+
+~~F~~ rame 3 Two-Wire Device Address Byt ~~e~~ Frame 4 Data Byte 1 Read Register
+
+1 9
+
+SCL
+
+(Continued)
+
+SDA
+
+(Continued)
+
+From ACK By Stop By
+Device Host (3) Host
+
+Frame 5 Data Byte 2 Read Register
+     Retrieved Chunk 3: ***6.3.8 General Call***
+
+The TMP102 device responds to a two-wire general call address (000 0000) if the eighth bit is 0. The device
+acknowledges the general call address and responds to commands in the second byte. If the second byte is
+0000 0110, the TMP102 device internal registers are reset to power-up values. The TMP102 device does not
+support the general address acquire command.
+
+***6.3.9 High-Speed (HS) Mode***
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. |Table 6-4. Address Pin|and Target Addresses|
+|---|---|
+|DEVICE TWO-WIRE ADDRESS|A0 PIN CONNECTION|
+|1001000|Ground|
+|1001001|V+|
+|1001010|SDA|
+|1001011|SCL|
+
+
+
+***6.3.5 Writing and Reading Operation***
+
+Query: Initialize registers hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |P7|P6|P5|P4|P3|P2|P1|P0|
+|---|---|---|---|---|---|---|---|
+|0|0|0|0|0|0|Register Bits||
+
+
+|Col1|Col2|Table 6-7. Pointer Addresses|
+|---|---|---|
+|P1|P0|REGISTER|
+|0|0|Temperature Register (Read Only)|
+|0|1|Configuration Register (Read/Write)|
+|1|0|T Register (Read/Write) LOW|
+|1|1|T Register (Read/Write) HIGH|
+     Retrieved Chunk 2: '0'. Table 6-7 describes the pointer address of the registers available in the TMP102 device. The power-up reset
+value of P1 and P0 is 00. By default, the TMP102 device reads the temperature on power up.
+     Retrieved Chunk 3: Both operational modes are represented in Figure 6-7. Table 6-13 through Table 6-16 describe the format for the
+T HIGH and T LOW registers. Note that the most significant byte is sent first, followed by the least significant byte.
+Power-up reset values for T HIGH and T LOW are: T HIGH = 80°C and T LOW = 75°C. The format of the data for T HIGH
+and T LOW is the same as for the Temperature Register.
+
+**Table 6-13. B** **y** **te 1 Tem** **p** **erature Re** **g** **ister** **HIGH** [(1) ]
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. '0'. Table 6-7 describes the pointer address of the registers available in the TMP102 device. The power-up reset
+value of P1 and P0 is 00. By default, the TMP102 device reads the temperature on power up.
+
+Query: Trigger measurement read command hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: then generates a START condition and sends the target address byte with the R/W bit high to initiate the read
+command. See Figure 6-1 for details of this sequence. If repeated reads from the same register are desired,
+continually sending the Pointer Register bytes is not necessary because the TMP102 remembers the Pointer
+Register value until the device is changed by the next write operation.
+     Retrieved Chunk 2: The digital output from each temperature measurement is stored in the read-only temperature register. The
+temperature register of the TMP102 device is configured as a 12-bit, read-only register (configuration register
+EM bit = 0, see the *Extended Mode (EM)* section), or as a 13-bit, read-only register (configuration register
+EM bit = 1) that stores the output of the most recent conversion. Two bytes must be read to obtain data and
+     Retrieved Chunk 3: The Temperature Register of the TMP102 is configured as a 12-bit, read-only register (Configuration Register
+EM bit = 0, see the *Extended Mode* section), or as a 13-bit, read-only register (Configuration Register EM bit = 1)
+that stores the output of the most recent conversion. Two bytes must be read to obtain data, and are described
+in Table 6-8 and Table 6-9. Note that byte 1 is the most significant byte, followed by byte 2, the least significant
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Sensor data output length in bytes
+Retrieved chunk:
+     Retrieved Chunk 1: The digital output from each temperature measurement is stored in the read-only temperature register. The
+temperature register of the TMP102 device is configured as a 12-bit, read-only register (configuration register
+EM bit = 0, see the *Extended Mode (EM)* section), or as a 13-bit, read-only register (configuration register
+EM bit = 1) that stores the output of the most recent conversion. Two bytes must be read to obtain data and
+     Retrieved Chunk 2: byte. The first 12 bits (13 bits in Extended mode) are used to indicate temperature. The least significant byte
+does not have to be read if that information is not needed.
+     Retrieved Chunk 3: [device data sheets, SBOS288 and SBOS363, respectively). All registers are updated byte by byte.](https://www.ti.com/lit/pdf/SBOS288)
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. The digital output from each temperature measurement is stored in the read-only temperature register. The
+temperature register of the TMP102 device is configured as a 12-bit, read-only register (configuration register
+EM bit = 0, see the *Extended Mode (EM)* section), or as a 13-bit, read-only register (configuration register
+EM bit = 1) that stores the output of the most recent conversion. Two bytes must be read to obtain data and
+
+Query: Sensor measurement data
+Retrieved chunk:
+     Retrieved Chunk 1: range.
+
+The TMP102 device is designed for extended
+temperature measurement in a variety of
+communication, computer, consumer, environmental,
+industrial, and instrumentation applications. The
+device is specified for operation over a temperature
+range of –40°C to 125°C.
+
+The TMP102 production units are 100% tested
+against sensors that are NIST-traceable and are
+verified with equipment that are NIST-traceable
+through ISO/IEC 17025 accredited calibrations.
+
+**Packa** **g** **e Information**
+     Retrieved Chunk 2: Temperature
+
+|DEVICE|COMPATIBLE INTERFACES|PACKAGE|SUPPLY CURRENT|SUPPLY VOLTAGE (MIN)|SUPPLY VOLTAGE (MAX)|RESOLUTION|LOCAL SENSOR ACCURACY (MAX)|SPECIFIED CALIBRATION DRIFT SLOPE|
+|---|---|---|---|---|---|---|---|---|
+|TMP112|I2C SMBus|SOT563 1.2 × 1.6 × 0.6|7.5 µA|1.4 V|3.6 V|12 bit 0.0625°C|0.5°C: (0°C to 65°C) 1°C: (-40°C to 125°C)|Yes|
+|TMP102|I2C SMBus|SOT563 1.2 × 1.6 × 0.6|7.5 µA|1.4 V|3.6 V|12 bit 0.0625°C|2°C: (25°C to 85°C) 3°C: (-40°C to 125°C)|No|
+
+
+SCL
+
+
+SDA
+
+
+
+
+ADD0
+     Retrieved Chunk 3: The digital output from each temperature measurement is stored in the read-only temperature register. The
+temperature register of the TMP102 device is configured as a 12-bit, read-only register (configuration register
+EM bit = 0, see the *Extended Mode (EM)* section), or as a 13-bit, read-only register (configuration register
+EM bit = 1) that stores the output of the most recent conversion. Two bytes must be read to obtain data and
+     Number of helpful chunks: 3
+Consolidated Final chunk: 1. range.
+
+The TMP102 device is designed for extended
+temperature measurement in a variety of
+communication, computer, consumer, environmental,
+industrial, and instrumentation applications. The
+device is specified for operation over a temperature
+range of –40°C to 125°C.
+
+The TMP102 production units are 100% tested
+against sensors that are NIST-traceable and are
+verified with equipment that are NIST-traceable
+through ISO/IEC 17025 accredited calibrations.
+
+**Packa** **g** **e Information**
+2. Temperature
+
+|DEVICE|COMPATIBLE INTERFACES|PACKAGE|SUPPLY CURRENT|SUPPLY VOLTAGE (MIN)|SUPPLY VOLTAGE (MAX)|RESOLUTION|LOCAL SENSOR ACCURACY (MAX)|SPECIFIED CALIBRATION DRIFT SLOPE|
+|---|---|---|---|---|---|---|---|---|
+|TMP112|I2C SMBus|SOT563 1.2 × 1.6 × 0.6|7.5 µA|1.4 V|3.6 V|12 bit 0.0625°C|0.5°C: (0°C to 65°C) 1°C: (-40°C to 125°C)|Yes|
+|TMP102|I2C SMBus|SOT563 1.2 × 1.6 × 0.6|7.5 µA|1.4 V|3.6 V|12 bit 0.0625°C|2°C: (25°C to 85°C) 3°C: (-40°C to 125°C)|No|
+
+
+SCL
+
+
+SDA
+
+
+
+
+ADD0
+3. The digital output from each temperature measurement is stored in the read-only temperature register. The
+temperature register of the TMP102 device is configured as a 12-bit, read-only register (configuration register
+EM bit = 0, see the *Extended Mode (EM)* section), or as a 13-bit, read-only register (configuration register
+EM bit = 1) that stores the output of the most recent conversion. Two bytes must be read to obtain data and
+
+Query: Formula to convert raw sensor data to measurement units
+Retrieved chunk:
+     Retrieved Chunk 1: Example: (50°C) / (0.0625°C / LSB) = 800 = 320h = 0011 0010 0000
+
+To convert a positive digital data format to temperature:
+1. Convert the 12-bit, left-justified binary temperature result, with the MSB = 0 to denote a positive sign, to a
+decimal number.
+
+2. Multiply the decimal number by the resolution to obtain the positive temperature.
+
+Example: 0011 0010 0000 = 320h = 800 × (0.0625°C / LSB) = 50°C
+     Retrieved Chunk 2: |PARAMETER|Col2|Col3|TEST CONDITIONS|MIN TYP MAX|UNIT|
+|---|---|---|---|---|---|
+|TEMPERATURE SENSOR||||||
+||Range|||–40 125|°C|
+||Accuracy (temperature error)||-25°C to 85°C|± 0.5 ± 2|°C|
+||||-40°C to 125°C|± 1 ± 3||
+||vs supply|||0.2 0.5|°C/V|
+||Resolution|||0.0625|°C|
+|DIGITAL INPUT/OUTPUT||||||
+||Input capacitance|||3|pF|
+|V IH|Input logic high|||0.7 × (V+) 3.6|V|
+|V IL|Input logic low|||–0.5 0.3 × (V+)|V|
+|I IN|Input current||0 < V < 3.6V IN|1|µA|
+     Retrieved Chunk 3: To convert a negative digital data format to temperature:
+1. Generate the twos compliment of the 12-bit, left-justified binary number of the temperature result (with
+MSB = 1, denoting negative temperature result) by complementing the binary number and adding one. This
+represents the binary number of the absolute value of the temperature.
+2. Convert to decimal number and multiply by the resolution to get the absolute temperature, then multiply by
+–1 for the negative sign.
+     Number of helpful chunks: 2
+Consolidated Final chunk: 1. Example: (50°C) / (0.0625°C / LSB) = 800 = 320h = 0011 0010 0000
+
+To convert a positive digital data format to temperature:
+1. Convert the 12-bit, left-justified binary temperature result, with the MSB = 0 to denote a positive sign, to a
+decimal number.
+
+2. Multiply the decimal number by the resolution to obtain the positive temperature.
+
+Example: 0011 0010 0000 = 320h = 800 × (0.0625°C / LSB) = 50°C
+2. To convert a negative digital data format to temperature:
+1. Generate the twos compliment of the 12-bit, left-justified binary number of the temperature result (with
+MSB = 1, denoting negative temperature result) by complementing the binary number and adding one. This
+represents the binary number of the absolute value of the temperature.
+2. Convert to decimal number and multiply by the resolution to get the absolute temperature, then multiply by
+–1 for the negative sign.
+
+Query: I2C address hexadecimal value
+Response: 0x48
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 2
+Query: Sensor measurement data
+Response: (Temperature: [4:15])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Temperature: "X 4 >> DUP 2048 / 4096 * - 0.0625 *")
+Latency for I2C address hexadecimal value:
+     retrieve_chunk: 0.39968228340148926 seconds
+     validate_chunk: 14.234561204910278 seconds
+     function: 3.275831937789917 seconds
+Latency for Initialize registers hexadecimal value:
+     retrieve_chunk: 0.410996675491333 seconds
+     validate_chunk: 11.471291065216064 seconds
+     function: 19.453579902648926 seconds
+Latency for Trigger measurement read command hexadecimal value:
+     retrieve_chunk: 0.8195154666900635 seconds
+     validate_chunk: 5.528189659118652 seconds
+     function: 15.365831851959229 seconds
+Latency for Sensor data output length in bytes:
+     retrieve_chunk: 0.6086328029632568 seconds
+     validate_chunk: 10.055471420288086 seconds
+     function: 9.196101665496826 seconds
+Latency for Sensor measurement data:
+     retrieve_chunk: 0.41009092330932617 seconds
+     validate_chunk: 7.971469879150391 seconds
+     function: 15.170174598693848 seconds
+Latency for Formula to convert raw sensor data to measurement units:
+     retrieve_chunk: 0.6226534843444824 seconds
+     validate_chunk: 6.13704514503479 seconds
+     function: 29.695375680923462 seconds
+Latency: 151.65555429458618 seconds
+End time: 1743832143.192214

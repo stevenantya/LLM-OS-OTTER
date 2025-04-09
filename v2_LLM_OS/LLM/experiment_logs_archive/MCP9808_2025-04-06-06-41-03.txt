@@ -1,0 +1,92 @@
+Datasheet fetch latency: 0.7831516265869141 seconds
+Number of chunks: 213
+Datasheet partition latency: 0.0030214786529541016 seconds
+Vector DB embedding latency: 0.07988691329956055 seconds
+Query: What is the I2C address hexadecimal value?
+Retrieved chunk:
+     Retrieved Chunk 1: Address Byte
+
+SCL 1 2 3 4 5 6 7 8 9
+
+AC
+
+SDA 0 0 1 1 A2 A1 A0 K
+
+Start
+
+Address Slave
+
+Code Address R/W
+
+**MCP9808** Response
+
+**See** Table 3-2. *FIGURE 4-1: Device Addressing.*
+
+###### 4.1.5 DATA VALID
+
+After the Start condition, each bit of data in the
+transmission needs to be settled for a time specified by
+t SU-DATA before SCL toggles from low-to-high (see the
+Sensor Serial Interface Timing Specifications section). 4.1.6 ACKNOWLEDGE (ACK/NAK)
+     Retrieved Chunk 2: The revision begins with 0x00 (hex) for the first release,
+with the number being incremented as revised versions
+are released. REGISTER 5-6: DEVICE ID AND DEVICE REVISION – READ-ONLY ( → ADDRESS ‘0000 0111’b)
+
+R-0 R-0 R-0 R-0 R-0 R-1 R-0 R-0
+
+Device ID
+
+bit 15 bit 8
+
+R-0 R-0 R-0 R-0 R-0 R-0 R-0 R-0
+
+Device Revision
+
+bit 7 bit 0
+
+**Legend:**
+
+R = Readable bit W = Writable bit U = Unimplemented bit, read as ‘0’
+
+-n = Value at POR ‘1’ = Bit is set ‘0’ = Bit is cleared x = Bit is unknown
+     Retrieved Chunk 3: ```
+  i2c_start(); // send START command
+
+```
+`i2c_write(AddressByte & 0xFE);` `//WRITE Command` (see **Section 4.1.4 “Address Byte”** )
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: How do you initialize or reset the sensor? Include register addresses or command codes for initialization or soft reset or power-up.
+Retrieved chunk:
+     Retrieved Chunk 1: Address Byte
+
+SCL 1 2 3 4 5 6 7 8 9
+
+AC
+
+SDA 0 0 1 1 A2 A1 A0 K
+
+Start
+
+Address Slave
+
+Code Address R/W
+
+**MCP9808** Response
+
+**See** Table 3-2. *FIGURE 4-1: Device Addressing.*
+
+###### 4.1.5 DATA VALID
+
+After the Start condition, each bit of data in the
+transmission needs to be settled for a time specified by
+t SU-DATA before SCL toggles from low-to-high (see the
+Sensor Serial Interface Timing Specifications section). 4.1.6 ACKNOWLEDGE (ACK/NAK)
+     Retrieved Chunk 2: |TABLE 5-3: POWER-ON RESET DEFAULTS|Col2|Col3|Col4|
+|---|---|---|---|
+|Registers||Default Register Data (Hexadecimal)|Power-Up Default Register Description|
+|Address (Hexadecimal)|Register Name|||
+|0x01|CONFIG|0x0000|Comparator Mode Active-Low Output Alert and Critical Output Output Disabled Alert Not Asserted Interrupt Cleared Alert Limits Unlocked Critical Limit Unlocked Continuous Conversion 0°C Hysteresis|
+|0x02|T UPPER|0x0000|0°C|
+|0x03|T LOWER|0x0000|0°C|
+|0x04|T CRIT|0x0000|0°C|

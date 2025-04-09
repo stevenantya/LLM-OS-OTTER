@@ -1,0 +1,171 @@
+#include <Wire.h>
+
+// MCP9808 I2C address (default: 0x18)
+#define MCP9808_ADDR 0x18
+// TMP102 I2C address (default: 0x48)
+#define TMP102_ADDR 0x48
+// AHT20 I2C address (default: 0x38)
+#define AHT20_ADDR 0x38
+
+// Register addresses for MCP9808
+#define REG_CONFIG 0x01
+#define REG_TEMP 0x05
+
+// AHT20 commands
+#define AHT20_INIT_CMD 0xBE
+#define AHT20_MEASURE_CMD 0xAC
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+  
+  // Configure MCP9808
+  Wire.beginTransmission(MCP9808_ADDR);
+  Wire.write(REG_CONFIG);
+  Wire.write(0x00); // Default configuration
+  Wire.write(0x00);
+  Wire.endTransmission();
+  
+  // Initialize AHT20
+  Wire.beginTransmission(AHT20_ADDR);
+  Wire.write(AHT20_INIT_CMD);
+  Wire.write(0x08);
+  Wire.write(0x00);
+  Wire.endTransmission();
+  delay(10); // Wait for initialization
+  
+  // TMP102 doesn't need configuration for basic operation
+}
+
+void loop() {
+  float temp1 = readMCP9808Temperature();
+  float temp2 = readTMP102Temperature();
+  float temp3 = readAHT20Temperature();
+  float humidity = readAHT20Humidity();
+  
+  Serial.print("MCP9808 Temperature: ");
+  Serial.print(temp1);
+  Serial.println(" °C");
+  
+  Serial.print("TMP102 Temperature: ");
+  Serial.print(temp2);
+  Serial.println(" °C");
+  
+  Serial.print("AHT20 Temperature: ");
+  Serial.print(temp3);
+  Serial.println(" °C");
+  
+  Serial.print("AHT20 Humidity: ");
+  Serial.print(humidity);
+  Serial.println(" %");
+  
+  delay(1000);
+}
+
+float readMCP9808Temperature() {
+  uint16_t tempData;
+  
+  // Request temperature data
+  Wire.beginTransmission(MCP9808_ADDR);
+  Wire.write(REG_TEMP);
+  Wire.endTransmission();
+  
+  // Read temperature data (2 bytes)
+  Wire.requestFrom(MCP9808_ADDR, 2);
+  if (Wire.available() == 2) {
+    uint8_t msb = Wire.read();
+    uint8_t lsb = Wire.read();
+    
+    // Clear flag bits
+    msb &= 0x1F;
+    
+    // Convert to temperature
+    tempData = (msb << 8) | lsb;
+    if (msb & 0x10) { // Handle negative temperatures
+      tempData = ((~tempData) + 1) & 0x1FFF;
+      return -(tempData * 0.0625);
+    } else {
+      return tempData * 0.0625;
+    }
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readTMP102Temperature() {
+  uint16_t tempData;
+  
+  // Request temperature data
+  Wire.beginTransmission(TMP102_ADDR);
+  Wire.write(0x00); // Temperature register
+  Wire.endTransmission();
+  
+  // Read temperature data (2 bytes)
+  Wire.requestFrom(TMP102_ADDR, 2);
+  if (Wire.available() == 2) {
+    uint8_t msb = Wire.read();
+    uint8_t lsb = Wire.read();
+    
+    // Combine the bytes
+    tempData = ((msb << 8) | lsb) >> 4; // 12-bit resolution
+    
+    // Convert to temperature (0.0625°C resolution)
+    float temp = tempData * 0.0625;
+    if (msb & 0x80) { // Handle negative temperatures
+      temp -= 256;
+    }
+    return temp;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readAHT20Temperature() {
+  uint8_t data[6];
+  
+  // Send measurement command
+  Wire.beginTransmission(AHT20_ADDR);
+  Wire.write(AHT20_MEASURE_CMD);
+  Wire.write(0x33);
+  Wire.write(0x00);
+  Wire.endTransmission();
+  delay(80); // Wait for measurement
+  
+  // Read data (6 bytes)
+  Wire.requestFrom(AHT20_ADDR, 6);
+  if (Wire.available() == 6) {
+    for (int i = 0; i < 6; i++) {
+      data[i] = Wire.read();
+    }
+    
+    // Convert to temperature
+    uint32_t temp_raw = ((uint32_t)data[3] & 0x0F) << 16 | (uint32_t)data[4] << 8 | data[5];
+    float temp = ((float)temp_raw * 200.0 / 1048576.0) - 50.0;
+    return temp;
+  }
+  return -999.0; // Return error value if read fails
+}
+
+float readAHT20Humidity() {
+  uint8_t data[6];
+  
+  // Send measurement command
+  Wire.beginTransmission(AHT20_ADDR);
+  Wire.write(AHT20_MEASURE_CMD);
+  Wire.write(0x33);
+  Wire.write(0x00);
+  Wire.endTransmission();
+  delay(80); // Wait for measurement
+  
+  // Read data (6 bytes)
+  Wire.requestFrom(AHT20_ADDR, 6);
+  if (Wire.available() == 6) {
+    for (int i = 0; i < 6; i++) {
+      data[i] = Wire.read();
+    }
+    
+    // Convert to humidity (first 20 bits of data)
+    uint32_t hum_raw = ((uint32_t)data[1] << 12) | ((uint32_t)data[2] << 4) | (data[3] >> 4);
+    float humidity = (float)hum_raw * 100.0 / 1048576.0;
+    return humidity;
+  }
+  return -999.0; // Return error value if read fails
+}

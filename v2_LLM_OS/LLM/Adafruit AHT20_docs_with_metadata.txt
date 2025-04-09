@@ -1,0 +1,845 @@
+Chunk 1
+Adafruit AHT20 Temperature & Humidity Sensor 
+
+---------------------------
+
+Chunk 2
+Created by Kattni Rembor 
+
+---------------------------
+
+Chunk 3
+https://learn.adafruit.com/adafruit-aht20 
+
+---------------------------
+
+Chunk 4
+Last updated on 2024-06-03 03:07:59 PM EDT 
+
+---------------------------
+
+Chunk 5
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 6
+Page 1 of 19 
+
+---------------------------
+
+Chunk 7
+Table of Contents 
+
+---------------------------
+
+Chunk 8
+Overview Pinouts • Power Pins • I2C Logic Pins Arduino • Wiring • Installation • Load Example • Example Code Arduino Docs Python & CircuitPython • CircuitPython Microcontroller Wiring • Python Computer Wiring • CircuitPython Installation of AHT20 Library • Python Installation of AHT20 Library • CircuitPython & Python Usage • Full Example Code Python Docs WipperSnapper • What is WipperSnapper • Wiring • Usage Downloads • Files • Schematic 3 4 5 8 8 12 12 18 
+
+---------------------------
+
+Chunk 9
+Fab Print 
+
+---------------------------
+
+Chunk 10
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 11
+Page 2 of 19 
+
+---------------------------
+
+Chunk 12
+Overview 
+
+---------------------------
+
+Chunk 13
+The AHT20 is a nice but inexpensive temperature and humidity sensor from the same folks that brought us the DHT22 (http://adafru.it/385). You can take sensor readings as often as you like, and it uses standard I2C so its super easy to use with any Arduino or Linux/Raspberry Pi board. 
+
+---------------------------
+
+Chunk 14
+This sensor has a typical accuracy of +- 2% relative humidity, and +-0.3 °C. There is only one I2C address so its not a good option when you need multiple humidity sensors. 
+
+---------------------------
+
+Chunk 15
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 16
+Page 3 of 19 
+
+---------------------------
+
+Chunk 17
+As with all Adafruit breakouts, we've done the work to make this handy temperature- and-humidity super easy to use. We've put it on a breakout board with the required support circuitry and connectors to make it easy to work with and is now a trend we've added SparkFun Qwiic (https://adafru.it/Fpw) compatible STEMMA QT (https:// adafru.it/Ft4) JST SH connectors that allow you to get going without needing to solder. Just use a STEMMA QT adapter cable (http://adafru.it/4209), plug it into your favorite microcontroller or Blinka supported SBC and you're ready to rock! 
+
+---------------------------
+
+Chunk 18
+Pinouts 
+
+---------------------------
+
+Chunk 19
+The default I2C address is 0x38. It cannot be changed. 
+
+---------------------------
+
+Chunk 20
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 21
+Page 4 of 19 
+
+---------------------------
+
+Chunk 22
+Power Pins 
+
+---------------------------
+
+Chunk 23
+The sensor on the breakout requires between a 2.7V and 5.5V, and can be easily used with most microcontrollers from an Arduino to a Feather or something else. 
+
+---------------------------
+
+Chunk 24
+• VIN - this is the power pin. To power the board, give it the same power as the logic level of your microcontroller - e.g. for a 5V micro like Arduino, use 5V 
+
+---------------------------
+
+Chunk 25
+GND - common ground for power and logic 
+
+---------------------------
+
+Chunk 26
+I2C Logic Pins 
+
+---------------------------
+
+Chunk 27
+• SCL - I2C clock pin, connect to your microcontrollers I2C clock line. The logic level is the same as VIN and it has a 10K pullup already on it. 
+
+---------------------------
+
+Chunk 28
+• SDA - I2C data pin, connect to your microcontrollers I2C data line. The logic level is the same as VIN. and it has a 10K pullup already on it. 
+
+---------------------------
+
+Chunk 29
+• STEMMA QT (https://adafru.it/Ft4) - These connectors allow you to connect to dev boards with STEMMA QT connectors or to other things with various associated accessories (https://adafru.it/Ft6) 
+
+---------------------------
+
+Chunk 30
+Arduino 
+
+---------------------------
+
+Chunk 31
+Wiring 
+
+---------------------------
+
+Chunk 32
+Connecting the AHT20 to your Feather or Arduino is easy: 
+
+---------------------------
+
+Chunk 33
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 34
+Page 5 of 19 
+
+---------------------------
+
+Chunk 35
+If you are running a Feather (3.3V), connect Feather 3V to board VIN If you are running a 5V Arduino (Uno, etc.), connect Arduino 5V to board VIN Connect Feather or Arduino GND to board 
+
+---------------------------
+
+Chunk 36
+GND 
+
+---------------------------
+
+Chunk 37
+Connect Feather or Arduino SCL to board 
+
+---------------------------
+
+Chunk 38
+SCL 
+
+---------------------------
+
+Chunk 39
+Connect Feather or Arduino SDA to board SDA 
+
+---------------------------
+
+Chunk 40
+The final results should resemble the illustration above, showing an Adafruit Metro development board. 
+
+---------------------------
+
+Chunk 41
+Installation 
+
+---------------------------
+
+Chunk 42
+You can install the Adafruit AHTx0 Library for Arduino using the Library Manager in the Arduino IDE: 
+
+---------------------------
+
+Chunk 43
+Click the Manage Libraries ... menu item, search for Adafruit AHTx0, and select the Adafruit AHTx0 library: 
+
+---------------------------
+
+Chunk 44
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 45
+Page 6 of 19 
+
+---------------------------
+
+Chunk 46
+Then follow the same process for the Adafruit BusIO library. 
+
+---------------------------
+
+Chunk 47
+Load Example 
+
+---------------------------
+
+Chunk 48
+Open up File -> Examples -> Adafruit AHTx0 -> adafruit_aht_test and upload to your Arduino wired up to the sensor. 
+
+---------------------------
+
+Chunk 49
+Upload the sketch to your board and open up the Serial Monitor (Tools->Serial Monitor). You should see the the values for temperature and humidity. 
+
+---------------------------
+
+Chunk 50
+Example Code 
+
+---------------------------
+
+Chunk 51
+The following example code is part of the standard library, but illustrates how you can retrieve sensor data from the AHT20 for the temperature and humidity values: 
+
+---------------------------
+
+Chunk 52
+#include <Adafruit_AHTX0.h> 
+
+---------------------------
+
+Chunk 53
+Adafruit_AHTX0 aht; void setup() { Serial.begin(115200); Serial.println("Adafruit AHT10/AHT20 demo!"); if (! aht.begin()) { Serial.println("Could not find AHT? Check wiring"); while (1) delay(10); } Serial.println("AHT10 or AHT20 found"); } void loop() { sensors_event_t humidity, temp; aht.getEvent(&humidity, &temp);// populate temp and humidity objects with fresh data Serial.print("Temperature: "); Serial.print(temp.temperature); Serial.println(" degrees C"); Serial.print("Humidity: "); Serial.print(humidity.relative_humidity); Serial.println("% rH"); 
+
+---------------------------
+
+Chunk 54
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 55
+Page 7 of 19 
+
+---------------------------
+
+Chunk 56
+} 
+
+---------------------------
+
+Chunk 57
+delay(500); 
+
+---------------------------
+
+Chunk 58
+You should get something resembling the following output when you open the Serial Monitor at 115200 baud: 
+
+---------------------------
+
+Chunk 59
+Arduino Docs 
+
+---------------------------
+
+Chunk 60
+Arduino Docs (https://adafru.it/LxB) 
+
+---------------------------
+
+Chunk 61
+Python & CircuitPython 
+
+---------------------------
+
+Chunk 62
+It's easy to use the AHT20 sensor with CircuitPython and the Adafruit CircuitPython AHT20 (https://adafru.it/QDP) module. This module allows you to easily write Python code that reads the temperature and humidity from the sensor. 
+
+---------------------------
+
+Chunk 63
+You can use this sensor with any CircuitPython microcontroller board or with a computer that has GPIO and Python thanks to Adafruit_Blinka, our CircuitPython-for- Python compatibility library (https://adafru.it/BSN). 
+
+---------------------------
+
+Chunk 64
+CircuitPython Microcontroller Wiring 
+
+---------------------------
+
+Chunk 65
+First wire up a AHT20 to your board exactly as follows. Here is an example of the AHT20 wired to a Feather using I2C: 
+
+---------------------------
+
+Chunk 66
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 67
+Page 8 of 19 
+
+---------------------------
+
+Chunk 68
+Board 3V to sensor VIN Board GND to sensor GND Board SCL to sensor SCL Board SDA to sensor SDA 
+
+---------------------------
+
+Chunk 69
+Python Computer Wiring 
+
+---------------------------
+
+Chunk 70
+Since there's dozens of Linux computers/boards you can use we will show wiring for Raspberry Pi. For other platforms, please visit the guide for CircuitPython on Linux to see whether your platform is supported (https://adafru.it/BSN). 
+
+---------------------------
+
+Chunk 71
+Here's the Raspberry Pi wired with I2C: 
+
+---------------------------
+
+Chunk 72
+Pi 3V3 to sensor VIN Pi GND to sensor GND Pi SCL to sensor SCL Pi SDA to sensor SDA 
+
+---------------------------
+
+Chunk 73
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 74
+Page 9 of 19 
+
+---------------------------
+
+Chunk 75
+CircuitPython Installation of AHT20 Library 
+
+---------------------------
+
+Chunk 76
+You'll need to install the Adafruit CircuitPython AHT20 (https://adafru.it/QDP) library on your CircuitPython board. 
+
+---------------------------
+
+Chunk 77
+First make sure you are running the latest version of Adafruit CircuitPython (https:// adafru.it/Amd) for your board. 
+
+---------------------------
+
+Chunk 78
+Next you'll need to install the necessary libraries to use the hardware--carefully follow the steps to find and install these libraries from Adafruit's CircuitPython library bundle (https://adafru.it/uap). Our CircuitPython starter guide has a great page on how to install the library bundle (https://adafru.it/ABU). 
+
+---------------------------
+
+Chunk 79
+Copy the following files from the bundle to the lib folder on your CIRCUITPY drive: 
+
+---------------------------
+
+Chunk 80
+• adafruit_ahtx0.mpy 
+
+---------------------------
+
+Chunk 81
+• adafruit_bus_device 
+
+---------------------------
+
+Chunk 82
+Before continuing make sure your board's lib folder or root filesystem has the adafruit_ahtx0.mpy, and adafruit_bus_device file and folder copied over. 
+
+---------------------------
+
+Chunk 83
+Next connect to the board's serial REPL (https://adafru.it/Awz)so you are at the CircuitPython >>> prompt. 
+
+---------------------------
+
+Chunk 84
+Python Installation of AHT20 Library 
+
+---------------------------
+
+Chunk 85
+You'll need to install the Adafruit_Blinka library that provides the CircuitPython support in Python. This may also require enabling I2C on your platform and verifying you are running Python 3. Since each platform is a little different, and Linux changes often, please visit the CircuitPython on Linux guide to get your computer ready (https://adafru.it/BSN)! 
+
+---------------------------
+
+Chunk 86
+Once that's done, from your command line run the following command: 
+
+---------------------------
+
+Chunk 87
+sudo pip3 install adafruit-circuitpython-ahtx0 
+
+---------------------------
+
+Chunk 88
+If your default Python is version 3 you may need to run 'pip' instead. Just make sure you aren't trying to use CircuitPython on Python 2.x, it isn't supported! 
+
+---------------------------
+
+Chunk 89
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 90
+Page 10 of 19 
+
+---------------------------
+
+Chunk 91
+CircuitPython & Python Usage 
+
+---------------------------
+
+Chunk 92
+To demonstrate the usage of the sensor we'll initialize it and read the temperature and humidity from the board's Python REPL. 
+
+---------------------------
+
+Chunk 93
+Run the following code to import the necessary modules and initialize the I2C connection with the sensor: 
+
+---------------------------
+
+Chunk 94
+import board import adafruit_ahtx0 
+
+---------------------------
+
+Chunk 95
+sensor = adafruit_ahtx0.AHTx0(board.I2C()) 
+
+---------------------------
+
+Chunk 96
+Now you're ready to read values from the sensor using these properties: 
+
+---------------------------
+
+Chunk 97
+• 
+
+---------------------------
+
+Chunk 98
+temperature - The temperature in Celsius. 
+
+---------------------------
+
+Chunk 99
+relative_humidity - The relative humidity in percent. 
+
+---------------------------
+
+Chunk 100
+For example to print temperature and relative humidity values: 
+
+---------------------------
+
+Chunk 101
+print("\nTemperature: %0.1f C" % sensor.temperature) print("Humidity: %0.1f %%" % sensor.relative_humidity) 
+
+---------------------------
+
+Chunk 102
+That's all there is to using the AHT20 sensor with CircuitPython! 
+
+---------------------------
+
+Chunk 103
+Full Example Code 
+
+---------------------------
+
+Chunk 104
+# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries # SPDX-License-Identifier: MIT """ Basic `AHTx0` example test """ import time import board import adafruit_ahtx0 # Create sensor object, communicating over the board's default I2C bus i2c = board.I2C() # uses board.SCL and board.SDA # i2c = board.STEMMA_I2C() # For using the built-in STEMMA QT connector on a microcontroller sensor = adafruit_ahtx0.AHTx0(i2c) while True: print("\nTemperature: %0.1f C" % sensor.temperature) print("Humidity: %0.1f %%" % sensor.relative_humidity) time.sleep(2) 
+
+---------------------------
+
+Chunk 105
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 106
+Page 11 of 19 
+
+---------------------------
+
+Chunk 107
+Python Docs 
+
+---------------------------
+
+Chunk 108
+Python Docs (https://adafru.it/LA7) 
+
+---------------------------
+
+Chunk 109
+WipperSnapper 
+
+---------------------------
+
+Chunk 110
+What is WipperSnapper 
+
+---------------------------
+
+Chunk 111
+WipperSnapper is a firmware designed to turn any WiFi-capable board into an Internet-of-Things device without programming a single line of code. WipperSnapper connects to Adafruit IO (https://adafru.it/fsU), a web platform designed (by Adafruit! (https://adafru.it/Bo5)) to display, respond, and interact with your project's data. 
+
+---------------------------
+
+Chunk 112
+Simply load the WipperSnapper firmware onto your board, add credentials, and plug it into power. Your board will automatically register itself with your Adafruit IO account. 
+
+---------------------------
+
+Chunk 113
+From there, you can add components to your board such as buttons, switches, potentiometers, sensors, and more! Components are dynamically added to hardware, so you can immediately start interacting, logging, and streaming the data your projects produce without writing code. 
+
+---------------------------
+
+Chunk 114
+If you've never used WipperSnapper, click below to read through the quick start guide before continuing. 
+
+---------------------------
+
+Chunk 115
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 116
+Page 12 of 19 
+
+---------------------------
+
+Chunk 117
+Quickstart: Adafruit IO WipperSnapper 
+
+---------------------------
+
+Chunk 118
+https://adafru.it/Vfd 
+
+---------------------------
+
+Chunk 119
+Wiring 
+
+---------------------------
+
+Chunk 120
+First, wire up an AHT20 to your board exactly as follows. Here is an example of the AHT20 wired to an Adafruit ESP32 Feather V2 (http://adafru.it/5400) using I2C with a STEMMA QT cable (no soldering required) (http://adafru.it/4210) 
+
+---------------------------
+
+Chunk 121
+Board 3V to sensor VIN (red wire on 
+
+---------------------------
+
+Chunk 122
+Board 3V to sensor VIN (red wire on STEMMA QT) Board GND to sensor GND (black wire on STEMMA QT) Board SCL to sensor SCL (yellow wire on STEMMA QT) Board SDA to sensor SDA (blue wire on STEMMA QT) 
+
+---------------------------
+
+Chunk 123
+STEMMA QT) 
+
+---------------------------
+
+Chunk 124
+Board GND to sensor GND (black wire on 
+
+---------------------------
+
+Chunk 125
+STEMMA QT) 
+
+---------------------------
+
+Chunk 126
+Board SCL to sensor SCL (yellow wire on 
+
+---------------------------
+
+Chunk 127
+STEMMA QT) 
+
+---------------------------
+
+Chunk 128
+Usage 
+
+---------------------------
+
+Chunk 129
+Connect your board to Adafruit IO Wippersnapper and navigate to the WipperSnapper board list (https://adafru.it/TAu). 
+
+---------------------------
+
+Chunk 130
+On this page, select the WipperSnapper board you're using to be brought to the board's interface page. 
+
+---------------------------
+
+Chunk 131
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 132
+Page 13 of 19 
+
+---------------------------
+
+Chunk 133
+If you do not see your board listed here - you need to connect your board to Adafruit IO (https://adafru.it/Vfd) first. 
+
+---------------------------
+
+Chunk 134
+On the device page, quickly check that you're running the latest version of the WipperSnapper firmware. 
+
+---------------------------
+
+Chunk 135
+The device tile on the left indicates the version number of the firmware running on the connected board. 
+
+---------------------------
+
+Chunk 136
+If the firmware version is green with a checkmark - continue with this guide. If the firmware version is red with an "X" - update to the latest WipperSnapper firmware (https://adafru.it/Vfd) on your board before continuing. 
+
+---------------------------
+
+Chunk 137
+Next, make sure the sensor is plugged into your board and click the I2C Scan button. 
+
+---------------------------
+
+Chunk 138
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 139
+Page 14 of 19 
+
+---------------------------
+
+Chunk 140
+You should see the AHT20's default I2C address of 0x38 pop-up in the I2C scan list. 
+
+---------------------------
+
+Chunk 141
+I don't see the sensor's I2C address listed! 
+
+---------------------------
+
+Chunk 142
+First, double-check the connection and/or wiring between the sensor and the board. 
+
+---------------------------
+
+Chunk 143
+Then, reset the board and let it re-connect to Adafruit IO WipperSnapper. 
+
+---------------------------
+
+Chunk 144
+With the sensor detected in an I2C scan, you're ready to add the sensor to your board. 
+
+---------------------------
+
+Chunk 145
+Click the New Component button or the + button to bring up the component picker. 
+
+---------------------------
+
+Chunk 146
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 147
+Page 15 of 19 
+
+---------------------------
+
+Chunk 148
+Adafruit IO supports a large amount of components. To quickly find your sensor, type AHT20 into the search bar, then select the AHT20 component. 
+
+---------------------------
+
+Chunk 149
+On the component configuration page, the AHT20's sensor address should be listed along with the sensor's settings. 
+
+---------------------------
+
+Chunk 150
+The Send Every option is specific to each sensor's measurements. This option will tell the Feather how often it should read from the AHT20 sensor and send the data to Adafruit IO. Measurements can range from every 30 seconds to every 24 hours. 
+
+---------------------------
+
+Chunk 151
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 152
+Page 16 of 19 
+
+---------------------------
+
+Chunk 153
+For this example, set the Send Every interval to every 30 seconds. When you've configured your AHT20 sensor, click Create Component. 
+
+---------------------------
+
+Chunk 154
+Your device interface should now show the sensor components you created. After the interval you configured elapses, WipperSnapper will automatically read values from the sensor(s) and send them to Adafruit IO. 
+
+---------------------------
+
+Chunk 155
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 156
+Page 17 of 19 
+
+---------------------------
+
+Chunk 157
+To view the data that has been logged from the sensor, click on the graph next to the sensor name. 
+
+---------------------------
+
+Chunk 158
+Here you can see the feed history and edit things about the feed such as the name, privacy, webhooks associated with the feed and more. If you want to learn more about how feeds work, check out this page (https://adafru.it/10aZ). 
+
+---------------------------
+
+Chunk 159
+Downloads 
+
+---------------------------
+
+Chunk 160
+Files 
+
+---------------------------
+
+Chunk 161
+AHT20 Datasheet (https://adafru.it/19gE) 
+
+---------------------------
+
+Chunk 162
+Fritzing object in the Adafruit Fritzing Library (https://adafru.it/LAn) 
+
+---------------------------
+
+Chunk 163
+EagleCAD PCB files on GitHub (https://adafru.it/LAo) 
+
+---------------------------
+
+Chunk 164
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 165
+Page 18 of 19 
+
+---------------------------
+
+Chunk 166
+Schematic 
+
+---------------------------
+
+Chunk 167
+Fab Print 
+
+---------------------------
+
+Chunk 168
+©Adafruit Industries 
+
+---------------------------
+
+Chunk 169
+Page 19 of 19 
+
+---------------------------
+

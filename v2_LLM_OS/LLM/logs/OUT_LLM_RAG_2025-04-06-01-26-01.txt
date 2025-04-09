@@ -1,0 +1,13 @@
+Sensor name: MCP9808
+Query: I2C address hexadecimal value
+Response: 0x18
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 2
+Query: Where are sensor output measurement values (e.g., temperature, pressure, acceleration) Where is it stored in memory or registers? Give bit positions, or byte layout.
+Response: (Temperature: [0:11])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Temperature: "X 4 >> X 16 % 0.0625 * +")

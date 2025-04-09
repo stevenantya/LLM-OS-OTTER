@@ -1,0 +1,511 @@
+Datasheet fetch latency: 1.0185837745666504 seconds
+Number of chunks: 213
+Datasheet partition latency: 0.00418543815612793 seconds
+Vector DB embedding latency: 0.1420133113861084 seconds
+Query: I2C address hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: Address Byte
+
+SCL 1 2 3 4 5 6 7 8 9
+
+AC
+
+SDA 0 0 1 1 A2 A1 A0 K
+
+Start
+
+Address Slave
+
+Code Address R/W
+
+**MCP9808** Response
+
+**See** Table 3-2. *FIGURE 4-1: Device Addressing.*
+
+###### 4.1.5 DATA VALID
+
+After the Start condition, each bit of data in the
+transmission needs to be settled for a time specified by
+t SU-DATA before SCL toggles from low-to-high (see the
+Sensor Serial Interface Timing Specifications section). 4.1.6 ACKNOWLEDGE (ACK/NAK)
+     Retrieved Chunk 2: ```
+  i2c_start(); // send START command
+
+```
+`i2c_write(AddressByte & 0xFE);` `//WRITE Command` (see **Section 4.1.4 “Address Byte”** )
+     Retrieved Chunk 3: ```
+                           //also, make sure bit 0 is cleared ‘0’
+     i2c_write(0x05); // Write T A Register Address
+     i2c_start(); //Repeat START
+
+```
+`i2c_write(AddressByte | 0x01);` `// READ Command` (see **Section 4.1.4 “Address Byte”** )
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. ```
+                           //also, make sure bit 0 is cleared ‘0’
+     i2c_write(0x05); // Write T A Register Address
+     i2c_start(); //Repeat START
+
+```
+`i2c_write(AddressByte | 0x01);` `// READ Command` (see **Section 4.1.4 “Address Byte”** )
+
+Query: Initialize registers hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |Col1|Col2|(See Section 5.3 “Summary of Power-on Default” for Power-on Defaults)|Col4|Col5|Col6|Col7|Col8|Col9|Col10|
+|---|---|---|---|---|---|---|---|---|---|
+|Register Pointer (Hex)|MSB/ LSB|Bit Assignment||||||||
+|||7|6|5|4|3|2|1|0|
+|0x00|MSB|0|0|0|0|0|0|0|0|
+||LSB|0|0|0|1|1|1|1|1|
+|0x01|MSB|0|0|0|0|0|Hysteresis||SHDN|
+||LSB|Crt Loc|Win Loc|Int Clr|Alt Stat|Alt Cnt|Alt Sel|Alt Pol|Alt Mod|
+|0x02|MSB|0|0|0|SIGN|27°C|26°C|25°C|24°C|
+||LSB|23°C|22°C|21°C|20°C|2-1°C|2-2°C|0|0|
+     Retrieved Chunk 2: |TABLE 5-3: POWER-ON RESET DEFAULTS|Col2|Col3|Col4|
+|---|---|---|---|
+|Registers||Default Register Data (Hexadecimal)|Power-Up Default Register Description|
+|Address (Hexadecimal)|Register Name|||
+|0x01|CONFIG|0x0000|Comparator Mode Active-Low Output Alert and Critical Output Output Disabled Alert Not Asserted Interrupt Cleared Alert Limits Unlocked Critical Limit Unlocked Continuous Conversion 0°C Hysteresis|
+|0x02|T UPPER|0x0000|0°C|
+|0x03|T LOWER|0x0000|0°C|
+|0x04|T CRIT|0x0000|0°C|
+     Retrieved Chunk 3: The revision begins with 0x00 (hex) for the first release,
+with the number being incremented as revised versions
+are released. REGISTER 5-6: DEVICE ID AND DEVICE REVISION – READ-ONLY ( → ADDRESS ‘0000 0111’b)
+
+R-0 R-0 R-0 R-0 R-0 R-1 R-0 R-0
+
+Device ID
+
+bit 15 bit 8
+
+R-0 R-0 R-0 R-0 R-0 R-0 R-0 R-0
+
+Device Revision
+
+bit 7 bit 0
+
+**Legend:**
+
+R = Readable bit W = Writable bit U = Unimplemented bit, read as ‘0’
+
+-n = Value at POR ‘1’ = Bit is set ‘0’ = Bit is cleared x = Bit is unknown
+     Number of helpful chunks: 3
+Consolidated Final chunk: 1. |Col1|Col2|(See Section 5.3 “Summary of Power-on Default” for Power-on Defaults)|Col4|Col5|Col6|Col7|Col8|Col9|Col10|
+|---|---|---|---|---|---|---|---|---|---|
+|Register Pointer (Hex)|MSB/ LSB|Bit Assignment||||||||
+|||7|6|5|4|3|2|1|0|
+|0x00|MSB|0|0|0|0|0|0|0|0|
+||LSB|0|0|0|1|1|1|1|1|
+|0x01|MSB|0|0|0|0|0|Hysteresis||SHDN|
+||LSB|Crt Loc|Win Loc|Int Clr|Alt Stat|Alt Cnt|Alt Sel|Alt Pol|Alt Mod|
+|0x02|MSB|0|0|0|SIGN|27°C|26°C|25°C|24°C|
+||LSB|23°C|22°C|21°C|20°C|2-1°C|2-2°C|0|0|
+2. |TABLE 5-3: POWER-ON RESET DEFAULTS|Col2|Col3|Col4|
+|---|---|---|---|
+|Registers||Default Register Data (Hexadecimal)|Power-Up Default Register Description|
+|Address (Hexadecimal)|Register Name|||
+|0x01|CONFIG|0x0000|Comparator Mode Active-Low Output Alert and Critical Output Output Disabled Alert Not Asserted Interrupt Cleared Alert Limits Unlocked Critical Limit Unlocked Continuous Conversion 0°C Hysteresis|
+|0x02|T UPPER|0x0000|0°C|
+|0x03|T LOWER|0x0000|0°C|
+|0x04|T CRIT|0x0000|0°C|
+3. The revision begins with 0x00 (hex) for the first release,
+with the number being incremented as revised versions
+are released. REGISTER 5-6: DEVICE ID AND DEVICE REVISION – READ-ONLY ( → ADDRESS ‘0000 0111’b)
+
+R-0 R-0 R-0 R-0 R-0 R-1 R-0 R-0
+
+Device ID
+
+bit 15 bit 8
+
+R-0 R-0 R-0 R-0 R-0 R-0 R-0 R-0
+
+Device Revision
+
+bit 7 bit 0
+
+**Legend:**
+
+R = Readable bit W = Writable bit U = Unimplemented bit, read as ‘0’
+
+-n = Value at POR ‘1’ = Bit is set ‘0’ = Bit is cleared x = Bit is unknown
+
+Query: Trigger measurement read command hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |0x02|T UPPER|0x0000|0°C|
+|0x03|T LOWER|0x0000|0°C|
+|0x04|T CRIT|0x0000|0°C|
+|0x05|T A|0x0000|0°C|
+|0x06|Manufacturer ID|0x0054|0x0054 (hex)|
+|0x07|Device ID/Device Revision|0x0400|0x0400 (hex)|
+|0x08|Resolution|0x03|0x03 (hex)|
+     Retrieved Chunk 2: ```
+                           //also, make sure bit 0 is Set ‘1’
+     UpperByte = i2c_read(ACK); // READ 8 bits
+                           //and Send ACK bit
+     LowerByte = i2c_read(NAK); // READ 8 bits
+                           //and Send NAK bit
+     i2c_stop(); // send STOP command
+     //Convert the temperature data
+     //First Check flag bits
+     if ((UpperByte & 0x80) == 0x80){ //T A ³ T CRIT
+     }
+     if ((UpperByte & 0x40) == 0x40){ //T A > T UPPER
+     }
+     Retrieved Chunk 3: Shutdown
+
+Critical Trip Lock
+
+Alarm Window Lock
+
+Clear Alert
+
+Alert Status
+
+Output Control
+
+Critical Alert only
+
+Alert Polarity
+
+Alert Comp./Int.
+
+Configuration
+
+Tem p erature
+
+T UPPER Limit
+
+T LOWER Limit
+
+T CRITICAL Limit
+
+Manufacturer ID
+
+Device ID/Rev
+
+Resolution
+
+SMBus/Standard I [2] C™
+Interface
+
+
+Band Gap
+Temperature
+Sensor
+
+ΔΣ ADC
+
++0.5°C
++0.25°C
++0.125°C
++0.0625°C
+
+
+A0 A1 A2 Alert SDA SCL V DD GND
+
+DS25095A-page 2 © 2011 Microchip Technology Inc.
+
+
+-----
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Sensor data output length in bytes
+Retrieved chunk:
+     Retrieved Chunk 1: lower bytes, the upper byte must be right-shifted by
+4 bits (or multiply by 2 [4] ) and the lower byte must be leftshifted by 4 bits (or multiply by 2 [-4] ). Adding the results
+of the shifted values provides the temperature data in
+decimal format (see Equation 5-1).
+     Retrieved Chunk 2: Shutdown
+
+Critical Trip Lock
+
+Alarm Window Lock
+
+Clear Alert
+
+Alert Status
+
+Output Control
+
+Critical Alert only
+
+Alert Polarity
+
+Alert Comp./Int.
+
+Configuration
+
+Tem p erature
+
+T UPPER Limit
+
+T LOWER Limit
+
+T CRITICAL Limit
+
+Manufacturer ID
+
+Device ID/Rev
+
+Resolution
+
+SMBus/Standard I [2] C™
+Interface
+
+
+Band Gap
+Temperature
+Sensor
+
+ΔΣ ADC
+
++0.5°C
++0.25°C
++0.125°C
++0.0625°C
+
+
+A0 A1 A2 Alert SDA SCL V DD GND
+
+DS25095A-page 2 © 2011 Microchip Technology Inc.
+
+
+-----
+     Retrieved Chunk 3: |0x06|MSB|0|0|0|0|0|0|0|0|
+||LSB|0|1|0|1|0|1|0|0|
+|0x07|MSB|0|0|0|0|0|1|0|0|
+||LSB|0|0|0|0|0|0|0|0|
+|0x08|LSB|0|0|0|0|0|0|1|1|
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Where are sensor output measurement values (e.g., temperature, pressure, acceleration) Where is it stored in memory or registers? Give bit positions, or byte layout.
+Retrieved chunk:
+     Retrieved Chunk 1: The registers are accessed by sending a Register
+
+The Temperature register is read-only, used to access
+
+Pointer to the MCP9808, using the serial interface. This
+
+the ambient temperature data. This register is double
+is an 8-bit write-only pointer. However, the four Least
+
+buffered and it is updated every t CONV . The Temperature
+
+Significant bits are used as pointers and all unused bits
+
+Alert Upper Boundary and Lower Boundary Limit
+     Retrieved Chunk 2: Shutdown
+
+Critical Trip Lock
+
+Alarm Window Lock
+
+Clear Alert
+
+Alert Status
+
+Output Control
+
+Critical Alert only
+
+Alert Polarity
+
+Alert Comp./Int.
+
+Configuration
+
+Tem p erature
+
+T UPPER Limit
+
+T LOWER Limit
+
+T CRITICAL Limit
+
+Manufacturer ID
+
+Device ID/Rev
+
+Resolution
+
+SMBus/Standard I [2] C™
+Interface
+
+
+Band Gap
+Temperature
+Sensor
+
+ΔΣ ADC
+
++0.5°C
++0.25°C
++0.125°C
++0.0625°C
+
+
+A0 A1 A2 Alert SDA SCL V DD GND
+
+DS25095A-page 2 © 2011 Microchip Technology Inc.
+
+
+-----
+     Retrieved Chunk 3: Shutdown
+
+Critical Trip Lock
+
+Alarm Win. Lock
+
+Clear Alert
+
+Alert Status
+
+Output Control
+
+Critical Alert Only
+
+Alert Polarity
+
+Alert Comp/Int
+
+Configuration
+
+Tem p erature
+
+T UPPER Limit
+
+T LOWER Limit
+
+T CRITICAL Limit
+
+Manufacturer ID
+
+Device ID/Rev
+
+Resolution
+
+Register
+Pointer
+
+SMBus/Standard I [2] C™
+Interface
+
+
+Band Gap
+Temperature
+Sensor
+
+ΔΣ ADC
+
++0.5°C
++0.25°C
++0.125°C
++0.0625°C
+
+
+A0 A1 A2 Alert SDA SCL V DD GND
+###### *FIGURE 5-1: Functional Block Diagram.*
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Formula to convert raw sensor data to measurement units
+Retrieved chunk:
+     Retrieved Chunk 1: lower bytes, the upper byte must be right-shifted by
+4 bits (or multiply by 2 [4] ) and the lower byte must be leftshifted by 4 bits (or multiply by 2 [-4] ). Adding the results
+of the shifted values provides the temperature data in
+decimal format (see Equation 5-1).
+     Retrieved Chunk 2: **-40** **-20** **0** **20** **40** **60** **80** **100** **120**
+
+**Temperature (°C)**
+
+
+**20**
+
+
+**-40** **-20** **0** **20** **40** **60** **80** **100** **120**
+
+**Temperature (°C)**
+
+###### *FIGURE 2-13: SDA and Alert Output V OL* *vs. Temperature.*
+
+###### *FIGURE 2-16: SMBus Time-out vs. * *Temperature.*
+
+
+**48**
+
+**42**
+
+**36**
+
+**30**
+
+**24**
+
+**18**
+
+**12**
+
+**6**
+
+**-40** **-20** **0** **20** **40** **60** **80** **100** **120**
+
+**Temperature (°C)**
+
+
+**2.00**
+
+**1.50**
+
+**1.00**
+     Retrieved Chunk 3: |0x02|T UPPER|0x0000|0°C|
+|0x03|T LOWER|0x0000|0°C|
+|0x04|T CRIT|0x0000|0°C|
+|0x05|T A|0x0000|0°C|
+|0x06|Manufacturer ID|0x0054|0x0054 (hex)|
+|0x07|Device ID/Device Revision|0x0400|0x0400 (hex)|
+|0x08|Resolution|0x03|0x03 (hex)|
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. lower bytes, the upper byte must be right-shifted by
+4 bits (or multiply by 2 [4] ) and the lower byte must be leftshifted by 4 bits (or multiply by 2 [-4] ). Adding the results
+of the shifted values provides the temperature data in
+decimal format (see Equation 5-1).
+
+Query: I2C address hexadecimal value
+Response: 0x18
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 2
+Query: Where are sensor output measurement values (e.g., temperature, pressure, acceleration) Where is it stored in memory or registers? Give bit positions, or byte layout.
+Response: (Temperature: [0:11])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Temperature: "X 4 >> X 16 % 0.0625 * +")
+Latency for I2C address hexadecimal value:
+     retrieve_chunk: 0.896888256072998 seconds
+     validate_chunk: 12.330464363098145 seconds
+     function: 2.4130027294158936 seconds
+Latency for Initialize registers hexadecimal value:
+     retrieve_chunk: 0.7329401969909668 seconds
+     validate_chunk: 7.009154558181763 seconds
+     function: 20.544363260269165 seconds
+Latency for Trigger measurement read command hexadecimal value:
+     retrieve_chunk: 0.8035213947296143 seconds
+     validate_chunk: 7.505331039428711 seconds
+     function: 22.94157886505127 seconds
+Latency for Sensor data output length in bytes:
+     retrieve_chunk: 0.38175487518310547 seconds
+     validate_chunk: 8.02070951461792 seconds
+     function: 9.534000873565674 seconds
+Latency for Where are sensor output measurement values (e.g., temperature, pressure, acceleration) Where is it stored in memory or registers? Give bit positions, or byte layout.:
+     retrieve_chunk: 1.2347095012664795 seconds
+     validate_chunk: 10.092774152755737 seconds
+     function: 24.221312999725342 seconds
+Latency for Formula to convert raw sensor data to measurement units:
+     retrieve_chunk: 0.7718052864074707 seconds
+     validate_chunk: 5.947692394256592 seconds
+     function: 24.351572513580322 seconds
+Latency: 160.90343022346497 seconds
+End time: 1743874121.637496

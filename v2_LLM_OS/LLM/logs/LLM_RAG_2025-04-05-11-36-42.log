@@ -1,0 +1,29 @@
+2025-04-05 11:36:42,777 - root - DEBUG - Loaded model client=<openai.resources.chat.completions.completions.Completions object at 0x701e89406200> async_client=<openai.resources.chat.completions.completions.AsyncCompletions object at 0x701e89424b50> root_client=<openai.OpenAI object at 0x701e8ba82b30> root_async_client=<openai.AsyncOpenAI object at 0x701e89406260> model_name='o3-mini' model_kwargs={} openai_api_key=SecretStr('**********')
+2025-04-05 11:36:42,777 - root - INFO - Sensor name: MPL3115A2
+2025-04-05 11:36:42,781 - primp.utils - DEBUG - Loaded CA certs
+2025-04-05 11:36:42,781 - rquest.connect - DEBUG - starting new connection: https://html.duckduckgo.com/
+2025-04-05 11:36:42,781 - rquest.util.client.connect.dns - DEBUG - resolving html.duckduckgo.com
+2025-04-05 11:36:42,798 - rquest.util.client.connect.http - DEBUG - connecting to 20.43.161.105:443
+2025-04-05 11:36:42,805 - rquest.util.client.connect.http - DEBUG - connected to 20.43.161.105:443
+2025-04-05 11:36:42,816 - rquest.util.client.pool - DEBUG - pooling idle connection for PoolKey { uri: https://html.duckduckgo.com/, alpn_protos: None, network: default }
+2025-04-05 11:36:43,697 - cookie_store.cookie_store - DEBUG - inserting secure cookie 'kl'
+2025-04-05 11:36:43,697 - primp - INFO - response: https://html.duckduckgo.com/html 200
+2025-04-05 11:36:43,697 - duckduckgo_search.DDGS - DEBUG - _get_url() https://html.duckduckgo.com/html 200
+2025-04-05 11:36:43,700 - root - DEBUG - Datasheet URL: https://www.nxp.com/docs/en/data-sheet/MPL3115A2.pdf
+2025-04-05 11:36:43,700 - root - DEBUG - Downloading datasheet...
+2025-04-05 11:36:43,701 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.nxp.com:443
+2025-04-05 11:36:43,838 - urllib3.connectionpool - DEBUG - https://www.nxp.com:443 "GET /docs/en/data-sheet/MPL3115A2.pdf HTTP/1.1" 200 738078
+2025-04-05 11:36:43,895 - root - DEBUG - Datasheet already exists in the database.
+2025-04-05 11:36:43,895 - root - DEBUG - Loading datasheet...
+2025-04-05 11:36:43,895 - root - DEBUG - Datasheet loaded!
+2025-04-05 11:36:43,895 - root - DEBUG - Datasheet fetch latency: 1.1176731586456299 seconds
+2025-04-05 11:36:43,897 - root - DEBUG - Datasheet partition exists. Loaded from local file
+2025-04-05 11:36:43,907 - root - DEBUG - 396
+2025-04-05 11:36:43,907 - root - DEBUG - Number of chunks: 396
+2025-04-05 11:36:43,907 - root - DEBUG - Datasheet partition latency: 0.010082483291625977 seconds
+2025-04-05 11:36:44,014 - faiss.loader - DEBUG - Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2025-04-05 11:36:44,014 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2025-04-05 11:36:44,028 - faiss.loader - INFO - Successfully loaded faiss with AVX512 support.
+2025-04-05 11:36:44,031 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-04-05 11:36:44,034 - root - DEBUG - Vector DB found, loaded from local file
+2025-04-05 11:36:44,034 - root - DEBUG - Vector DB embedding latency: 0.12698030471801758 seconds

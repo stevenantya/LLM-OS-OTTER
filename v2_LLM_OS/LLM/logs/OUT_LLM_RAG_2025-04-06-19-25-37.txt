@@ -1,0 +1,13 @@
+Sensor name: SHT31
+Query: What is the I2C address hexadecimal value?
+Response: 0x44
+Query: How do you initialize or reset the sensor? Include register addresses or command codes for initialization or soft reset or power-up.
+Response: INOP
+Query: What read command or register hexadecimal value triggers a sensor measurement? Which register address should be pointed to or read from to acquire data?
+Response: 0x2C, 0x06
+Query: What is the sensor data output length in bytes?
+Response: 6
+Query: Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.
+Response: (Temperature: [0:15], Humidity: [24:39])
+Query: What is the formula or process for converting raw sensor output values to physical units like temperature, humidity, pressure, or altitude?
+Response: (Temperature: "X 32 >> 0xFFFF & 175 * 65535 / -45 +", Humidity: "X 8 >> 0xFFFF & 100 * 65535 /")

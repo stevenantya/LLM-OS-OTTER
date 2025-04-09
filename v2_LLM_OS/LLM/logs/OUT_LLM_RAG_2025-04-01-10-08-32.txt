@@ -1,0 +1,14 @@
+Query: I2C address hexadecimal value
+Response: 0x60
+Query: Initialize registers hexadecimal value
+Response: 0x07, 0xB8
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: The numerical byte value mentioned is 5.
+Query: Sensor measurement data
+Response: (Altimeter: [0:19], Temperature: [0:11])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Altimeter: "X 19 >> 1 & 1048576 * - 16.0 /", Temperature: "X 11 >> 1 & 4096 * - 16.0 /")
+
+NEW_SENSOR = MPL3115A2;PROTOCOL = I2C;SENSOR_ADDR = 0x60;INIT_CMD = (0x26, 0xB9);NEW_SENSOR_READ;READ_CMD = (0x01);DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:15]);SCALE_FORMAT = (0: "x 256 /");

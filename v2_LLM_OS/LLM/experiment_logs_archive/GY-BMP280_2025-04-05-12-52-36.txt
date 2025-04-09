@@ -1,0 +1,269 @@
+Datasheet fetch latency: 1.884615182876587 seconds
+Number of chunks: 252
+Datasheet partition latency: 44.662707567214966 seconds
+Vector DB embedding latency: 3.406071424484253 seconds
+Query: I2C address hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: **5.2.2** **I²C read**
+
+To be able to read registers, first the register address must be sent in write mode (slave address
+111011X0). Then either a stop or a repeated start condition must be generated. After this the
+slave is addressed in read mode (RW = ‘1’) at address 111011X1, after which the slave sends
+out data from auto-incremented register addresses until a NOACKM and stop condition occurs.
+This is depicted in Figure 8, where two bytes are read from register 0xF6 and 0xF7.
+     Retrieved Chunk 2: Figure 7: I²C multiple byte write (not auto-incremented)
+     Retrieved Chunk 3: |Col1|Col2|Col3|Control byte|Col5|Data byte|Col7|Col8|
+|---|---|---|---|---|---|---|---|
+|Slave Address|RW|ACKS|Register address (A0h)|ACKS|Register data - address A0h|ACKS||
+|1 1 1 0 1 1 X 0|||1 0 1 0 0 0 0 0||bit7 bit6 bit5 bit4 bit3 bit2 bit1 bit0|||
+||||Control byte|||||
+||||Control byte||Data byte|||
+||||Register address (A1h)|ACKS|Register data - address A1h|ACKS|Stop|
+||||1 0 1 0 0 0 0 1||bit7 bit6 bit5 bit4 bit3 bit2 bit1 bit0||P|
+
+
+
+**5.2.2** **I²C read**
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. |Col1|Col2|Col3|Control byte|Col5|Data byte|Col7|Col8|
+|---|---|---|---|---|---|---|---|
+|Slave Address|RW|ACKS|Register address (A0h)|ACKS|Register data - address A0h|ACKS||
+|1 1 1 0 1 1 X 0|||1 0 1 0 0 0 0 0||bit7 bit6 bit5 bit4 bit3 bit2 bit1 bit0|||
+||||Control byte|||||
+||||Control byte||Data byte|||
+||||Register address (A1h)|ACKS|Register data - address A1h|ACKS|Stop|
+||||1 0 1 0 0 0 0 1||bit7 bit6 bit5 bit4 bit3 bit2 bit1 bit0||P|
+
+
+
+**5.2.2** **I²C read**
+
+Query: Initialize registers hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: 4.3.1 R EGISTER 0 X D0 *“* *ID* *”* .................................................................................................................... 24
+4.3.2 R EGISTER 0 X E0 *“* *RESET* *”* .............................................................................................................. 24
+4.3.3 R EGISTER 0 X F3 *“* *STATUS* *”* ............................................................................................................ 25
+     Retrieved Chunk 2: 8-bit registers are named calib00…calib25 and are stored at memory addresses 0x88…0xA1.
+The corresponding compensation words are named dig_T# for temperature compensation
+related values and dig_P# for pressure compensation related values. The mapping is shown in
+Table 17.
+     Retrieved Chunk 3: |Register Address LSB / MSB|Register content|Data type|
+|---|---|---|
+|0x88 / 0x89|dig_T1|unsigned short|
+|0x8A / 0x8B|dig_T2|signed short|
+|0x8C / 0x8D|dig_T3|signed short|
+|0x8E / 0x8F|dig_P1|unsigned short|
+|0x90 / 0x91|dig_P2|signed short|
+|0x92 / 0x93|dig_P3|signed short|
+|0x94 / 0x95|dig_P4|signed short|
+|0x96 / 0x97|dig_P5|signed short|
+|0x98 / 0x99|dig_P6|signed short|
+|0x9A / 0x9B|dig_P7|signed short|
+|0x9C / 0x9D|dig_P8|signed short|
+|0x9E / 0x9F|dig_P9|signed short|
+     Number of helpful chunks: 2
+Consolidated Final chunk: 1. 4.3.1 R EGISTER 0 X D0 *“* *ID* *”* .................................................................................................................... 24
+4.3.2 R EGISTER 0 X E0 *“* *RESET* *”* .............................................................................................................. 24
+4.3.3 R EGISTER 0 X F3 *“* *STATUS* *”* ............................................................................................................ 25
+2. |Register Address LSB / MSB|Register content|Data type|
+|---|---|---|
+|0x88 / 0x89|dig_T1|unsigned short|
+|0x8A / 0x8B|dig_T2|signed short|
+|0x8C / 0x8D|dig_T3|signed short|
+|0x8E / 0x8F|dig_P1|unsigned short|
+|0x90 / 0x91|dig_P2|signed short|
+|0x92 / 0x93|dig_P3|signed short|
+|0x94 / 0x95|dig_P4|signed short|
+|0x96 / 0x97|dig_P5|signed short|
+|0x98 / 0x99|dig_P6|signed short|
+|0x9A / 0x9B|dig_P7|signed short|
+|0x9C / 0x9D|dig_P8|signed short|
+|0x9E / 0x9F|dig_P9|signed short|
+
+Query: Trigger measurement read command hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: **3.11.2** **Trimming parameter readout**
+The trimming parameters are programmed into the devices’ non-volatile memory (NVM) during
+production and cannot be altered by the customer. Each compensation word is a 16-bit signed
+or unsigned integer value stored in two’s complement. As the memory is organized into 8-bit
+words, two words must always be combined in order to represent the compensation word. The
+8-bit registers are named calib00…calib25 and are stored at memory addresses 0x88…0xA1.
+     Retrieved Chunk 2: To read out data after a conversion, it is strongly recommended to use a burst read and not
+address every register individually. This will prevent a possible mix-up of bytes belonging to
+different measurements and reduce interface traffic. Data readout is done by starting a burst
+read from 0xF7 to 0xFC. The data are read out in an unsigned 20-bit format both for pressure
+and for temperature. It is strongly recommended to use the BMP280 API, available from Bosch
+     Retrieved Chunk 3: ```
+Please note that it is strongly advised to use the API available from Bosch Sensortec to perform
+readout and compensation. If this is not wanted, the code below can be applied at the user’s
+risk. Both pressure and temperature values are expected to be received in 20 bit format,
+positive, stored in a 32 bit signed integer.
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Sensor data output length in bytes
+Retrieved chunk:
+     Retrieved Chunk 1: Table 14: typical output data Rate (ODR) in normal mode [Hz]
+
+|t [ms] standby|Col2|Col3|Col4|Col5|Col6|Col7|Col8|
+|---|---|---|---|---|---|---|---|
+|0.5|62.5|125|250|500|1000|2000|4000|
+|166.67|14.71|7.66|3.91|1.98|0.99|0.50|0.25|
+|125.00|14.29|7.55|3.88|1.97|0.99|0.50|0.25|
+|83.33|13.51|7.33|3.82|1.96|0.99|0.50|0.25|
+|50.00|12.20|6.92|3.71|1.92|0.98|0.50|0.25|
+|26.32|10.00|6.15|3.48|1.86|0.96|0.49|0.25|
+
+
+
+Table 15: Sensor timing according to recommended settings (based on use cases)
+     Retrieved Chunk 2: Table 13: measurement time
+
+|Oversampling setting|Pressure oversampling|Temperature oversampling|Measurement time [ms]|Col5|Measurement rate [Hz]|Col7|
+|---|---|---|---|---|---|---|
+||||Typ|Max|Typ|Min|
+|Ultra low power|×1|×1|5.5|6.4|181.8|155.6|
+|Low power|×2|×1|7.5|8.7|133.3|114.6|
+|Standard resolution|×4|×1|11.5|13.3|87.0|75.0|
+|High resolution|×8|×1|19.5|22.5|51.3|44.4|
+|Ultra high resolution|×16|×2|37.5|43.2|26.7|23.1|
+
+
+
+BST-BMP280-DS001-11 | Revision 1.14 | May 2015 Bosch Sensortec
+     Retrieved Chunk 3: To read out data after a conversion, it is strongly recommended to use a burst read and not
+address every register individually. This will prevent a possible mix-up of bytes belonging to
+different measurements and reduce interface traffic. Data readout is done by starting a burst
+read from 0xF7 to 0xFC. The data are read out in an unsigned 20-bit format both for pressure
+and for temperature. It is strongly recommended to use the BMP280 API, available from Bosch
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. To read out data after a conversion, it is strongly recommended to use a burst read and not
+address every register individually. This will prevent a possible mix-up of bytes belonging to
+different measurements and reduce interface traffic. Data readout is done by starting a burst
+read from 0xF7 to 0xFC. The data are read out in an unsigned 20-bit format both for pressure
+and for temperature. It is strongly recommended to use the BMP280 API, available from Bosch
+
+Query: Sensor measurement data
+Retrieved chunk:
+     Retrieved Chunk 1: The BMP280 measurement period consists of a temperature and pressure measurement with
+selectable oversampling. After the measurement period, the data are passed through an
+optional IIR filter, which removes short-term fluctuations in pressure (e.g. caused by slamming a
+door). The flow is depicted in the diagram below.
+
+BST-BMP280-DS001-11 | Revision 1.14 | May 2015 Bosch Sensortec
+     Retrieved Chunk 2: -----
+
+|Col1|Datasheet BMP280 Digital Pressure Sensor|Page 13|
+|---|---|---|
+
+
+**3.3.2** **Temperature measurement**
+     Retrieved Chunk 3: - Temperature measurement
+
+  Ultra low power
+
+  - Low power
+
+  - Standard resolution
+
+  High resolution
+
+  Ultra high resolution
+
+BMP280 is equipped with a built-in IIR filter in order to minimize short-term disturbances in the
+output data caused by the slamming of a door or window. The filter coefficient ranges from 0
+(off) to 16.
+     Number of helpful chunks: 3
+Consolidated Final chunk: 1. The BMP280 measurement period consists of a temperature and pressure measurement with
+selectable oversampling. After the measurement period, the data are passed through an
+optional IIR filter, which removes short-term fluctuations in pressure (e.g. caused by slamming a
+door). The flow is depicted in the diagram below.
+
+BST-BMP280-DS001-11 | Revision 1.14 | May 2015 Bosch Sensortec
+2. -----
+
+|Col1|Datasheet BMP280 Digital Pressure Sensor|Page 13|
+|---|---|---|
+
+
+**3.3.2** **Temperature measurement**
+3. - Temperature measurement
+
+  Ultra low power
+
+  - Low power
+
+  - Standard resolution
+
+  High resolution
+
+  Ultra high resolution
+
+BMP280 is equipped with a built-in IIR filter in order to minimize short-term disturbances in the
+output data caused by the slamming of a door or window. The filter coefficient ranges from 0
+(off) to 16.
+
+Query: Formula to convert raw sensor data to measurement units
+Retrieved chunk:
+     Retrieved Chunk 1: **3.11.3** **Compensation formula**
+Please note that it is strongly advised to use the API available from Bosch Sensortec to perform
+readout and compensation. If this is not wanted, the code below can be applied at the user’s
+risk. Both pressure and temperature values are expected to be received in 20 bit format,
+positive, stored in a 32 bit signed integer.
+     Retrieved Chunk 2: Table 13: measurement time
+
+|Oversampling setting|Pressure oversampling|Temperature oversampling|Measurement time [ms]|Col5|Measurement rate [Hz]|Col7|
+|---|---|---|---|---|---|---|
+||||Typ|Max|Typ|Min|
+|Ultra low power|×1|×1|5.5|6.4|181.8|155.6|
+|Low power|×2|×1|7.5|8.7|133.3|114.6|
+|Standard resolution|×4|×1|11.5|13.3|87.0|75.0|
+|High resolution|×8|×1|19.5|22.5|51.3|44.4|
+|Ultra high resolution|×16|×2|37.5|43.2|26.7|23.1|
+
+
+
+BST-BMP280-DS001-11 | Revision 1.14 | May 2015 Bosch Sensortec
+     Retrieved Chunk 3: |Weather monitoring (lowest power)|Forced|Ultra low power|×1|×1|Off|0.14|1/60|26.4|
+|Elevator / floor change detection|Normal|Standard resolution|×4|×1|4|50.9|7.3|6.4|
+|Drop detection|Normal|Low power|×2|×1|Off|509|125|20.8|
+|Indoor navigation|Normal|Ultra high resolution|×16|×2|16|650|26.3|1.6|
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: I2C address hexadecimal value
+Response: 0x76
+Query: Initialize registers hexadecimal value
+Response: 0xB6, 0x27, 0xA0
+Query: Trigger measurement read command hexadecimal value
+Response: 0xF4, 0x25, 0xF7, 0xF8, 0xF9, 0xFA, 0xFB, 0xFC
+Query: Sensor data output length in bytes
+Response: The numerical byte value extracted is: 6.
+Query: Sensor measurement data
+Response: (pressure: [0:19], temperature: [24:43])
+Query: Formula to convert raw sensor data to measurement units
+Response: (pressure: "X 0.1718 * 30000 +", temperature: "X 8000 / 40 -")
+Latency for I2C address hexadecimal value:
+     retrieve_chunk: 0.631803035736084 seconds
+     validate_chunk: 10.668172121047974 seconds
+     function: 3.873643159866333 seconds
+Latency for Initialize registers hexadecimal value:
+     retrieve_chunk: 0.8200328350067139 seconds
+     validate_chunk: 7.57702898979187 seconds
+     function: 19.67265486717224 seconds
+Latency for Trigger measurement read command hexadecimal value:
+     retrieve_chunk: 0.6052842140197754 seconds
+     validate_chunk: 6.552525281906128 seconds
+     function: 22.79027223587036 seconds
+Latency for Sensor data output length in bytes:
+     retrieve_chunk: 0.9710369110107422 seconds
+     validate_chunk: 9.420947074890137 seconds
+     function: 11.468910694122314 seconds
+Latency for Sensor measurement data:
+     retrieve_chunk: 1.024005651473999 seconds
+     validate_chunk: 8.807198762893677 seconds
+     function: 27.035122632980347 seconds
+Latency for Formula to convert raw sensor data to measurement units:
+     retrieve_chunk: 0.4110853672027588 seconds
+     validate_chunk: 9.11313533782959 seconds
+     function: 37.993488073349 seconds
+Latency: 229.39259552955627 seconds
+End time: 1743828985.9473627

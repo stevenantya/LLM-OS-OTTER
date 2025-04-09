@@ -1,0 +1,8 @@
+Sensor name: MCP9808
+Query: What is the I2C address hexadecimal value?
+Response: 0x18
+Query: How do you initialize or reset the sensor? Include register addresses or command codes for initialization or soft reset or power-up.
+Response: INOP
+Query: What read command or register hexadecimal value triggers a sensor measurement or starts data acquisition? Which register address should be pointed to or read from?
+Response: INOP
+Query: What is the sensor data output length in bytes?

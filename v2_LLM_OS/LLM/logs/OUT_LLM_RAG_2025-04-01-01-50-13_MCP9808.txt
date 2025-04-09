@@ -1,0 +1,15 @@
+Query: I2C address hexadecimal value
+Response: 0x18
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: The numerical byte value extracted is: 2.
+Query: Sensor measurement data
+Response: (Temperature: [0:15])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Temperature: "X 4 >> X 16 % 0.0625 * +")
+
+
+NEW_SENSOR = MCP9808;PROTOCOL = I2C;SENSOR_ADDR = 0x18;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x05);DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:15]);SCALE_FORMAT = (0: "x 4096 % 0.0625 *");

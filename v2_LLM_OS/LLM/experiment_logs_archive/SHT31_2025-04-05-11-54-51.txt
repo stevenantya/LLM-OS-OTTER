@@ -1,0 +1,313 @@
+Datasheet fetch latency: 1.3181133270263672 seconds
+Number of chunks: 164
+Datasheet partition latency: 9.156419038772583 seconds
+Vector DB embedding latency: 2.8647892475128174 seconds
+Query: I2C address hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: **Table 8** I2C device addresses.
+###### **3.5 ALERT Pin **
+
+|SHT3x-DIS|I2C Address in Hex. representation|Condition|
+|---|---|---|
+|I2C address A|0x44 (default)|ADDR (pin 2) connected to logic low|
+|I2C address B|0x45|ADDR (pin 2) connected to logic high|
+     Retrieved Chunk 2: Through the appropriate wiring of the ADDR pin the I2C
+address can be selected (see Table 8 for the respective
+addresses). The ADDR pin can either be connected to
+logic high or logic low. The address of the sensor can be
+changed dynamically during operation by switching the
+level on the ADDR pin. The only constraint is that the
+level has to stay constant starting from the I2C start
+condition until the communication is finished. This allows
+
+to connect more than two SHT3x-DIS onto the same bus.
+     Retrieved Chunk 3: |Command|Hex Code|
+|---|---|
+|Periodic Measurem ART|ent with 0x2B32|
+|1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 S I2C Address W Command MSB Command LSB ACK ACK ACK I2C write header 16-bit command||
+|Table 12 Command for a periodic data acquisition with the ART feature (Clear blocks are controlled by the microcontroller, grey blocks by the sensor).|| **4.8 Break command / Stop Periodic Data ** **Acquisition Mode **
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. **Table 8** I2C device addresses.
+###### **3.5 ALERT Pin **
+
+|SHT3x-DIS|I2C Address in Hex. representation|Condition|
+|---|---|---|
+|I2C address A|0x44 (default)|ADDR (pin 2) connected to logic low|
+|I2C address B|0x45|ADDR (pin 2) connected to logic high|
+
+Query: Initialize registers hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |Command|Hex code|
+|---|---|
+|Read Out of status register|0xF32D|
+|||
+     Retrieved Chunk 2: **Table 18** Description of the status register.
+###### **Clear Status Register **
+
+All flags (Bit 15, 11, 10, 4) in the status register can be
+cleared (set to zero) by sending the command shown in
+
+**Table 19** Command to clear the status register (Clear
+blocks are controlled by the microcontroller, grey blocks by
+the sensor). **4.12 Checksum Calculation **
+
+|cleared (set to zero) by sendin Table 19.|ng the command shown in|
+|---|---|
+|Command|Hex Code|
+|Clear status register|0x 30 41|
+|||
+     Retrieved Chunk 3: interface only. The status register preserves its content. minimum of 1 µs to generate a reset of the sensor. **Soft Reset / Re-Initialization Hard Reset **
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. **Table 18** Description of the status register.
+###### **Clear Status Register **
+
+All flags (Bit 15, 11, 10, 4) in the status register can be
+cleared (set to zero) by sending the command shown in
+
+**Table 19** Command to clear the status register (Clear
+blocks are controlled by the microcontroller, grey blocks by
+the sensor). **4.12 Checksum Calculation **
+
+|cleared (set to zero) by sendin Table 19.|ng the command shown in|
+|---|---|
+|Command|Hex Code|
+|Clear status register|0x 30 41|
+|||
+
+Query: Trigger measurement read command hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |Command|Hex code|
+|---|---|
+|Read Out of status register|0xF32D|
+|||
+     Retrieved Chunk 2: Transmission of the measurement data can be initiated
+through the fetch data command shown in Table 11. If
+no measurement data is present the I2C read header is
+responded with a NACK (Bit 9 in Table 11) and the
+communication stops. After the read out command fetch
+data has been issued, the data memory is cleared, i.e.
+no measurement data is present.
+
+|Comman|Col2|Col3|d Hex code|Col5|Col6|
+|---|---|---|---|---|---|
+|Fetch Dat|||a 0x E0 00|||
+|||||||
+|||||||
+     Retrieved Chunk 3: |Command|Hex Code|
+|---|---|
+|Periodic Measurem ART|ent with 0x2B32|
+|1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 S I2C Address W Command MSB Command LSB ACK ACK ACK I2C write header 16-bit command||
+|Table 12 Command for a periodic data acquisition with the ART feature (Clear blocks are controlled by the microcontroller, grey blocks by the sensor).|| **4.8 Break command / Stop Periodic Data ** **Acquisition Mode **
+     Number of helpful chunks: 2
+Consolidated Final chunk: 1. Transmission of the measurement data can be initiated
+through the fetch data command shown in Table 11. If
+no measurement data is present the I2C read header is
+responded with a NACK (Bit 9 in Table 11) and the
+communication stops. After the read out command fetch
+data has been issued, the data memory is cleared, i.e.
+no measurement data is present.
+
+|Comman|Col2|Col3|d Hex code|Col5|Col6|
+|---|---|---|---|---|---|
+|Fetch Dat|||a 0x E0 00|||
+|||||||
+|||||||
+2. |Command|Hex Code|
+|---|---|
+|Periodic Measurem ART|ent with 0x2B32|
+|1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 S I2C Address W Command MSB Command LSB ACK ACK ACK I2C write header 16-bit command||
+|Table 12 Command for a periodic data acquisition with the ART feature (Clear blocks are controlled by the microcontroller, grey blocks by the sensor).|| **4.8 Break command / Stop Periodic Data ** **Acquisition Mode **
+
+Query: Sensor data output length in bytes
+Retrieved chunk:
+     Retrieved Chunk 1: All SHT3x-DIS commands and data are mapped to a 16bit address space. Additionally, data and commands are
+protected with a CRC checksum. This increases
+communication reliability. The 16 bits commands to the
+sensor already include a 3 bit CRC checksum. Data sent
+from and received by the sensor is always succeeded by
+an 8 bit CRC.
+     Retrieved Chunk 2: A measurement communication sequence consists of a
+START condition, the I2C write header (7-bit I2C device
+address plus 0 as the write bit) and a 16-bit
+measurement command. The proper reception of each
+byte is indicated by the sensor. It pulls the SDA pin low
+(ACK bit) after the falling edge of the 8th SCL clock to
+indicate the reception. A complete measurement cycle is
+depicted in Table 9.
+     Retrieved Chunk 3: In this mode one issued measurement command yields
+*a stream of data pairs* . Each data pair consists of one 16
+bit temperature and one 16 bit humidity value (in this
+order).
+
+In periodic mode different measurement commands can
+be selected. The corresponding 16 bit commands are
+shown in Table 10. They differ with respect to
+repeatability (low, medium and high) and data
+acquisition frequency (0.5, 1, 2, 4 & 10 measurements
+per second, mps). Clock stretching cannot be selected in
+this mode.
+     Number of helpful chunks: 1
+Consolidated Final chunk: 1. In this mode one issued measurement command yields
+*a stream of data pairs* . Each data pair consists of one 16
+bit temperature and one 16 bit humidity value (in this
+order).
+
+In periodic mode different measurement commands can
+be selected. The corresponding 16 bit commands are
+shown in Table 10. They differ with respect to
+repeatability (low, medium and high) and data
+acquisition frequency (0.5, 1, 2, 4 & 10 measurements
+per second, mps). Clock stretching cannot be selected in
+this mode.
+
+Query: Sensor measurement data
+Retrieved chunk:
+     Retrieved Chunk 1: In this mode one issued measurement command yields
+*a stream of data pairs* . Each data pair consists of one 16
+bit temperature and one 16 bit humidity value (in this
+order).
+
+In periodic mode different measurement commands can
+be selected. The corresponding 16 bit commands are
+shown in Table 10. They differ with respect to
+repeatability (low, medium and high) and data
+acquisition frequency (0.5, 1, 2, 4 & 10 measurements
+per second, mps). Clock stretching cannot be selected in
+this mode.
+     Retrieved Chunk 2: A measurement communication sequence consists of a
+START condition, the I2C write header (7-bit I2C device
+address plus 0 as the write bit) and a 16-bit
+measurement command. The proper reception of each
+byte is indicated by the sensor. It pulls the SDA pin low
+(ACK bit) after the falling edge of the 8th SCL clock to
+indicate the reception. A complete measurement cycle is
+depicted in Table 9.
+     Retrieved Chunk 3: Each transmission sequence begins with a START
+condition (S) and ends with a STOP condition (P) as
+described in the I2C-bus specification. Whenever the
+sensor is powered up, but not performing a
+measurement or communicating, it automatically enters
+idle state for energy saving. This idle state cannot be
+controlled by the user. **4.2 Starting a Measurement **
+     Number of helpful chunks: 2
+Consolidated Final chunk: 1. In this mode one issued measurement command yields
+*a stream of data pairs* . Each data pair consists of one 16
+bit temperature and one 16 bit humidity value (in this
+order).
+
+In periodic mode different measurement commands can
+be selected. The corresponding 16 bit commands are
+shown in Table 10. They differ with respect to
+repeatability (low, medium and high) and data
+acquisition frequency (0.5, 1, 2, 4 & 10 measurements
+per second, mps). Clock stretching cannot be selected in
+this mode.
+2. A measurement communication sequence consists of a
+START condition, the I2C write header (7-bit I2C device
+address plus 0 as the write bit) and a 16-bit
+measurement command. The proper reception of each
+byte is indicated by the sensor. It pulls the SDA pin low
+(ACK bit) after the falling edge of the 8th SCL clock to
+indicate the reception. A complete measurement cycle is
+depicted in Table 9.
+
+Query: Formula to convert raw sensor data to measurement units
+Retrieved chunk:
+     Retrieved Chunk 1: Measurement data is always transferred as 16-bit values
+(unsigned integer). These values are already linearized **4.14 Communication Timing **
+
+
+and compensated for temperature and supply voltage
+effects. Converting those raw values into a physical
+scale can be achieved using the following formulas.
+
+Relative humidity conversion formula (result in %RH):
+
+*RH* = *100*  *S* *RH*
+
+*2* *16* − 1
+     Retrieved Chunk 2: Relative humidity conversion formula (result in %RH):
+
+*RH* = *100*  *S* *RH*
+
+*2* *16* − 1
+
+Temperature conversion formula (result in °C & °F):
+##### T   C  = − 45 + 175  2 16 S T − 1 T   F = − 49 + 315  2 16 S T − 1
+
+S RH and S T denote the raw sensor output for humidity
+and temperature, respectively. The formulas work only
+correctly when S RH and S T are used in decimal
+representation.
+     Retrieved Chunk 3: |Parameter|Symbol|Conditions|Min.|Typ.|Max.|Units|Comments|
+|---|---|---|---|---|---|---|---|
+|Power-up time|t PU|After hard reset, V ≥ V DD POR|-|0.5|1.5|ms|Time between V reaching DD V and sensor entering idle POR state|
+|Measurement duration|t MEAS,l|Low repeatability|-|2.5|4.5|ms|The three repeatability modes differ with respect to measurement duration, noise level and energy consumption.|
+||t MEAS,m|Medium repeatability|-|4.5|6.5|ms||
+||t MEAS,h|High repeatability|-|12.5|15.5|ms||
+     Number of helpful chunks: 2
+Consolidated Final chunk: 1. Measurement data is always transferred as 16-bit values
+(unsigned integer). These values are already linearized **4.14 Communication Timing **
+
+
+and compensated for temperature and supply voltage
+effects. Converting those raw values into a physical
+scale can be achieved using the following formulas.
+
+Relative humidity conversion formula (result in %RH):
+
+*RH* = *100*  *S* *RH*
+
+*2* *16* − 1
+2. Relative humidity conversion formula (result in %RH):
+
+*RH* = *100*  *S* *RH*
+
+*2* *16* − 1
+
+Temperature conversion formula (result in °C & °F):
+##### T   C  = − 45 + 175  2 16 S T − 1 T   F = − 49 + 315  2 16 S T − 1
+
+S RH and S T denote the raw sensor output for humidity
+and temperature, respectively. The formulas work only
+correctly when S RH and S T are used in decimal
+representation.
+
+Query: I2C address hexadecimal value
+Response: 0x44
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: 0x24, 0x00, 0x2C, 0x06, 0x24, 0x00
+Query: Sensor data output length in bytes
+Response: The numerical byte value extracted is 6.
+Query: Sensor measurement data
+Response: (Temperature: [0:15], Relative Humidity: [16:31])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Temperature: "X 175 * 65535 / -45 +", Relative Humidity: "X 100 * 65535 /")
+Latency for I2C address hexadecimal value:
+     retrieve_chunk: 0.5866928100585938 seconds
+     validate_chunk: 7.785520553588867 seconds
+     function: 3.0695102214813232 seconds
+Latency for Initialize registers hexadecimal value:
+     retrieve_chunk: 0.613227367401123 seconds
+     validate_chunk: 10.445772886276245 seconds
+     function: 11.05800461769104 seconds
+Latency for Trigger measurement read command hexadecimal value:
+     retrieve_chunk: 0.6145052909851074 seconds
+     validate_chunk: 8.089637517929077 seconds
+     function: 36.55709648132324 seconds
+Latency for Sensor data output length in bytes:
+     retrieve_chunk: 0.8187594413757324 seconds
+     validate_chunk: 5.529345512390137 seconds
+     function: 16.38406491279602 seconds
+Latency for Sensor measurement data:
+     retrieve_chunk: 0.3726017475128174 seconds
+     validate_chunk: 10.277826070785522 seconds
+     function: 17.964107990264893 seconds
+Latency for Formula to convert raw sensor data to measurement units:
+     retrieve_chunk: 1.0819127559661865 seconds
+     validate_chunk: 5.119273900985718 seconds
+     function: 14.134856224060059 seconds
+Latency: 163.8434681892395 seconds
+End time: 1743825455.1496773

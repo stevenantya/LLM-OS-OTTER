@@ -1,0 +1,14 @@
+Query: I2C address hexadecimal value
+Response: 0x38
+Query: Initialize registers hexadecimal value
+Response: 0xBE, 0x08, 0x00
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 6
+Query: Sensor measurement data
+Response: (RelativeHumidity: [8:27], Temperature: [28:47])
+Query: Formula to convert raw sensor data to measurement units
+Response: (RelativeHumidity: "X 100.0 * 1048576.0 /", Temperature: "X 200.0 * 1048576.0 / 50.0 –")
+
+NEW_SENSOR = AHT20;PROTOCOL = I2C;SENSOR_ADDR = 0x38;INIT_CMD = (0xBE, 0x08, 0x00);NEW_SENSOR_READ;READ_CMD = (0xAC, 0x33, 0x00);DATA_LEN = 6;DATA_KEY_VAL = (0: "HUM", 1: "TEMP");DATA_FORMAT = (0: [12:31], 1: [28:47]);SCALE_FORMAT = (0: "x 100.0 * 1048576.0 / 50.0 - 50.0 +", 1: "x 200.0 * 1048576.0 / 50 -");

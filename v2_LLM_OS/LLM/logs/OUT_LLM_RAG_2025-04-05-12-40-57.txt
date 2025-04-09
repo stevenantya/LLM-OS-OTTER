@@ -1,0 +1,8 @@
+Sensor name: VL530X
+Query: I2C address hexadecimal value
+Response: 0x52
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes

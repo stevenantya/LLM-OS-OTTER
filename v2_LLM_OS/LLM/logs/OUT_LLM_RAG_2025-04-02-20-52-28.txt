@@ -1,0 +1,13 @@
+Sensor name: TMP102
+Query: I2C address hexadecimal value
+Response: 0x48
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 2
+Query: Sensor measurement data
+Response: (Temperature: [0:11])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Temperature: "X 4 >> X 11 >> 1 & 4096 * - 0.0625 *")

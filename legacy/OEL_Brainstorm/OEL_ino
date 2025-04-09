@@ -1,0 +1,118 @@
+#include <mbed.h>
+#include <map>
+#include <cstring>
+#include <string>
+#include <Wire.h>
+
+#define MS(x) chrono::milliseconds(x)
+
+using namespace std; // we will be using std::chrono
+using namespace rtos; // we will be using rtos::ThisThread
+using namespace std::chrono_literals;
+
+std::map<String, Thread*> sensorThreads;
+
+struct SensorConfig {
+    String name;
+    String protocol;
+    String address;
+    String reg_addr;
+    float scale_factor;
+    String post_process;
+};
+
+SensorConfig parseSensorConfig(String input) {
+    SensorConfig config;
+    int start = 0;
+    int end = input.indexOf(';');
+    Serial.print(input);
+    while (end != -1) {
+        String line = input.substring(start, end);
+        line.trim();
+
+        if (line.startsWith("NEW_SENSOR")) {
+            config.name = line.substring(line.indexOf(' ') + 1);
+        } else if (line.startsWith("PROTOCOL")) {
+            config.protocol = line.substring(line.indexOf(' ') + 1);
+        } else if (line.startsWith("ADDR")) {
+            config.address = line.substring(line.indexOf(' ') + 1);
+        } else if (line.startsWith("REGISTER")) {
+            config.reg_addr = line.substring(line.indexOf(' ') + 1);
+        } else if (line.startsWith("SCALE")) {
+            config.scale_factor = line.substring(line.indexOf(' ') + 1).toFloat();
+        } else if (line.startsWith("POST_PROCESS")) {
+            config.post_process = line.substring(line.indexOf(' ') + 1);
+        } else if (line.startsWith("END_SENSOR")) {
+            break;
+        }
+
+        start = end + 1;
+        end = input.indexOf(';', start);
+    }
+
+    return config;
+}
+
+void thread_function(SensorConfig config) {
+    osThreadId_t my_id = ThisThread::get_id();
+    //Initialize sensor
+
+    for (;;) {
+        Serial.print("Running Sensor Thread: ");
+        Serial.print(config.name);
+        Serial.print("\n");
+        //Loop reading the sensor here
+        ThisThread::sleep_for(1s);
+    }
+}
+
+void create_new_thread(SensorConfig config) {
+  SensorConfig *config_ptr = new SensorConfig(config); // Dynamically allocate memory
+  char * cstr = new char [config.name.length()+1];
+  std::strcpy (cstr, config.name.c_str()); //What if I have 2 of the same sensors
+  Thread *new_thread = new Thread(osPriorityNormal, OS_STACK_SIZE, nullptr, cstr);
+  new_thread->start([config_ptr]() {
+      thread_function(*config_ptr);
+      delete config_ptr; // Free the memory after use
+  });
+  sensorThreads[config.name] = new_thread; 
+}
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+}
+void loop() {
+  Serial.print("Main thread started.\n");
+
+  while (true) {
+    if (Serial.available()) {
+      String str_input = Serial.readString();
+      str_input.trim();
+
+      if (str_input.startsWith("NEW_SENSOR")) {
+        SensorConfig config = parseSensorConfig(str_input);
+        create_new_thread(config);
+      } else if (str_input.startsWith("SENSOR_REMOVE")) {
+          String sensor_name = str_input.substring(str_input.indexOf(' ') + 1);
+          sensor_name.trim();
+          if (sensorThreads.find(sensor_name) != sensorThreads.end()) {
+              Thread *thread = sensorThreads[sensor_name];
+              thread->terminate(); // Terminate the thread
+              delete thread; // Clean up the thread object
+              Serial.print("Freeing thread");
+              Serial.print("\n");
+              sensorThreads.erase(sensor_name); // Remove from map
+              Serial.print("Removed Sensor: ");
+              Serial.print(sensor_name);
+              Serial.print("\n");
+              Serial.print("Returning to OS");
+              Serial.print("\n");
+          }
+      } 
+      //TODO: Sensor Suspend and Resume
+      //TODO: Sensor Resolution
+    }
+    ThisThread::sleep_for(1ms);
+  }
+}

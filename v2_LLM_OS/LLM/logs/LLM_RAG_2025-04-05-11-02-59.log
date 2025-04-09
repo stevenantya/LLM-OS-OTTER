@@ -1,0 +1,148 @@
+2025-04-05 11:02:59,831 - root - DEBUG - Loaded model client=<openai.resources.chat.completions.completions.Completions object at 0x7e977bde4220> async_client=<openai.resources.chat.completions.completions.AsyncCompletions object at 0x7e977bde6b30> root_client=<openai.OpenAI object at 0x7e977ee98d90> root_async_client=<openai.AsyncOpenAI object at 0x7e977bde4280> model_name='o3-mini' model_kwargs={} openai_api_key=SecretStr('**********')
+2025-04-05 11:02:59,832 - root - INFO - Sensor name: AHT20
+2025-04-05 11:02:59,844 - primp.utils - DEBUG - Loaded CA certs
+2025-04-05 11:02:59,848 - rquest.connect - DEBUG - starting new connection: https://lite.duckduckgo.com/
+2025-04-05 11:02:59,848 - rquest.util.client.connect.dns - DEBUG - resolving lite.duckduckgo.com
+2025-04-05 11:02:59,867 - rquest.util.client.connect.http - DEBUG - connecting to 20.43.161.105:443
+2025-04-05 11:02:59,874 - rquest.util.client.connect.http - DEBUG - connected to 20.43.161.105:443
+2025-04-05 11:02:59,882 - rquest.util.client.pool - DEBUG - pooling idle connection for PoolKey { uri: https://lite.duckduckgo.com/, alpn_protos: None, network: default }
+2025-04-05 11:03:00,780 - cookie_store.cookie_store - DEBUG - inserting secure cookie 'kl'
+2025-04-05 11:03:00,780 - primp - INFO - response: https://lite.duckduckgo.com/lite/ 200
+2025-04-05 11:03:00,780 - duckduckgo_search.DDGS - DEBUG - _get_url() https://lite.duckduckgo.com/lite/ 200
+2025-04-05 11:03:00,788 - root - DEBUG - Datasheet URL: https://asairsensors.com/wp-content/uploads/2021/09/Data-Sheet-AHT20-Humidity-and-Temperature-Sensor-ASAIR-V1.0.03.pdf
+2025-04-05 11:03:00,788 - root - DEBUG - Downloading datasheet...
+2025-04-05 11:03:00,789 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): asairsensors.com:443
+2025-04-05 11:03:02,111 - urllib3.connectionpool - DEBUG - https://asairsensors.com:443 "GET /wp-content/uploads/2021/09/Data-Sheet-AHT20-Humidity-and-Temperature-Sensor-ASAIR-V1.0.03.pdf HTTP/1.1" 200 996550
+2025-04-05 11:03:03,247 - root - DEBUG - Datasheet already exists in the database.
+2025-04-05 11:03:03,247 - root - DEBUG - Loading datasheet...
+2025-04-05 11:03:03,247 - root - DEBUG - Datasheet loaded!
+2025-04-05 11:03:03,256 - root - DEBUG - Datasheet partition exists. Loaded from local file
+2025-04-05 11:03:03,257 - root - DEBUG - 60
+2025-04-05 11:03:03,321 - faiss.loader - DEBUG - Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2025-04-05 11:03:03,321 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2025-04-05 11:03:03,358 - faiss.loader - INFO - Successfully loaded faiss with AVX512 support.
+2025-04-05 11:03:03,361 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-04-05 11:03:03,364 - root - DEBUG - Vector DB found, loaded from local file
+2025-04-05 11:03:03,364 - root - INFO - Query: I2C address hexadecimal value
+2025-04-05 11:03:03,366 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): openaipublic.blob.core.windows.net:443
+2025-04-05 11:03:04,466 - urllib3.connectionpool - DEBUG - https://openaipublic.blob.core.windows.net:443 "GET /encodings/cl100k_base.tiktoken HTTP/1.1" 200 1681126
+2025-04-05 11:03:07,198 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x7e977b7d5fc0>, 'json_data': {'input': [[40, 17, 34, 2686, 70822, 907]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-05 11:03:07,200 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-05 11:03:07,201 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-05 11:03:07,218 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7e977b77b8e0>
+2025-04-05 11:03:07,218 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7e97818ccec0> server_hostname='api.openai.com' timeout=None
+2025-04-05 11:03:07,229 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7e977b77b670>
+2025-04-05 11:03:07,229 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:07,230 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-05 11:03:07,230 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-05 11:03:07,230 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-05 11:03:07,230 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:08,357 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 03:03:08 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-ada-002-v2'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'208'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-964f7b64-tm7kt'), (b'x-envoy-upstream-service-time', b'98'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999994'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_a32edc3936f59d01a8a6e35d1a202b04'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=n2UQlF2BowfeGOqqbCSJRvXgiYTslWMEGJGFetf6gEI-1743822188-1.0.1.1-H_AuGcuEv.M4XJz3ujGD4SvS92WNtAF5k4P.Mdeb3AO0SqsvId4U2To0eTzk9DUALrixUiwosKI9qg0jNkYqMWT.8yZLLVekw_unTfw4m0E; path=/; expires=Sat, 05-Apr-25 03:33:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=xar23mg0xLHray1SJJBFzQmIMC_DYk1oRs2ehc0RVGI-1743822188236-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92b5cf7e8b30821c-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-05 11:03:08,358 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-04-05 11:03:08,358 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-05 11:03:08,359 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-05 11:03:08,359 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-05 11:03:08,359 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-05 11:03:08,359 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers([('date', 'Sat, 05 Apr 2025 03:03:08 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-allow-origin', '*'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-model', 'text-embedding-ada-002-v2'), ('openai-organization', 'user-xo5nxcg539ixphtlpjjluiw6'), ('openai-processing-ms', '208'), ('openai-version', '2020-10-01'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('via', 'envoy-router-964f7b64-tm7kt'), ('x-envoy-upstream-service-time', '98'), ('x-ratelimit-limit-requests', '3000'), ('x-ratelimit-limit-tokens', '1000000'), ('x-ratelimit-remaining-requests', '2999'), ('x-ratelimit-remaining-tokens', '999994'), ('x-ratelimit-reset-requests', '20ms'), ('x-ratelimit-reset-tokens', '0s'), ('x-request-id', 'req_a32edc3936f59d01a8a6e35d1a202b04'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=n2UQlF2BowfeGOqqbCSJRvXgiYTslWMEGJGFetf6gEI-1743822188-1.0.1.1-H_AuGcuEv.M4XJz3ujGD4SvS92WNtAF5k4P.Mdeb3AO0SqsvId4U2To0eTzk9DUALrixUiwosKI9qg0jNkYqMWT.8yZLLVekw_unTfw4m0E; path=/; expires=Sat, 05-Apr-25 03:33:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=xar23mg0xLHray1SJJBFzQmIMC_DYk1oRs2ehc0RVGI-1743822188236-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '92b5cf7e8b30821c-SIN'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-04-05 11:03:08,359 - openai._base_client - DEBUG - request_id: req_a32edc3936f59d01a8a6e35d1a202b04
+2025-04-05 11:03:08,369 - root - DEBUG - Retrieved Chunk 1: After the transmission is initiated, the first byte of the
+subsequent I2C transmission includes the 7-bit I2C
+device address 0x38 and a SDA direction bit x (read R:
+‘1’, write W: ‘0’). After the falling edge of the 8th SCL
+clock, the SDA pin (ACK) is pulled low to indicate that
+the sensor data reception is normal. After issuing the
+initialization command 0xBE and the measurement
+command 0xAC, the MCU must wait until the
+measurement is completed. The basic commands are
+2025-04-05 11:03:08,375 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            I2C address hexadecimal value\n\n            CHUNK:\n            After the transmission is initiated, the first byte of the\nsubsequent I2C transmission includes the 7-bit I2C\ndevice address 0x38 and a SDA direction bit x (read R:\n‘1’, write W: ‘0’). After the falling edge of the 8th SCL\nclock, the SDA pin (ACK) is pulled low to indicate that\nthe sensor data reception is normal. After issuing the\ninitialization command 0xBE and the measurement\ncommand 0xAC, the MCU must wait until the\nmeasurement is completed. The basic commands are\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-05 11:03:08,375 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-05 11:03:08,376 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-05 11:03:08,391 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7e9773dddfc0>
+2025-04-05 11:03:08,391 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7e977efc07c0> server_hostname='api.openai.com' timeout=None
+2025-04-05 11:03:08,402 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7e9773dddd50>
+2025-04-05 11:03:08,402 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:08,402 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-05 11:03:08,402 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-05 11:03:08,402 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-05 11:03:08,402 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:10,200 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 03:03:10 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1069'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199797'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'60ms'), (b'x-request-id', b'req_d6397a8e64df9ee65500326ddcaf139d'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=kAN43sIq2_JVq4b7ZqLf.gOz8w9EzImpVRLUy2Tdr4Q-1743822190-1.0.1.1-oJtqeZzNu4HcKOp0zCfXmzGmUD9TlvXjG7jGyiNcF88EEjBTnWtzJp0RGaHnpGgiztXDyO6H7R5pp93Pm7kKToU1_AakJHrYGERk9anrXZ8; path=/; expires=Sat, 05-Apr-25 03:33:10 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=k2KFh28nDWQS6zv0EftUJNPzLxlgFxWvEaN7B_6B0o4-1743822190131-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92b5cf85ddb5ce51-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-05 11:03:10,201 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-05 11:03:10,201 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-05 11:03:10,201 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-05 11:03:10,201 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-05 11:03:10,201 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-05 11:03:10,201 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Sat, 05 Apr 2025 03:03:10 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-xo5nxcg539ixphtlpjjluiw6'), ('openai-processing-ms', '1069'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '500'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '499'), ('x-ratelimit-remaining-tokens', '199797'), ('x-ratelimit-reset-requests', '120ms'), ('x-ratelimit-reset-tokens', '60ms'), ('x-request-id', 'req_d6397a8e64df9ee65500326ddcaf139d'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=kAN43sIq2_JVq4b7ZqLf.gOz8w9EzImpVRLUy2Tdr4Q-1743822190-1.0.1.1-oJtqeZzNu4HcKOp0zCfXmzGmUD9TlvXjG7jGyiNcF88EEjBTnWtzJp0RGaHnpGgiztXDyO6H7R5pp93Pm7kKToU1_AakJHrYGERk9anrXZ8; path=/; expires=Sat, 05-Apr-25 03:33:10 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=k2KFh28nDWQS6zv0EftUJNPzLxlgFxWvEaN7B_6B0o4-1743822190131-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '92b5cf85ddb5ce51-SIN'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-04-05 11:03:10,201 - openai._base_client - DEBUG - request_id: req_d6397a8e64df9ee65500326ddcaf139d
+2025-04-05 11:03:10,211 - root - DEBUG - yes
+2025-04-05 11:03:10,211 - root - DEBUG - YES. Chunk is helpful, proceeding with the next steps
+2025-04-05 11:03:10,211 - root - DEBUG - Retrieved Chunk 2: Figure 16 Typical application circuit
+
+Note: 1. The pull-up voltage of SCL and SDA must be powered by VDD,
+and the power supply voltage range is 2.0 ~ 5.5V;
+2. Add 100nF decoupling capacitor between VDD and GND;
+3. AHT20 can share I2C bus with other I2C devices.
+2025-04-05 11:03:10,214 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            I2C address hexadecimal value\n\n            CHUNK:\n            Figure 16 Typical application circuit\n\nNote: 1. The pull-up voltage of SCL and SDA must be powered by VDD,\nand the power supply voltage range is 2.0 ~ 5.5V;\n2. Add 100nF decoupling capacitor between VDD and GND;\n3. AHT20 can share I2C bus with other I2C devices.\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-05 11:03:10,215 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-05 11:03:10,215 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:10,215 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-05 11:03:10,215 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-05 11:03:10,215 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-05 11:03:10,215 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:12,316 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 03:03:12 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'1828'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199852'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'44ms'), (b'x-request-id', b'req_4e24f1600476ee77f88d349c4a42d500'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92b5cf913b8bce51-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-05 11:03:12,317 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-05 11:03:12,317 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-05 11:03:12,317 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-05 11:03:12,317 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-05 11:03:12,317 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-05 11:03:12,317 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 03:03:12 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '1828', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199852', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '44ms', 'x-request-id': 'req_4e24f1600476ee77f88d349c4a42d500', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92b5cf913b8bce51-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-05 11:03:12,317 - openai._base_client - DEBUG - request_id: req_4e24f1600476ee77f88d349c4a42d500
+2025-04-05 11:03:12,318 - root - DEBUG - no
+2025-04-05 11:03:12,318 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-05 11:03:12,318 - root - DEBUG - Retrieved Chunk 3: 5. Calculate the temperature and humidity values.
+
+Note: The calibration status check in the first step
+only needs to be checked at power-on. No operation
+is required during the normal acquisition process.
+
+Trigger measurement data
+
+|Col1|Col2|Col3|Col4|Col5|Col6|Col7|Col8|Col9|Col10|Col11|Col12|Col13|Col14|Col15|Col16|Col17|Col18|Col19|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+||I²C address + write|||||||||Trigger measurement 0xAC|||||||||
+2025-04-05 11:03:12,321 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "\n            You are an assistant that validates if a provided document chunk is helpful in answering the user's query.\n\n            QUERY:\n            I2C address hexadecimal value\n\n            CHUNK:\n            5. Calculate the temperature and humidity values.\n\nNote: The calibration status check in the first step\nonly needs to be checked at power-on. No operation\nis required during the normal acquisition process.\n\nTrigger measurement data\n\n|Col1|Col2|Col3|Col4|Col5|Col6|Col7|Col8|Col9|Col10|Col11|Col12|Col13|Col14|Col15|Col16|Col17|Col18|Col19|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||I²C address + write|||||||||Trigger measurement 0xAC|||||||||\n\n            Is this chunk helpful for answering the query? Respond ONLY with 'Yes' or 'No'.\n            ", 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-05 11:03:12,322 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-05 11:03:12,322 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:12,322 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-05 11:03:12,322 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-05 11:03:12,322 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-05 11:03:12,322 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:15,483 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 03:03:15 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'2751'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199797'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'60ms'), (b'x-request-id', b'req_9acc917c2d99a4c8aecc06ca7145afbf'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92b5cf9e5c80ce51-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-05 11:03:15,484 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-05 11:03:15,484 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-05 11:03:15,484 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-05 11:03:15,484 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-05 11:03:15,484 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-05 11:03:15,484 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 03:03:15 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '2751', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199797', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '60ms', 'x-request-id': 'req_9acc917c2d99a4c8aecc06ca7145afbf', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92b5cf9e5c80ce51-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-05 11:03:15,484 - openai._base_client - DEBUG - request_id: req_9acc917c2d99a4c8aecc06ca7145afbf
+2025-04-05 11:03:15,485 - root - DEBUG - no
+2025-04-05 11:03:15,485 - root - DEBUG - NO. Chunk not helpful, moving to next chunk
+2025-04-05 11:03:15,488 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': '\n            You are a helpful assistant and an expert in I2C Sensors. Assume ideal and default condition.\n\n            Raw context (might be inaccurate):\n            1. After the transmission is initiated, the first byte of the\nsubsequent I2C transmission includes the 7-bit I2C\ndevice address 0x38 and a SDA direction bit x (read R:\n‘1’, write W: ‘0’). After the falling edge of the 8th SCL\nclock, the SDA pin (ACK) is pulled low to indicate that\nthe sensor data reception is normal. After issuing the\ninitialization command 0xBE and the measurement\ncommand 0xAC, the MCU must wait until the\nmeasurement is completed. The basic commands are\n\n\n            From your knowledge, what is the I2C address of AHT20? Respond ONLY the hexadecimal value.\n            ', 'role': 'user'}], 'model': 'o3-mini', 'stream': False}}
+2025-04-05 11:03:15,489 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-04-05 11:03:15,489 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:15,489 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-05 11:03:15,489 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-05 11:03:15,489 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-05 11:03:15,489 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-05 11:03:18,391 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 05 Apr 2025 03:03:18 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-xo5nxcg539ixphtlpjjluiw6'), (b'openai-processing-ms', b'2536'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'199806'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'58ms'), (b'x-request-id', b'req_76a417b4563429935612fcdbc1bd7de5'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92b5cfb249dfce51-SIN'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-05 11:03:18,392 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-05 11:03:18,392 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-05 11:03:18,392 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-05 11:03:18,392 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-05 11:03:18,392 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-05 11:03:18,392 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Sat, 05 Apr 2025 03:03:18 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xo5nxcg539ixphtlpjjluiw6', 'openai-processing-ms': '2536', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '199806', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '58ms', 'x-request-id': 'req_76a417b4563429935612fcdbc1bd7de5', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92b5cfb249dfce51-SIN', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-05 11:03:18,392 - openai._base_client - DEBUG - request_id: req_76a417b4563429935612fcdbc1bd7de5
+2025-04-05 11:03:18,393 - root - DEBUG - Response: 0x38
+2025-04-05 11:03:18,523 - httpcore.connection - DEBUG - close.started
+2025-04-05 11:03:18,523 - httpcore.connection - DEBUG - close.complete
+2025-04-05 11:03:18,523 - httpcore.connection - DEBUG - close.started
+2025-04-05 11:03:18,524 - httpcore.connection - DEBUG - close.complete

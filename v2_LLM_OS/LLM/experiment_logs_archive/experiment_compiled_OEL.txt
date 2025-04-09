@@ -1,0 +1,365 @@
+TMP102
+    NEW_SENSOR = TMP102;PROTOCOL = I2C;SENSOR_ADDR = 0x48;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [4:15]);SCALE_FORMAT = (0: "X 11 >> 4096 * X - 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x48
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [4:15])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 11 >> 4096 * X - 0.0625 *")
+
+    OK
+    NEW_SENSOR = TMP102;PROTOCOL = I2C;SENSOR_ADDR = 0x48;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:11]);SCALE_FORMAT = (0: "X 2048 / 4096 * X - 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x48
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: The numerical byte value extracted is: 2.
+    Query: Sensor measurement data
+    Response: (Temperature: [0:11])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 2048 / 4096 * X - 0.0625 *")
+
+
+    NEW_SENSOR = TMP102;PROTOCOL = I2C;SENSOR_ADDR = 0x48;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [4:15]);SCALE_FORMAT = (0:  "X 4 >> DUP 2048 / 4096 * - 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x48
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [4:15])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 4 >> DUP 2048 / 4096 * - 0.0625 *")
+
+
+    NEW_SENSOR = TMP102;PROTOCOL = I2C;SENSOR_ADDR = 0x48;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:11]);SCALE_FORMAT = (0: "X 11 >> 4096 * - 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x48
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [0:11])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 11 >> 4096 * - 0.0625 *")
+
+    NEW_SENSOR = TMP102;PROTOCOL = I2C;SENSOR_ADDR = 0x48;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:11]);SCALE_FORMAT = (0: "X 4 >> X 4 >> 11 >> 4096 * - 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x48
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [0:11])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 4 >> X 4 >> 11 >> 4096 * - 0.0625 *")
+
+    OK
+    NEW_SENSOR = TMP102;PROTOCOL = I2C;SENSOR_ADDR = 0x48;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:11]);SCALE_FORMAT = (0: "X X 11 >> 4096 * - 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x48
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [0:11])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X X 11 >> 4096 * - 0.0625 *")
+
+SHT31
+    NEW_SENSOR = SHT31;PROTOCOL = I2C;SENSOR_ADDR = 0x44;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x24, 0x00, 0x2C, 0x06, 0x24, 0x00);DATA_LEN = 6;DATA_KEY_VAL = (0: "TEMP", 1: "HUM");DATA_FORMAT = (0: [0:15], 1: [16:31]);SCALE_FORMAT = (0:  "X 175 * 65535 / -45 +", 1: "X 100 * 65535 /");
+    Query: I2C address hexadecimal value
+    Response: 0x44
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: 0x24, 0x00, 0x2C, 0x06, 0x24, 0x00
+    Query: Sensor data output length in bytes
+    Response: The numerical byte value extracted is 6.
+    Query: Sensor measurement data
+    Response: (Temperature: [0:15], Relative Humidity: [16:31])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 175 * 65535 / -45 +", Relative Humidity: "X 100 * 65535 /")
+
+
+    NEW_SENSOR = SHT31;PROTOCOL = I2C;SENSOR_ADDR = 0x44;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x2C, 0x06, 0x2C, 0x10, 0x24, 0x00, 0x24, 0x0B, 0x24, 0x16);DATA_LEN = 6;DATA_KEY_VAL = (0: "TEMP", 1: "HUM");DATA_FORMAT = (0: [0:15], 1: [16:31]);SCALE_FORMAT = (0: "X 175 * 65535 / -45 +", 1: "X 100 * 65535 /");
+    Query: I2C address hexadecimal value
+    Response: 0x44
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: 0x2C06, 0x2C0D, 0x2C10, 0x2400, 0x240B, 0x2416
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (temperature: [0:15], humidity: [16:31])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (temperature: "X 175 * 65535 / -45 +", humidity: "X 100 * 65535 /")
+
+
+    NEW_SENSOR = SHT31;PROTOCOL = I2C;SENSOR_ADDR = 0x44;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 6;DATA_KEY_VAL = (0: "TEMP", 1: "HUM");DATA_FORMAT = (0: [0:15], 1: [24:39]);SCALE_FORMAT = (0:  "X 175 * 65535 / -45 +", 1: "X 100 * 65535 /");
+    Query: I2C address hexadecimal value
+    Response: 0x44
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (Temperature: [0:15], Humidity: [24:39])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 175 * 65535 / -45 +", Humidity: "X 100 * 65535 /")
+
+
+
+    NEW_SENSOR = SHT31;PROTOCOL = I2C;SENSOR_ADDR = 0x44;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x24, 0x00, 0x2C, 0x06);DATA_LEN = 6;DATA_KEY_VAL = (0: "TEMP", 1: "HUM");DATA_FORMAT = (0: [0:15], 1: [16:31]);SCALE_FORMAT = (0: "X 65535 / 175 * -45 +", 1: "X 65535 / 100 *");
+
+    Query: I2C address hexadecimal value
+    Response: 0x44
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: 0x2400, 0x2C06
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (Temperature: [0:15], Relative Humidity: [16:31])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 65535 / 175 * -45 +", Relative Humidity: "X 65535 / 100 *")
+
+
+    NEW_SENSOR = SHT31;PROTOCOL = I2C;SENSOR_ADDR = 0x44;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x24, 0x00, 0x2C, 0x06, 0x2B, 0x32, 0xE0, 0x00);DATA_LEN = 6;DATA_KEY_VAL = (0: "TEMP", 1: "HUM");DATA_FORMAT = (0: [0:15], 1: [16:31]);SCALE_FORMAT = (0: "X 175 * 65535 / -45 +", 1: "X 100 * 65535 /");
+
+    Query: I2C address hexadecimal value
+    Response: 0x44
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: 0x2400, 0x2C06, 0x2B32, 0xE000
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (temperature: [0:15], humidity: [16:31])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (temperature: "X 175 * 65535 / -45 +", humidity: "X 100 * 65535 /")
+
+
+    NEW_SENSOR = SHT31;PROTOCOL = I2C;SENSOR_ADDR = 0x44;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x24, 0x00, 0x24, 0x0B, 0x24, 0x16, 0x2C, 0x06, 0x2C, 0x0D, 0x2C, 0x10, 0x2B, 0x32, 0xE0, 0x00);DATA_LEN = 6;DATA_KEY_VAL = (0: "TEMP", 1: "HUM");DATA_FORMAT = (0: [0:15], 1: [24:39]);SCALE_FORMAT = (0: "X 175 * 65535 / -45 +", 1: "X 100 * 65535 /");
+
+    Query: I2C address hexadecimal value
+    Response: 0x44
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: 0x2400, 0x240B, 0x2416, 0x2C06, 0x2C0D, 0x2C10, 0x2B32, 0xE000
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (Temperature: [0:15], Humidity: [24:39])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 175 * 65535 / -45 +", Humidity: "X 100 * 65535 /")
+
+MCP9808
+    NEW_SENSOR = MCP9808;PROTOCOL = I2C;SENSOR_ADDR = 0x18;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x05);DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:15]);SCALE_FORMAT = (0: "X 4 >> X 16 % 16.0 / +");
+    Query: I2C address hexadecimal value
+    Response: 0x18
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (temperature: [0:15])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (temperature: "X 4 >> X 16 % 16.0 / +")
+
+    NEW_SENSOR = MCP9808;PROTOCOL = I2C;SENSOR_ADDR = 0x18;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x05);DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:11]);SCALE_FORMAT = (0: "X 8 >> 4 << X 256 % 4 >> + 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x18
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [0:11])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 8 >> 4 << X 256 % 4 >> + 0.0625 *")
+
+    OK
+    NEW_SENSOR = MCP9808;PROTOCOL = I2C;SENSOR_ADDR = 0x18;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x05);DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:15]);SCALE_FORMAT = (0: "X 4096 % 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x18
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [0:15])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 4096 % 0.0625 *")
+
+
+    NEW_SENSOR = MCP9808;PROTOCOL = I2C;SENSOR_ADDR = 0x18;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x05);DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:15]);SCALE_FORMAT = (0: "X 4 >> X 15 & 0.0625 * +");
+    Query: I2C address hexadecimal value
+    Response: 0x18
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [0:15])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 4 >> X 15 & 0.0625 * +")
+
+
+    NEW_SENSOR = MCP9808;PROTOCOL = I2C;SENSOR_ADDR = 0x18;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x05);DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [0:15]);SCALE_FORMAT = (0: "X 4 >> X 16 % 0.0625 * +");
+    Query: I2C address hexadecimal value
+    Response: 0x18
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [0:15])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 4 >> X 16 % 0.0625 * +")
+
+    OK
+    NEW_SENSOR = MCP9808;PROTOCOL = I2C;SENSOR_ADDR = 0x18;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0x05);DATA_LEN = 2;DATA_KEY_VAL = (0: "TEMP");DATA_FORMAT = (0: [4:15]);SCALE_FORMAT = (0: "X 4095 & 0.0625 *");
+    Query: I2C address hexadecimal value
+    Response: 0x18
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 2
+    Query: Sensor measurement data
+    Response: (Temperature: [4:15])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Temperature: "X 4095 & 0.0625 *")
+
+
+AHT20
+    NEW_SENSOR = AHT20;PROTOCOL = I2C;SENSOR_ADDR = 0x38;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 6;DATA_KEY_VAL = (0: "HUM", 1: "TEMP");DATA_FORMAT = (0: [8:27], 1: [28:47]);SCALE_FORMAT = (0: "X 100.0 * 1048576.0 /", 1: "X 200.0 * 1048576.0 / 50.0 -");
+    Query: I2C address hexadecimal value
+    Response: 0x38
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: The numerical byte value extracted is 6.
+    Query: Sensor measurement data
+    Response: (Humidity: [8:27], Temperature: [28:47])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Humidity: "X 100.0 * 1048576.0 /", Temperature: "X 200.0 * 1048576.0 / 50.0 -")
+    Latency for I2C address hexadecimal value:
+
+    NEW_SENSOR = AHT20;PROTOCOL = I2C;SENSOR_ADDR = 0x38;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = (0xAC, 0x33);DATA_LEN = 6;DATA_KEY_VAL = (0: "HUM", 1: "TEMP");DATA_FORMAT = (0: [8:27], 1: [28:47]);SCALE_FORMAT = (0: "X 100.0 * 1048576.0 /", 1: "X 200.0 * 1048576.0 / 50.0 -");
+    Query: I2C address hexadecimal value
+    Response: 0x38
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: 0xAC, 0x33
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (RelativeHumidity: [8:27], Temperature: [28:47])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (RelativeHumidity: "X 100 * 1048576 /", Temperature: "X 200 * 1048576 / 50 -")
+    Latency for I2C address hexadecimal value:
+
+    NEW_SENSOR = AHT20;PROTOCOL = I2C;SENSOR_ADDR = 0x38;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 6;DATA_KEY_VAL = (0: "HUM", 1: "TEMP");DATA_FORMAT = (0: [8:27], 1: [28:47]);SCALE_FORMAT = (0: "X 100.0 * 1048576.0 /", 1: "X 200.0 * 1048576.0 / 50.0 -");
+    Query: I2C address hexadecimal value
+    Response: 0x38
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (RelativeHumidity: [8:27], Temperature: [28:47])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (RelativeHumidity: "X 100.0 * 1048576.0 /", Temperature: "X 200.0 * 1048576.0 / 50 -")
+    Latency for I2C address hexadecimal value:
+
+    NEW_SENSOR = AHT20;PROTOCOL = I2C;SENSOR_ADDR = 0x38;INIT_CMD = (0xBE, 0x08, 0x00);NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 6;DATA_KEY_VAL = (0: "HUM", 1: "TEMP");DATA_FORMAT = (0: [8:27], 1: [28:47]);SCALE_FORMAT = (0: "X 100.0 * 1048576.0 /", 1: "X 200.0 * 1048576.0 / 50.0 -");
+    Query: I2C address hexadecimal value
+    Response: 0x38
+    Query: Initialize registers hexadecimal value
+    Response: 0xBE, 0x08, 0x00
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (RelativeHumidity: [8:27], Temperature: [28:47])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (RelativeHumidity: "X 100.0 * 1048576.0 /", Temperature: "X 200.0 * 1048576.0 / 50.0 -")
+    Latency for I2C address hexadecimal value:
+
+
+    NEW_SENSOR = AHT20;PROTOCOL = I2C;SENSOR_ADDR = 0x38;INIT_CMD = ();NEW_SENSOR_READ;READ_CMD = ();DATA_LEN = 6;DATA_KEY_VAL = (0: "HUM", 1: "TEMP");DATA_FORMAT = (0: [8:27], 1: [28:47]);SCALE_FORMAT = (0: "X 100.0 * 1048576.0 /", 1: "X 200.0 * 1048576.0 / 50.0 -");
+    Query: I2C address hexadecimal value
+    Response: 0x38
+    Query: Initialize registers hexadecimal value
+    Response: INOP
+    Query: Trigger measurement read command hexadecimal value
+    Response: INOP
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (Relative Humidity: [8:27], Temperature: [28:47])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (Relative Humidity: "X 100 * 1048576 /", Temperature: "X 200 * 1048576 / 50 -")
+    Latency for I2C address hexadecimal value:
+        retrieve_chunk: 0.5000686645507812 seconds
+
+    NEW_SENSOR = AHT20;PROTOCOL = I2C;SENSOR_ADDR = 0x38;INIT_CMD = (0xBE, 0x08, 0x00);NEW_SENSOR_READ;READ_CMD = (0xAC, 0x33, 0x00);DATA_LEN = 6;DATA_KEY_VAL = (0: "HUM", 1: "TEMP");DATA_FORMAT = (0: [4:23], 1: [24:43]);SCALE_FORMAT = (0: "X 100.0 * 1048576.0 /", 1: "X 200.0 * 1048576.0 / 50.0 -");
+    Query: I2C address hexadecimal value
+    Response: 0x38
+    Query: Initialize registers hexadecimal value
+    Response: 0xBE, 0x08, 0x00
+    Query: Trigger measurement read command hexadecimal value
+    Response: 0xAC, 0x33, 0x00
+    Query: Sensor data output length in bytes
+    Response: 6
+    Query: Sensor measurement data
+    Response: (RelativeHumidity: [4:23], Temperature: [24:43])
+    Query: Formula to convert raw sensor data to measurement units
+    Response: (RelativeHumidity: "X 100 * 1048576 /", Temperature: "X 200 * 1048576 / 50 -")
+    Latency for I2C address hexadecimal value:

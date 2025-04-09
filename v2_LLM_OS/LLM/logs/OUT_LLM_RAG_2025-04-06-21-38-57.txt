@@ -1,0 +1,13 @@
+Sensor name: TMP102
+Query: What is the I2C address hexadecimal value?
+Response: 0x48
+Query: How do you initialize or reset the sensor? Include register addresses or command codes for initialization or soft reset or power-up.
+Response: INOP
+Query: What read command or register hexadecimal value triggers a sensor measurement? Which register address should be pointed to or read from to acquire data?
+Response: 0x00, 0x00, 0x00
+Query: What is the sensor data output length in bytes?
+Response: 2
+Query: Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.
+Response: (Temperature: [0:11])
+Query: What is the formula or process for converting raw sensor output values to physical units like temperature, humidity, pressure, or altitude?
+Response: (Temperature: "X 2047 & X 2048 & - 0.0625 *")

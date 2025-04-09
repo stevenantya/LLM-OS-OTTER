@@ -1,0 +1,13 @@
+Sensor name: AHT20
+Query: I2C address hexadecimal value
+Response: 0x38
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: 0xAC, 0x33, 0x00
+Query: Sensor data output length in bytes
+Response: The expert mentioned “6 bytes,” so the only numerical byte value to extract is 6.
+Query: Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.
+Response: (RelativeHumidity: [8:27], Temperature: [28:47])
+Query: Formula to convert raw sensor data to measurement units
+Response: (RelativeHumidity: "X 100.0 * 1048576 /", Temperature: "X 200.0 * 1048576 / 50 -")

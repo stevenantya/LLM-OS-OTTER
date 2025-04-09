@@ -1,0 +1,14 @@
+Query: I2C address hexadecimal value
+Response: 0x76
+Query: Initialize registers hexadecimal value
+Response: 0xB6, 0x27, 0xA0
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 6
+Query: Sensor measurement data
+Response: (Pressure: [0:19], Temperature: [24:43])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Pressure: "X 4 >> 1048576 % 0.1 * 50 +", Temperature: "X 4 >> 1048576 % 0.01 * 40 -")
+
+NEW_SENSOR = GY_BMP280;PROTOCOL = I2C;SENSOR_ADDR = 0x76;INIT_CMD = (0xF4, 0x27), (0xF5, 0xA0);NEW_SENSOR_READ;READ_CMD = (0xF7);DATA_LEN = 6;DATA_KEY_VAL = (0: "PRES", 1: "TEMP");DATA_FORMAT = (0: [0:19], 1: [20:39]);SCALE_FORMAT = (0: "x 4.0 / 100.0 /", 1: "x 100.0 / 0.01 *");

@@ -1,0 +1,13 @@
+Sensor name: VL530X
+Query: I2C address hexadecimal value
+Response: 0x52
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 12
+Query: Sensor measurement data
+Response: (Distance: [0:1], MeasurementUncertainty: [2:3], SignalRate: [4:5], AmbientRate: [6:7])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Distance: "X 16 >> X 65536 % 65536.0 / +", MeasurementUncertainty: "X 16 >> X 65536 % 65536.0 / +", SignalRate: "X 16 >> X 65536 % 65536.0 / +", AmbientRate: "X 16 >> X 65536 % 65536.0 / +")

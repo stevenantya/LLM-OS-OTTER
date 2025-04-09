@@ -1,0 +1,14 @@
+2025-04-05 12:37:29,276 - root - DEBUG - Loaded model client=<openai.resources.chat.completions.completions.Completions object at 0x7239a1f0e4a0> async_client=<openai.resources.chat.completions.completions.AsyncCompletions object at 0x7239a1a10df0> root_client=<openai.OpenAI object at 0x7239a4072dd0> root_async_client=<openai.AsyncOpenAI object at 0x7239a1f0e500> model_name='o3-mini' model_kwargs={} openai_api_key=SecretStr('**********')
+2025-04-05 12:37:29,276 - root - INFO - Sensor name: VL530X
+2025-04-05 12:37:29,280 - primp.utils - DEBUG - Loaded CA certs
+2025-04-05 12:37:29,280 - rquest.connect - DEBUG - starting new connection: https://lite.duckduckgo.com/
+2025-04-05 12:37:29,280 - rquest.util.client.connect.dns - DEBUG - resolving lite.duckduckgo.com
+2025-04-05 12:37:29,303 - rquest.util.client.connect.http - DEBUG - connecting to 20.43.161.105:443
+2025-04-05 12:37:29,308 - rquest.util.client.connect.http - DEBUG - connected to 20.43.161.105:443
+2025-04-05 12:37:29,317 - rquest.util.client.pool - DEBUG - pooling idle connection for PoolKey { uri: https://lite.duckduckgo.com/, alpn_protos: None, network: default }
+2025-04-05 12:37:30,091 - cookie_store.cookie_store - DEBUG - inserting secure cookie 'kl'
+2025-04-05 12:37:30,091 - primp - INFO - response: https://lite.duckduckgo.com/lite/ 200
+2025-04-05 12:37:30,091 - duckduckgo_search.DDGS - DEBUG - _get_url() https://lite.duckduckgo.com/lite/ 200
+2025-04-05 12:37:30,092 - root - DEBUG - Datasheet URL: https://www.st.com/resource/en/datasheet/vl53l0x.pdf
+2025-04-05 12:37:30,092 - root - DEBUG - Downloading datasheet...
+2025-04-05 12:37:30,093 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.st.com:443

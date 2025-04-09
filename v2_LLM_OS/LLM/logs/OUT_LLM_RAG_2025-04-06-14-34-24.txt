@@ -1,0 +1,2 @@
+Sensor name: AHT20
+Query: What is the I2C address hexadecimal value?

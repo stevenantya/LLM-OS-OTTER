@@ -1,0 +1,5 @@
+2025-04-06 10:54:43,053 - root - DEBUG - Loaded model client=<openai.resources.chat.completions.completions.Completions object at 0x70a4b89deb60> async_client=<openai.resources.chat.completions.completions.AsyncCompletions object at 0x70a4b89f94b0> root_client=<openai.OpenAI object at 0x70a4bba576d0> root_async_client=<openai.AsyncOpenAI object at 0x70a4b89debc0> model_name='o3-mini' model_kwargs={} openai_api_key=SecretStr('**********')
+2025-04-06 10:54:43,053 - root - INFO - Sensor name: MCP9808
+2025-04-06 10:54:43,057 - primp.utils - DEBUG - Loaded CA certs
+2025-04-06 10:54:43,057 - rquest.connect - DEBUG - starting new connection: https://html.duckduckgo.com/
+2025-04-06 10:54:43,058 - rquest.util.client.connect.dns - DEBUG - resolving html.duckduckgo.com

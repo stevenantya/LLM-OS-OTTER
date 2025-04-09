@@ -1,0 +1,12 @@
+Query: I2C address hexadecimal value
+Response: 0x76
+Query: Initialize registers hexadecimal value
+Response: 0xB6, 0x27, 0xA0
+Query: Trigger measurement read command hexadecimal value
+Response: 0x27, 0xF4, 0xF7, 0xF8, 0xF9, 0xFA, 0xFB, 0xFC
+Query: Sensor data output length in bytes
+Response: The numerical byte value extracted is 6.
+Query: Sensor measurement data
+Response: (Pressure: [Byte 0 bit 0 : Byte 2 bit 3], Temperature: [Byte 2 bit 4 : Byte 4 bit 7])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Pressure: "X 4 >> 80000.0 65535.0 / * 30000.0 +", Temperature: "X 4 >> 125.0 65535.0 / * 40.0 -")

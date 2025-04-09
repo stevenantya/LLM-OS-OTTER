@@ -1,0 +1,15 @@
+Sensor name: SHT31
+Query: What is the I2C address hexadecimal value?
+Response: 0x44
+Query: How do you initialize or reset the sensor? Include register addresses or command codes for initialization or soft reset or power-up.
+Response: INOP
+Query: What read command or register hexadecimal value triggers a sensor measurement? Which register address should be pointed to or read from to acquire data?
+Response: 0x24, 0x00
+
+Explanation:
+The SHT31 accepts one measurement‐command pair per measurement. There are two families of commands:
+• For clock‐stretching enabled (continuous mode), you’d send one of 0x2C06 (high repeatability), 0x2C0D (medium), or 0x2C10 (low).
+• For the more common polling (clock‐stretching disabled) mode – which is typically the “default” or “ideal” operating condition – you send one of 0x2400 (high), 0x240B (medium), or 0x2416 (low).
+
+The parsed sequence you provided is a concatenation of both families. Under default conditions (polling mode), the correct sequence to initiate a high‐repeatability measurement is to write the two bytes 0x24 followed by 0x00 and then, after waiting for the measurement (typically ~15 ms), to read 6 data bytes (temperature MSB, temperature LSB, temp CRC, humidity MSB, humidity LSB, humidity CRC).
+Query: What is the sensor data output length in bytes?

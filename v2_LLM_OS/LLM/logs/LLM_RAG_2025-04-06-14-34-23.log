@@ -1,0 +1,140 @@
+2025-04-06 14:34:23,815 - root - DEBUG - Loaded model client=<openai.resources.chat.completions.completions.Completions object at 0x70fb35efb790> async_client=<openai.resources.chat.completions.completions.AsyncCompletions object at 0x70fb35a060e0> root_client=<openai.OpenAI object at 0x70fb380d0100> root_async_client=<openai.AsyncOpenAI object at 0x70fb35efb7f0> model_name='o3-mini' model_kwargs={} openai_api_key=SecretStr('**********')
+2025-04-06 14:34:23,816 - root - INFO - Sensor name: AHT20
+2025-04-06 14:34:23,819 - primp.utils - DEBUG - Loaded CA certs
+2025-04-06 14:34:23,820 - rquest.connect - DEBUG - starting new connection: https://lite.duckduckgo.com/
+2025-04-06 14:34:23,820 - rquest.util.client.connect.dns - DEBUG - resolving lite.duckduckgo.com
+2025-04-06 14:34:23,882 - rquest.util.client.connect.http - DEBUG - connecting to 20.43.161.105:443
+2025-04-06 14:34:23,909 - rquest.util.client.connect.http - DEBUG - connected to 20.43.161.105:443
+2025-04-06 14:34:24,003 - rquest.util.client.pool - DEBUG - pooling idle connection for PoolKey { uri: https://lite.duckduckgo.com/, alpn_protos: None, network: default }
+2025-04-06 14:34:24,726 - cookie_store.cookie_store - DEBUG - inserting secure cookie 'kl'
+2025-04-06 14:34:24,726 - primp - INFO - response: https://lite.duckduckgo.com/lite/ 200
+2025-04-06 14:34:24,726 - duckduckgo_search.DDGS - DEBUG - _get_url() https://lite.duckduckgo.com/lite/ 200
+2025-04-06 14:34:24,730 - root - DEBUG - Datasheet URL: https://asairsensors.com/wp-content/uploads/2021/09/Data-Sheet-AHT20-Humidity-and-Temperature-Sensor-ASAIR-V1.0.03.pdf
+2025-04-06 14:34:24,730 - root - DEBUG - Downloading datasheet...
+2025-04-06 14:34:24,731 - root - DEBUG - Datasheet already exists in the database.
+2025-04-06 14:34:24,731 - root - DEBUG - Loading datasheet...
+2025-04-06 14:34:24,731 - root - DEBUG - Datasheet loaded!
+2025-04-06 14:34:24,731 - root - DEBUG - Datasheet fetch latency: 0.9148924350738525 seconds
+2025-04-06 14:34:24,735 - root - DEBUG - Datasheet partition exists. Loaded from local file
+2025-04-06 14:34:24,737 - root - DEBUG - 78
+2025-04-06 14:34:24,738 - root - DEBUG - Number of chunks: 78
+2025-04-06 14:34:24,738 - root - DEBUG - Datasheet partition latency: 0.0029964447021484375 seconds
+2025-04-06 14:34:24,866 - faiss.loader - DEBUG - Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2025-04-06 14:34:24,866 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2025-04-06 14:34:24,881 - faiss.loader - INFO - Successfully loaded faiss with AVX512 support.
+2025-04-06 14:34:24,885 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-04-06 14:34:24,886 - root - DEBUG - Vector DB found, loaded from local file
+2025-04-06 14:34:24,886 - root - DEBUG - Vector DB embedding latency: 0.14812803268432617 seconds
+2025-04-06 14:34:24,886 - root - INFO - Query: What is the I2C address hexadecimal value?
+2025-04-06 14:34:25,053 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x70fb349e8670>, 'json_data': {'input': [[3923, 374, 279, 358, 17, 34, 2686, 70822, 907, 30]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-06 14:34:25,055 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-06 14:34:25,056 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-04-06 14:34:25,128 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x70fb349da260>
+2025-04-06 14:34:25,128 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x70fb3aad91c0> server_hostname='api.openai.com' timeout=None
+2025-04-06 14:34:25,161 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x70fb349d9ff0>
+2025-04-06 14:34:25,161 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 14:34:25,161 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 14:34:25,161 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 14:34:25,162 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 14:34:25,162 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 14:34:25,742 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'Date', b'Sun, 06 Apr 2025 06:34:25 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'337'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_8177844db25e847c36b9c38827043935'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=YL8qMByv06q1sfiQkIRO_bq9pceXEQorYxvvn1AyuzM-1743921265-1.0.1.1-boOTnXvQuwxIHRNt3sRiwflgUn6c_ewt8wsIDsEwb_QbjKpuA7c_YDfm1IZZUb851oNO.PmcvbTz.1UlFKeOEX1PG05FHYlI4Y2bWo0KZzY; path=/; expires=Sun, 06-Apr-25 07:04:25 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=hKBk0OMUhiaR3jxbjROjq_OmAFR_tr3JrcL3pWHd40E-1743921265690-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bf42634f939c69-SIN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 14:34:25,743 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2025-04-06 14:34:25,744 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 14:34:25,744 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 14:34:25,744 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 14:34:25,744 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 14:34:25,744 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "429 Too Many Requests" Headers([('date', 'Sun, 06 Apr 2025 06:34:25 GMT'), ('content-type', 'application/json; charset=utf-8'), ('content-length', '337'), ('connection', 'keep-alive'), ('vary', 'Origin'), ('x-request-id', 'req_8177844db25e847c36b9c38827043935'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=YL8qMByv06q1sfiQkIRO_bq9pceXEQorYxvvn1AyuzM-1743921265-1.0.1.1-boOTnXvQuwxIHRNt3sRiwflgUn6c_ewt8wsIDsEwb_QbjKpuA7c_YDfm1IZZUb851oNO.PmcvbTz.1UlFKeOEX1PG05FHYlI4Y2bWo0KZzY; path=/; expires=Sun, 06-Apr-25 07:04:25 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=hKBk0OMUhiaR3jxbjROjq_OmAFR_tr3JrcL3pWHd40E-1743921265690-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '92bf42634f939c69-SIN'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-04-06 14:34:25,744 - openai._base_client - DEBUG - request_id: req_8177844db25e847c36b9c38827043935
+2025-04-06 14:34:25,745 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/openai/_base_client.py", line 1002, in _request
+    response.raise_for_status()
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/embeddings'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2025-04-06 14:34:25,752 - openai._base_client - DEBUG - Retrying due to status code 429
+2025-04-06 14:34:25,752 - openai._base_client - DEBUG - 2 retries left
+2025-04-06 14:34:25,753 - openai._base_client - INFO - Retrying request to /embeddings in 0.384535 seconds
+2025-04-06 14:34:26,138 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x70fb349e8670>, 'json_data': {'input': [[3923, 374, 279, 358, 17, 34, 2686, 70822, 907, 30]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-06 14:34:26,139 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-06 14:34:26,140 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 14:34:26,140 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 14:34:26,140 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 14:34:26,141 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 14:34:26,141 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 14:34:26,676 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'Date', b'Sun, 06 Apr 2025 06:34:26 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'337'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_1def83aeb6776eacff0395b180b1827c'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bf42698c899c69-SIN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 14:34:26,676 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2025-04-06 14:34:26,677 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 14:34:26,677 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 14:34:26,677 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 14:34:26,677 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 14:34:26,677 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "429 Too Many Requests" Headers({'date': 'Sun, 06 Apr 2025 06:34:26 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '337', 'connection': 'keep-alive', 'vary': 'Origin', 'x-request-id': 'req_1def83aeb6776eacff0395b180b1827c', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bf42698c899c69-SIN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 14:34:26,677 - openai._base_client - DEBUG - request_id: req_1def83aeb6776eacff0395b180b1827c
+2025-04-06 14:34:26,678 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/openai/_base_client.py", line 1002, in _request
+    response.raise_for_status()
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/embeddings'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/openai/_base_client.py", line 1002, in _request
+    response.raise_for_status()
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/embeddings'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2025-04-06 14:34:26,678 - openai._base_client - DEBUG - Retrying due to status code 429
+2025-04-06 14:34:26,678 - openai._base_client - DEBUG - 1 retry left
+2025-04-06 14:34:26,678 - openai._base_client - INFO - Retrying request to /embeddings in 0.791671 seconds
+2025-04-06 14:34:27,470 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'post_parser': <function Embeddings.create.<locals>.parser at 0x70fb349e8670>, 'json_data': {'input': [[3923, 374, 279, 358, 17, 34, 2686, 70822, 907, 30]], 'model': 'text-embedding-ada-002', 'encoding_format': 'base64'}}
+2025-04-06 14:34:27,472 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2025-04-06 14:34:27,472 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-06 14:34:27,472 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-06 14:34:27,473 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-06 14:34:27,473 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-06 14:34:27,473 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-06 14:34:28,081 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'Date', b'Sun, 06 Apr 2025 06:34:28 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'337'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_91c72af6b3cebf425dccc5af2b4a20f3'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92bf42720b7f9c69-SIN'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-04-06 14:34:28,082 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+2025-04-06 14:34:28,082 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-06 14:34:28,082 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-06 14:34:28,082 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-06 14:34:28,082 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-06 14:34:28,083 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/embeddings "429 Too Many Requests" Headers({'date': 'Sun, 06 Apr 2025 06:34:28 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '337', 'connection': 'keep-alive', 'vary': 'Origin', 'x-request-id': 'req_91c72af6b3cebf425dccc5af2b4a20f3', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '92bf42720b7f9c69-SIN', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-04-06 14:34:28,083 - openai._base_client - DEBUG - request_id: req_91c72af6b3cebf425dccc5af2b4a20f3
+2025-04-06 14:34:28,083 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/openai/_base_client.py", line 1002, in _request
+    response.raise_for_status()
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/embeddings'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/openai/_base_client.py", line 1002, in _request
+    response.raise_for_status()
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/embeddings'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/openai/_base_client.py", line 1002, in _request
+    response.raise_for_status()
+  File "/home/steven/FYP/v2_LLM_OS/LLM/venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.openai.com/v1/embeddings'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2025-04-06 14:34:28,083 - openai._base_client - DEBUG - Re-raising status error
+2025-04-06 14:34:28,261 - httpcore.connection - DEBUG - close.started
+2025-04-06 14:34:28,261 - httpcore.connection - DEBUG - close.complete

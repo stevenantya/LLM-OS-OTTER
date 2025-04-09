@@ -1,0 +1,14 @@
+Query: I2C address hexadecimal value
+Response: 0x48
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: 0x00, 0x01, 0x80, 0x00, 0x00
+Query: Sensor data output length in bytes
+Response: The numerical value is: 2
+Query: Sensor measurement data
+Response: (Temperature: [15:4])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Temperature: "X 4 >> X 11 >> 1 & 4096 * - 0.0625 *")
+
+NEW_SENSOR = SHT31;PROTOCOL = I2C;SENSOR_ADDR = 0x44;INIT_CMD = (0x2C, 0x06);NEW_SENSOR_READ;READ_CMD = (0xE0, 0x00);DATA_LEN = 6;DATA_KEY_VAL = (0: "TEMP", 1: "HUM");DATA_FORMAT = (0: [0:15], 1: [16:31]);SCALE_FORMAT = (0: "x 175.0 * 65535.0 / 45.0 -", 1: "x 100.0 * 65535.0 /");

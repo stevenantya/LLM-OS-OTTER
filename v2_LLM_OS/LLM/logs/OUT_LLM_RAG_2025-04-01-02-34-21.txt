@@ -1,0 +1,13 @@
+Query: I2C address hexadecimal value
+Response: 0x60
+Query: Initialize registers hexadecimal value
+Response: 0x07, 0xB8, 0xB9
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 5
+Query: Sensor measurement data
+Response: (Altitude: [0:19], Temperature: [20:31])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Altitude: "X 524288 XOR 524288 - 16.0 /", Temperature: "X 2048 XOR 2048 - 16.0 /")
+ 

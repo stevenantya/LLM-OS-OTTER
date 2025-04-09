@@ -1,0 +1,17 @@
+Sensor name: MCP9808
+Query: What is the I2C address hexadecimal value?
+Response: 0x18
+Query: How do you initialize or reset the sensor? Include register addresses or command codes for initialization or soft reset or power-up.
+Response: INOP
+Query: What read command or register hexadecimal value triggers a sensor measurement? Which register address should be pointed to or read from to acquire data?
+Response: From your text, the only explicit hexadecimal value provided is the pointer value for the Temperature register:
+
+  0x05
+
+The two subsequent 1‑byte hexadecimal data values (which together form a 16‐bit temperature reading) are not given explicitly in the statement. They would be obtained when you read from the device after writing the pointer.
+Query: What is the sensor data output length in bytes?
+Response: 2
+Query: Where are the sensor measurement values stored in registers or memory? Include register addresses, byte ranges, or bit positions.
+Response: (Temperature: [4:15])
+Query: What is the formula or process for converting raw sensor output values to physical units like temperature, humidity, pressure, or altitude?
+Response: (Temperature: "X 0.0625 *")

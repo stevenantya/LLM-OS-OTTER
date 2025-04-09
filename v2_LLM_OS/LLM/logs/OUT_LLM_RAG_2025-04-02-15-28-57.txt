@@ -1,0 +1,1 @@
+Query: I2C address hexadecimal value

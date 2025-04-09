@@ -1,0 +1,227 @@
+Datasheet fetch latency: 0.9489336013793945 seconds
+Number of chunks: 396
+Datasheet partition latency: 15.59775996208191 seconds
+Vector DB embedding latency: 3.861649513244629 seconds
+Query: I2C address hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |I2C addressing|||||||
+|I2C Address|—|—|0x60|||Hex|
+|The device uses 7-bit addressing and does not acknowledge general call address 000 0000. Client address has been set to 60h or 110 0000. 8-bit read is C1h, 8-bit write is C0h.|||||||
+     Retrieved Chunk 2: |VOL|Low-level output voltage INT1, INT2|I = 500 µA O|—|—|0.1|V DDIO|
+|VOLS|Low-level output voltage SDA|I = 500 µA O|—|—|0.1|V DDIO|
+|T ON|Turn-on time [1][2][3]|High-speed mode|—|—|60|ms|
+|||High-resolution mode|—|—|1000|ms|
+|T OP|Operating temperature range|—|−40|25|+85|°C|
+|I2C addressing|||||||
+|I2C Address|—|—|0x60|||Hex|
+     Retrieved Chunk 3: **10** **Digital interface ................................................9** 0Fh) ..................................................................25
+10.1 I2C characteristics ............................................. 9 14.9 TIME_DLY - time delay register (address
+10.2 I2C operation ...................................................10 10h) ..................................................................26
+     Number of helpful chunks: 2
+Consolidated Final chunk: 1. |I2C addressing|||||||
+|I2C Address|—|—|0x60|||Hex|
+|The device uses 7-bit addressing and does not acknowledge general call address 000 0000. Client address has been set to 60h or 110 0000. 8-bit read is C1h, 8-bit write is C0h.|||||||
+2. |VOL|Low-level output voltage INT1, INT2|I = 500 µA O|—|—|0.1|V DDIO|
+|VOLS|Low-level output voltage SDA|I = 500 µA O|—|—|0.1|V DDIO|
+|T ON|Turn-on time [1][2][3]|High-speed mode|—|—|60|ms|
+|||High-resolution mode|—|—|1000|ms|
+|T OP|Operating temperature range|—|−40|25|+85|°C|
+|I2C addressing|||||||
+|I2C Address|—|—|0x60|||Hex|
+
+Query: Initialize registers hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |Register Address|Name|Access|Reset value|Description|Reset when STBY to Active|Comment|Auto-increment address|Reference|
+|---|---|---|---|---|---|---|---|---|
+|0Bh|OUT_T_DELTA_LSB|R|00h|Temperature data out delta LSB [1][2]|Yes|Bits 0 to 3 of 12-bit temperature change data|06h|Section 14.6|
+|0Ch|WHO_AM_I|R|C4h|Device identification register|No|Fixed device ID number|0Dh|Section 14.7|
+|0Dh|F_STATUS|R|00h|FIFO status register [1][2]|Yes|FIFO status: no FIFO event detected|0Eh|Section 14.8.1|
+     Retrieved Chunk 2: 14.22 Control registers .............................................. 32
+14.22.1 CTRL_REG1 - control register 1 (address
+26h) ..................................................................32
+14.22.2 CTRL_REG2 - control register 2 (address
+27h) ..................................................................34
+14.22.3 CTRL_REG3 - interrupt CTRL register
+(address 28h) .................................................. 34
+14.22.4 CTRL_REG4 - interrupt enable register
+     Retrieved Chunk 3: |Register Address|Name|Access|Reset value|Description|Reset when STBY to Active|Comment|Auto-increment address|Col9|Reference|
+|---|---|---|---|---|---|---|---|---|---|
+|00h|STATUS|R|00h|Sensor status register [1].[2]|Yes|Alias for DR_STATUS or F_ STATUS|01h||Section 14.1|
+|01h|OUT_P_MSB|R|00h|Pressure data out MSB [1][2]|Yes|Bits 12 to 19 of 20-bit real-time pressure sample. Root pointer to pressure and temperature FIFO data.|02h|01h|Section 14.3|
+     Number of helpful chunks: 3
+Consolidated Final chunk: 1. |Register Address|Name|Access|Reset value|Description|Reset when STBY to Active|Comment|Auto-increment address|Reference|
+|---|---|---|---|---|---|---|---|---|
+|0Bh|OUT_T_DELTA_LSB|R|00h|Temperature data out delta LSB [1][2]|Yes|Bits 0 to 3 of 12-bit temperature change data|06h|Section 14.6|
+|0Ch|WHO_AM_I|R|C4h|Device identification register|No|Fixed device ID number|0Dh|Section 14.7|
+|0Dh|F_STATUS|R|00h|FIFO status register [1][2]|Yes|FIFO status: no FIFO event detected|0Eh|Section 14.8.1|
+2. 14.22 Control registers .............................................. 32
+14.22.1 CTRL_REG1 - control register 1 (address
+26h) ..................................................................32
+14.22.2 CTRL_REG2 - control register 2 (address
+27h) ..................................................................34
+14.22.3 CTRL_REG3 - interrupt CTRL register
+(address 28h) .................................................. 34
+14.22.4 CTRL_REG4 - interrupt enable register
+3. |Register Address|Name|Access|Reset value|Description|Reset when STBY to Active|Comment|Auto-increment address|Col9|Reference|
+|---|---|---|---|---|---|---|---|---|---|
+|00h|STATUS|R|00h|Sensor status register [1].[2]|Yes|Alias for DR_STATUS or F_ STATUS|01h||Section 14.1|
+|01h|OUT_P_MSB|R|00h|Pressure data out MSB [1][2]|Yes|Bits 12 to 19 of 20-bit real-time pressure sample. Root pointer to pressure and temperature FIFO data.|02h|01h|Section 14.3|
+
+Query: Trigger measurement read command hexadecimal value
+Retrieved chunk:
+     Retrieved Chunk 1: |0Ah|OUT_T_DELTA_MSB|R|00h|Temperature data out delta MSB [1][2]|Yes|Bits 4 to 11 of 12-bit temperature change data|0Bh||Section 14.6|
+     Retrieved Chunk 2: ###### **I [2] C precision pressure sensor with altimetry** **14.8.3  F_SETUP- FIFO setup register (address 0Fh)** A FIFO sample count exceeding the watermark event does not stop the FIFO from accepting new data. The FIFO update rate is dictated by the selected system acquisition rate (ST bits of CTRL_REG2). When a byte is read from the FIFO buffer the oldest sample data in the FIFO buffer is returned and also deleted from the front of the FIFO buffer, while the FIFO sample count is decremented
+     Retrieved Chunk 3: DATA READY
+
+
+FIFO
+
+
+PRESSURE THRESHOLD
+
+
+TEMPERATURE THRESHOLD
+
+
+event flag 0
+
+event flag 1
+
+event flag 2
+
+event flag 3
+
+event flag 4
+
+event flag 5
+
+event flag 6
+
+event flag 7
+
+
+INT1
+
+INT2
+
+
+PRESSURE WINDOW
+
+
+TEMPERATURE WINDOW
+
+
+PRESSURE CHANGE
+
+
+TEMPERATURE CHANGE
+
+
+8 8
+
+INT_ENABLE INT_CFG
+
+*aaa-024058*
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Sensor data output length in bytes
+Retrieved chunk:
+     Retrieved Chunk 1: |0Ah|OUT_T_DELTA_MSB|R|00h|Temperature data out delta MSB [1][2]|Yes|Bits 4 to 11 of 12-bit temperature change data|0Bh||Section 14.6|
+     Retrieved Chunk 2: |||Altimeter mode|0.0625|0.3|––|m|
+||Output data rate|One-shot mode|––|100|––|Hz|
+|||FIFO mode|––|––|1|Hz|
+||Board mount drift|After solder reflow|––|±0.15|––|kPa|
+||Long-term drift|After a period of 1 year|––|±0.1|––|kPa|
+|Temperature sensor|||||||
+|T FS|Measurement range|––|–40|––|+85|°C|
+||Temperature accuracy|@25 °C|––|±1|––|°C|
+|||Over temperature range|––|±3|––|°C|
+|T OP|Operating temperature range|––|–40|––|+85|°C|
+     Retrieved Chunk 3: |06h/00h|DR_STATUS|R|00h|Sensor status register [1][2]|Yes|Data ready status information|07h||Section 14.2|
+|07h|OUT_P_DELTA_MSB|R|00h|Pressure data out delta MSB [1][2]|Yes|Bits 12 to 19 of 20-bit pressure change data|08h||Section 14.5|
+|08h|OUT_P_DELTA_CSB|R|00h|Pressure data out delta CSB [1][2]|Yes|Bits 4 to 11 of 20-bit pressure change data|09h||Section 14.5|
+|09h|OUT_P_DELTA_LSB|R|00h|Pressure data out delta LSB [1][2]|Yes|Bits 0 to 3 of 20-bit pressure change data|0Ah||Section 14.5|
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: Sensor measurement data
+Retrieved chunk:
+     Retrieved Chunk 1: |||Altimeter mode|0.0625|0.3|––|m|
+||Output data rate|One-shot mode|––|100|––|Hz|
+|||FIFO mode|––|––|1|Hz|
+||Board mount drift|After solder reflow|––|±0.15|––|kPa|
+||Long-term drift|After a period of 1 year|––|±0.1|––|kPa|
+|Temperature sensor|||||||
+|T FS|Measurement range|––|–40|––|+85|°C|
+||Temperature accuracy|@25 °C|––|±1|––|°C|
+|||Over temperature range|––|±3|––|°C|
+|T OP|Operating temperature range|––|–40|––|+85|°C|
+     Retrieved Chunk 2: ###### **9.1.1 Resolution** The resolution of a pressure sensor is the minimum change of pressure that can be reliably measured. The usable resolution of the device is programmable, enabling the user to choose a compromise between acquisition speed, power consumption, and resolution that best fits the application. To simplify the programming, the data is always reported in the same format with differing number of usable bits. **9.1.2 Accuracy** **9.1.2.1 Offset** The offset is defined as the
+     Retrieved Chunk 3: ###### **I [2] C precision pressure sensor with altimetry** Power consumption and sensitivity are programmable where the data oversampling ratio can be set to balance current consumption and noise/resolution. Serial interface communication is through an I [2] C interface therefore making the device particularly suitable for direct interfacing with a microcontroller. The device features two independently programmable interrupt signals INT1 and INT2. These can be set to generate an interrupt
+     Number of helpful chunks: 3
+Consolidated Final chunk: 1. |||Altimeter mode|0.0625|0.3|––|m|
+||Output data rate|One-shot mode|––|100|––|Hz|
+|||FIFO mode|––|––|1|Hz|
+||Board mount drift|After solder reflow|––|±0.15|––|kPa|
+||Long-term drift|After a period of 1 year|––|±0.1|––|kPa|
+|Temperature sensor|||||||
+|T FS|Measurement range|––|–40|––|+85|°C|
+||Temperature accuracy|@25 °C|––|±1|––|°C|
+|||Over temperature range|––|±3|––|°C|
+|T OP|Operating temperature range|––|–40|––|+85|°C|
+2. ###### **9.1.1 Resolution** The resolution of a pressure sensor is the minimum change of pressure that can be reliably measured. The usable resolution of the device is programmable, enabling the user to choose a compromise between acquisition speed, power consumption, and resolution that best fits the application. To simplify the programming, the data is always reported in the same format with differing number of usable bits. **9.1.2 Accuracy** **9.1.2.1 Offset** The offset is defined as the
+3. ###### **I [2] C precision pressure sensor with altimetry** Power consumption and sensitivity are programmable where the data oversampling ratio can be set to balance current consumption and noise/resolution. Serial interface communication is through an I [2] C interface therefore making the device particularly suitable for direct interfacing with a microcontroller. The device features two independently programmable interrupt signals INT1 and INT2. These can be set to generate an interrupt
+
+Query: Formula to convert raw sensor data to measurement units
+Retrieved chunk:
+     Retrieved Chunk 1: |||Altimeter mode|0.0625|0.3|––|m|
+||Output data rate|One-shot mode|––|100|––|Hz|
+|||FIFO mode|––|––|1|Hz|
+||Board mount drift|After solder reflow|––|±0.15|––|kPa|
+||Long-term drift|After a period of 1 year|––|±0.1|––|kPa|
+|Temperature sensor|||||||
+|T FS|Measurement range|––|–40|––|+85|°C|
+||Temperature accuracy|@25 °C|––|±1|––|°C|
+|||Over temperature range|––|±3|––|°C|
+|T OP|Operating temperature range|––|–40|––|+85|°C|
+     Retrieved Chunk 2: digitized outputs for pressure in Pascals and temperature in °C. The compensated pressure output can then be converted to altitude, utilizing the formula stated in Section 9.1.3 " Pressure/altitude " provided in meters.The internal processing in MPL3115A2 removes compensation and unit conversion load from the system MCU, simplifying system design. MPL3115A2's advanced ASIC has multiple user programmable modes such as power saving, interrupt and autonomous data acquisition modes, including
+     Retrieved Chunk 3: ###### **9.1.1 Resolution** The resolution of a pressure sensor is the minimum change of pressure that can be reliably measured. The usable resolution of the device is programmable, enabling the user to choose a compromise between acquisition speed, power consumption, and resolution that best fits the application. To simplify the programming, the data is always reported in the same format with differing number of usable bits. **9.1.2 Accuracy** **9.1.2.1 Offset** The offset is defined as the
+     Number of helpful chunks: 0
+Consolidated Final chunk: 
+Query: I2C address hexadecimal value
+Response: 0x60
+Query: Initialize registers hexadecimal value
+Response: 0xB8, 0x07, 0xB9
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 5
+Query: Sensor measurement data
+Response: (Altimeter: [0:19], Temperature: [20:31])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Altimeter: "X 4 >> X 16 % 16.0 / +", Temperature: "X 4 >> X 16 % 16.0 / +")
+Latency for I2C address hexadecimal value:
+     retrieve_chunk: 0.37804269790649414 seconds
+     validate_chunk: 7.47722053527832 seconds
+     function: 6.244874477386475 seconds
+Latency for Initialize registers hexadecimal value:
+     retrieve_chunk: 0.6150963306427002 seconds
+     validate_chunk: 7.271499872207642 seconds
+     function: 26.212260723114014 seconds
+Latency for Trigger measurement read command hexadecimal value:
+     retrieve_chunk: 0.5129952430725098 seconds
+     validate_chunk: 6.247798204421997 seconds
+     function: 18.02087926864624 seconds
+Latency for Sensor data output length in bytes:
+     retrieve_chunk: 0.5116090774536133 seconds
+     validate_chunk: 6.348307371139526 seconds
+     function: 17.71703553199768 seconds
+Latency for Sensor measurement data:
+     retrieve_chunk: 0.6132545471191406 seconds
+     validate_chunk: 9.83044719696045 seconds
+     function: 32.154757022857666 seconds
+Latency for Formula to convert raw sensor data to measurement units:
+     retrieve_chunk: 0.5112600326538086 seconds
+     validate_chunk: 7.475641965866089 seconds
+     function: 19.66009283065796 seconds
+Latency: 188.2129397392273 seconds
+End time: 1743825822.3557315

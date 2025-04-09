@@ -1,0 +1,12 @@
+Query: I2C address hexadecimal value
+Response: 0x18
+Query: Initialize registers hexadecimal value
+Response: 0x0000, 0x0000, 0x0000, 0x0000, 0x0003, 0x0054
+Query: Trigger measurement read command hexadecimal value
+Response: 0x30, 0x31
+Query: Sensor data output length in bytes
+Response: 2
+Query: Sensor measurement data
+Response: (temperature: [4:15])
+Query: Formula to convert raw sensor data to measurement units
+Response: (temperature: "X 2048 >= IF X 4096 - ELSE X THEN 0.0625 *")

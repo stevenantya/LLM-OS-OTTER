@@ -1,0 +1,13 @@
+Sensor name: AHT20
+Query: I2C address hexadecimal value
+Response: 0x38
+Query: Initialize registers hexadecimal value
+Response: INOP
+Query: Trigger measurement read command hexadecimal value
+Response: INOP
+Query: Sensor data output length in bytes
+Response: 6
+Query: Sensor measurement data
+Response: (Relative Humidity: [8:27], Temperature: [28:47])
+Query: Formula to convert raw sensor data to measurement units
+Response: (Relative Humidity: "X 100 * 1048576 /", Temperature: "X 200 * 1048576 / 50 -")

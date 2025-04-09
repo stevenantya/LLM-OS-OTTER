@@ -1,0 +1,2 @@
+Sensor name: MCP9808
+Query: What is the I2C address hexadecimal value?
