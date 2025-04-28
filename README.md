@@ -1,7 +1,22 @@
-# OTTER - LLM OS for Embedded Systems
+# OTTER - LLM for Embedded Systems
+
+### OTTER Components Directory
+- OTTER LLM in v2_LLM_OS/LLM/experiment.py
+- OTTER LLM to OEL in v2_LLM_OS/LLM/Experiment_Helper_Code/convert_to_oel.py
+- OTTER Engine in v2_LLM_OS/LLM/fyp_rtos.ino
+
+### Data extraction files
+- v2_LLM_OS/LLM/Experiment_Helper_Code/extract_i2c_data.py
+- v2_LLM_OS/LLM/Experiment_Helper_Code/extract_latency.py
+- v2_LLM_OS/LLM/Experiment_Helper_Code/extract_no_helpful_chunks.py
+
+### The experiment results are combined in
+- v2_LLM_OS/OTTER Experiment v2.xlsx
+
+
 
 ## Overview
-OTTER (Open-source Translation at Task Execution Runtime) is a lightweight operating system designed to streamline sensor interfacing in embedded systems using Large Language Models (LLMs). It simplifies I2C sensor communication by dynamically generating and executing sensor configurations, reducing development time and increasing flexibility.
+OTTER is a lightweight middleware designed to streamline sensor interfacing in embedded systems using Large Language Models (LLMs). It simplifies I2C sensor communication by dynamically generating and executing sensor configurations, reducing development time and increasing flexibility.
 
 ## Features
 - **LLM-Powered Sensor Configuration**: Converts natural language descriptions into optimized sensor configurations.
